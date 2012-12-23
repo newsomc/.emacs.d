@@ -15,10 +15,14 @@
 ;; setup load paths
 (add-to-list 'load-path user-emacs-directory)
 
+(setq core-dir (concat user-emacs-directory "core"))
 (setq modules-dir (concat user-emacs-directory "modules"))
-(add-to-list 'load-path modules-dir)
-
+(setq personal-dir (concat user-emacs-directory "personal"))
 (setq themes-dir (concat user-emacs-directory "themes"))
+
+(add-to-list 'load-path core-dir)
+(add-to-list 'load-path modules-dir)
+(add-to-list 'load-path personal-dir)
 (add-to-list 'load-path themes-dir)
 
 ;; save point position between sessions
@@ -28,3 +32,7 @@
 
 ;; load color theme
 (require 'tomorrow-night-theme)
+
+(require 'setup-elnode)
+(require 'setup-package)
+(require 'install-packages)
