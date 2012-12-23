@@ -11,7 +11,6 @@
 
 (setq source-directory "~/projects/emacs/emacs-24.2")
 
-(setq user-emacs-directory "~/.emacs.d")
 (add-to-list 'load-path user-emacs-directory)
 
 (setq modules-dir (concat user-emacs-directory "modules"))
@@ -23,3 +22,5 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+(require 'tomorrow-night-theme)
