@@ -9,8 +9,10 @@
 (setq auto-save-list-file-name nil)
 (setq auto-save-default nil)
 
+;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
 
+;; setup load paths
 (add-to-list 'load-path user-emacs-directory)
 
 (setq modules-dir (concat user-emacs-directory "modules"))
@@ -19,8 +21,10 @@
 (setq themes-dir (concat user-emacs-directory "themes"))
 (add-to-list 'load-path themes-dir)
 
+;; save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
+;; load color theme
 (require 'tomorrow-night-theme)
