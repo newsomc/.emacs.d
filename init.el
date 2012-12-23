@@ -9,6 +9,9 @@
 (setq auto-save-list-file-name nil)
 (setq auto-save-default nil)
 
+;; path to scheme interpreter
+(setq scheme-program-name "/usr/local/bin/stk")
+
 ;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
 
