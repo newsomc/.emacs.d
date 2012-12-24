@@ -46,3 +46,5 @@
 (require 'setup-saveplace)
 (require 'setup-smex)
 (require 'setup-undo-tree)
+
+(require 'key-bindings)
