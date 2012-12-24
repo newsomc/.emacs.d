@@ -1,7 +1,9 @@
 (defun init--install-packages ()
   (packages-install
+   (cons 'ace-jump-mode melpa)
    (cons 'dash melpa)
-   (cons 's melpa)))
+   (cons 's melpa)
+   (cons 'smex melpa)))
 
 (condition-case nil
     (init--install-packages)
