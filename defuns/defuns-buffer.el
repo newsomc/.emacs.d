@@ -12,6 +12,12 @@
     (switch-to-buffer (get-buffer-create bufname))
     (emacs-lisp-mode)))
 
+(defun list-existing-buffers ()
+  (interactive)
+  (ibuffer-list-buffers)
+  (other-window 1)
+  (delete-other-windows))
+
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
