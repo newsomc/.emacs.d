@@ -2,6 +2,7 @@
   (packages-install
    (cons 'ace-jump-mode melpa)
    (cons 'dash melpa)
+   (cons 'ido-ubiquitous melpa)
    (cons 's melpa)
    (cons 'smex melpa)
    (cons 'undo-tree melpa)))
