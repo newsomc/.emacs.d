@@ -43,8 +43,9 @@
 (require 'sane-defaults)
 
 (require 'setup-ace-jump-mode)
-(require 'setup-saveplace)
+(require 'setup-browse-kill-ring)
 (require 'setup-ido)
+(require 'setup-saveplace)
 (require 'setup-smex)
 (require 'setup-undo-tree)
 

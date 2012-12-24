@@ -1,6 +1,7 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'ace-jump-mode melpa)
+   (cons 'browse-kill-ring melpa)
    (cons 'dash melpa)
    (cons 'ido-ubiquitous melpa)
    (cons 's melpa)
