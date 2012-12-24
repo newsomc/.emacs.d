@@ -30,9 +30,15 @@
 ;; load color theme
 (require 'tomorrow-night-theme)
 
-(require 'setup-elnode)
+;; elpa packages
 (require 'setup-package)
 (require 'install-packages)
 
+;; list/string libraries
+(require 'cl)
+(require 'dash)
+(require 's)
+
+(require 'setup-ace-jump-mode)
 (require 'setup-saveplace)
 (require 'setup-smex)
