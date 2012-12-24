@@ -19,6 +19,7 @@
 
 ;; setup load paths
 (setq core-dir (concat user-emacs-directory "core"))
+(setq defuns-dir (concat user-emacs-directory "defuns"))
 (setq modules-dir (concat user-emacs-directory "modules"))
 (setq themes-dir (concat user-emacs-directory "themes"))
 
@@ -39,15 +40,15 @@
 (require 'dash)
 (require 's)
 
+;; load functions
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file) (load file)))
+
+;; core
 (require 'appearance)
 (require 'sane-defaults)
-
-(require 'setup-ace-jump-mode)
-(require 'setup-browse-kill-ring)
-(require 'setup-ido)
-(require 'setup-jump-char)
-(require 'setup-saveplace)
-(require 'setup-smex)
-(require 'setup-undo-tree)
-
 (require 'key-bindings)
+
+;; load modules
+(dolist (file (directory-files modules-dir t "\\w+"))
+  (require (intern (file-name-sans-extension (file-name-nondirectory file)))))
