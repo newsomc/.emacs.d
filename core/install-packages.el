@@ -3,6 +3,8 @@
    (cons 'ace-jump-mode melpa)
    (cons 'browse-kill-ring melpa)
    (cons 'dash melpa)
+   (cons 'diminish melpa)
+   (cons 'elisp-slime-nav melpa)
    (cons 'ido-ubiquitous melpa)
    (cons 'jump-char melpa)
    (cons 's melpa)
