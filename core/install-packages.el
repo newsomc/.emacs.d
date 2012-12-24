@@ -4,6 +4,7 @@
    (cons 'browse-kill-ring melpa)
    (cons 'dash melpa)
    (cons 'ido-ubiquitous melpa)
+   (cons 'jump-char melpa)
    (cons 's melpa)
    (cons 'smex melpa)
    (cons 'undo-tree melpa)))

@@ -45,6 +45,7 @@
 (require 'setup-ace-jump-mode)
 (require 'setup-browse-kill-ring)
 (require 'setup-ido)
+(require 'setup-jump-char)
 (require 'setup-saveplace)
 (require 'setup-smex)
 (require 'setup-undo-tree)
