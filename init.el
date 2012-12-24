@@ -6,6 +6,10 @@
 ;; turn off splash screen
 (setq inhibit-startup-message t)
 
+;; kill *Messages* early
+(setq message-log-max nil)
+(kill-buffer "*Messages*")
+
 ;; turn off autosave/backup
 (setq make-backup-files nil)
 (setq auto-save-list-file-name nil)
@@ -14,6 +18,7 @@
 ;; path to scheme interpreter
 (setq scheme-program-name
   "/Applications/mit-scheme.app/Contents/Resources/mit-scheme")
+(require 'xscheme)
 
 ;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
@@ -23,11 +28,13 @@
 (setq defuns-dir (concat user-emacs-directory "defuns"))
 (setq modules-dir (concat user-emacs-directory "modules"))
 (setq themes-dir (concat user-emacs-directory "themes"))
+(setq vendor-dir (concat user-emacs-directory "vendor"))
 
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path core-dir)
 (add-to-list 'load-path modules-dir)
 (add-to-list 'load-path themes-dir)
+(add-to-list 'load-path vendor-dir)
 
 ;; load color theme
 (require 'tomorrow-night-theme)
@@ -52,6 +59,10 @@
 
 ;; load modules
 (dolist (file (directory-files modules-dir t "\\w+"))
+  (require (intern (file-name-from-path-no-ext file))))
+
+;; load vendor
+(dolist (file (directory-files vendor-dir t "\\w+"))
   (require (intern (file-name-from-path-no-ext file))))
 
 ;; start emacs server
