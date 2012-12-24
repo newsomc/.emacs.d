@@ -3,7 +3,8 @@
    (cons 'ace-jump-mode melpa)
    (cons 'dash melpa)
    (cons 's melpa)
-   (cons 'smex melpa)))
+   (cons 'smex melpa)
+   (cons 'undo-tree melpa)))
 
 (condition-case nil
     (init--install-packages)

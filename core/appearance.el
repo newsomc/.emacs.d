@@ -15,6 +15,9 @@
 (setq line-number-mode t)
 (setq linum-format "%3d ")
 (setq shift-select-mode nil)
+(setq whitespace-line-column 100)
+(setq whitespace-style '(trailing lines space-before-tab
+                                  indentation space-after-tab))
 (setq x-select-enable-clipboard t)
 
 (set-face-attribute 'linum nil :background "#333")
