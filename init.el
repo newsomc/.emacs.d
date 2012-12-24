@@ -12,7 +12,7 @@
 (setq auto-save-default nil)
 
 ;; path to scheme interpreter
-(setq scheme-program-name "/usr/local/bin/stk")
+(setq scheme-program-name "/usr/local/bin/stk-simply")
 
 ;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
