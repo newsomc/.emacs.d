@@ -44,6 +44,7 @@
 
 (require 'setup-ace-jump-mode)
 (require 'setup-saveplace)
+(require 'setup-ido)
 (require 'setup-smex)
 (require 'setup-undo-tree)
 
