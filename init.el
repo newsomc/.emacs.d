@@ -51,4 +51,8 @@
 
 ;; load modules
 (dolist (file (directory-files modules-dir t "\\w+"))
-  (require (intern (file-name-sans-extension (file-name-nondirectory file)))))
+  (require (intern (file-name-from-path-no-ext file))))
+
+;; start emacs server
+(require 'server)
+(unless (server-running-p) (server-start))
