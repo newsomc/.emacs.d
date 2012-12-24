@@ -12,7 +12,8 @@
 (setq auto-save-default nil)
 
 ;; path to scheme interpreter
-(setq scheme-program-name "/usr/local/bin/stk-simply")
+(setq scheme-program-name
+  "/Applications/mit-scheme.app/Contents/Resources/mit-scheme")
 
 ;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
