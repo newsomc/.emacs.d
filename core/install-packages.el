@@ -8,6 +8,7 @@
    (cons 'ido-ubiquitous melpa)
    (cons 'jump-char melpa)
    (cons 's melpa)
+   (cons 'sicp melpa)
    (cons 'smex melpa)
    (cons 'undo-tree melpa)))
 
