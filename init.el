@@ -40,6 +40,7 @@
 (require 's)
 
 (require 'appearance)
+(require 'sane-defaults)
 
 (require 'setup-ace-jump-mode)
 (require 'setup-saveplace)
