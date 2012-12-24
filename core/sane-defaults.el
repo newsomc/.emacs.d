@@ -1,9 +1,9 @@
+(require 'ido)
 (require 'uniquify)
 
 (auto-compression-mode t)
-
 (global-font-lock-mode t)
-
+(ido-mode t)
 (recentf-mode 1)
 
 (setq delete-by-moving-to-trash t)
