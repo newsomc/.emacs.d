@@ -6,6 +6,7 @@
    (cons 'dash melpa)
    (cons 'diminish melpa)
    (cons 'elisp-slime-nav melpa)
+   (cons 'geiser marmalade)
    (cons 'ido-ubiquitous melpa)
    (cons 'jump-char melpa)
    (cons 's melpa)

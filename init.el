@@ -38,7 +38,7 @@
 (add-to-list 'load-path vendor-dir)
 
 ;; load color theme
-(require 'tomorrow-night-theme)
+(require 'tomorrow-theme)
 
 ;; elpa packages
 (require 'setup-package)
