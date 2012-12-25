@@ -10,7 +10,6 @@
    (cons 'jump-char melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
-   (cons 'slime melpa)
    (cons 'smex melpa)
    (cons 'undo-tree melpa)))
 
