@@ -48,14 +48,14 @@
 (require 'dash)
 (require 's)
 
-;; load functions
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file) (load file)))
-
 ;; core
 (require 'appearance)
 (require 'sane-defaults)
 (require 'key-bindings)
+
+;; load functions
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file) (load file)))
 
 ;; load modules
 (dolist (file (directory-files modules-dir t "\\w+"))
