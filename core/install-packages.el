@@ -8,6 +8,7 @@
    (cons 'elisp-slime-nav melpa)
    (cons 'geiser marmalade)
    (cons 'ido-ubiquitous melpa)
+   (cons 'jade-mode melpa)
    (cons 'jump-char melpa)
    (cons 'paredit melpa)
    (cons 's melpa)
