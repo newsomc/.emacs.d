@@ -26,6 +26,7 @@
 ;; setup load paths
 (setq core-dir (concat user-emacs-directory "core"))
 (setq defuns-dir (concat user-emacs-directory "defuns"))
+(setq elpa-dir (concat user-emacs-directory "elpa"))
 (setq modules-dir (concat user-emacs-directory "modules"))
 (setq themes-dir (concat user-emacs-directory "themes"))
 (setq vendor-dir (concat user-emacs-directory "vendor"))
