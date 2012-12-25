@@ -3,6 +3,7 @@
 (auto-compression-mode t)
 (eldoc-mode)
 (global-font-lock-mode t)
+(pending-delete-mode t)
 
 (setq delete-by-moving-to-trash t)
 (setq echo-keystrokes 0.1)
