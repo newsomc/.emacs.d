@@ -67,6 +67,9 @@
 (dolist (file (directory-files vendor-dir t "\\w+"))
   (require (intern (file-name-from-path-no-ext file))))
 
+(require 'expand-region)
+(require 'change-inner)
+
 ;; start emacs server
 (require 'server)
 (unless (server-running-p) (server-start))

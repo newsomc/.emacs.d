@@ -23,6 +23,10 @@
 (global-set-key (kbd "C-h h v") 'describe-variable)
 (global-set-key (kbd "C-h h w") 'where-is)
 
+(global-set-key (kbd "C-]") 'er/expand-region)
+(global-set-key (kbd "C-h c i") 'change-inner)
+(global-set-key (kbd "C-h c a") 'change-outer)
+
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 
