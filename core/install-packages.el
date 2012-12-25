@@ -13,7 +13,8 @@
    (cons 's melpa)
    (cons 'sicp melpa)
    (cons 'smex melpa)
-   (cons 'undo-tree melpa)))
+   (cons 'undo-tree melpa)
+   (cons 'yaml-mode melpa)))
 
 (condition-case nil
     (init--install-packages)

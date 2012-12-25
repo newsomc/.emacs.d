@@ -53,6 +53,7 @@
 (require 'appearance)
 (require 'sane-defaults)
 (require 'key-bindings)
+(require 'mode-mappings)
 
 ;; load functions
 (dolist (file (directory-files defuns-dir t "\\w+"))
