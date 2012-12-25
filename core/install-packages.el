@@ -9,6 +9,7 @@
    (cons 'geiser marmalade)
    (cons 'ido-ubiquitous melpa)
    (cons 'jump-char melpa)
+   (cons 'paredit melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
    (cons 'smex melpa)
