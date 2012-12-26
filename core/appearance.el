@@ -21,8 +21,8 @@
 (set-default 'truncate-lines t)
 (setq-default truncate-lines t)
 
-(set-face-attribute 'linum nil :background "#e9efff")
-(set-face-background 'hl-line "#e9efff")
+(set-face-attribute 'linum nil :background "#333")
+(set-face-background 'hl-line "#333")
 
 (show-paren-mode 1)
 

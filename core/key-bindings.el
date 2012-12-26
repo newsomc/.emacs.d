@@ -53,6 +53,7 @@
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "M-s") 'save-buffer)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "H-m") 'ace-jump-char-mode)
