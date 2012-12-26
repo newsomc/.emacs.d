@@ -9,6 +9,4 @@
       (message "Opening file...")
     (message "Aborting")))
 
-(global-set-key (kbd "C-x f") 'ido-recentf-open)
-
 (provide 'setup-recentf)

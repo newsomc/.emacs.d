@@ -52,7 +52,6 @@
 ;; core
 (require 'appearance)
 (require 'sane-defaults)
-(require 'key-bindings)
 (require 'mode-mappings)
 
 ;; load functions
@@ -66,6 +65,8 @@
 ;; load vendor
 (dolist (file (directory-files vendor-dir t "\\w+"))
   (require (intern (file-name-from-path-no-ext file))))
+
+(require 'key-bindings)
 
 ;; start emacs server
 (require 'server)

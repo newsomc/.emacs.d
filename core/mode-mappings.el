@@ -1,3 +1,8 @@
+;; misc mode cleanup to maintain clean slate
+(add-hook 'lisp-interaction-mode-hook
+  (lambda ()
+    (local-unset-key (kbd "C-j"))))
+
 ;; jade, stylus (sws = significant whitespace)
 (autoload 'sws-mode "sws-mode")
 (autoload 'jade-mode "jade-mode")
