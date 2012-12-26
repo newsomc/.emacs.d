@@ -2,6 +2,8 @@
 (global-unset-key (kbd "C-x C-c"))
 (global-unset-key (kbd "C-x m"))
 
+(global-set-key [remap goto-line] 'goto-line-with-feedback)
+
 (-each '("<f2>" "<f3>" "<f4>" "<f5>" "<f6>" "<f7>"
          "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
@@ -26,6 +28,7 @@
 (global-set-key (kbd "C-]") 'er/expand-region)
 (global-set-key (kbd "C-h c i") 'change-inner)
 (global-set-key (kbd "C-h c a") 'change-outer)
+(global-set-key (kbd "C-h l") 'goto-line)
 
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)

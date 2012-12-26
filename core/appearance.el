@@ -3,7 +3,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (global-hl-line-mode 1)
-(global-linum-mode 1)
 
 (setq column-number-mode t)
 (setq fill-column 80)
