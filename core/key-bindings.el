@@ -30,6 +30,12 @@
 (global-set-key (kbd "C-h ca") 'change-outer)
 (global-set-key (kbd "C-h l") 'goto-line)
 (global-set-key (kbd "C-h re") 're-builder)
+(global-set-key (kbd "C-h ;") 'eval-expression)
+
+(global-set-key (kbd "C-<up>") 'windmove-up)
+(global-set-key (kbd "C-<down>") 'windmove-down)
+(global-set-key (kbd "C-<left>") 'windmove-left)
+(global-set-key (kbd "C-<right>") 'windmove-right)
 
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
