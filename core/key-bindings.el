@@ -3,7 +3,12 @@
 
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-(-each '("C-t" "C-h" "C-j"
+(define-key input-decode-map (kbd "C-i") (kbd "H-i"))
+(define-key input-decode-map (kbd "C-m") (kbd "H-m"))
+(define-key input-decode-map (kbd "C-[") (kbd "H-["))
+(global-set-key (kbd "<tab>") 'insert-tab)
+
+(-each '("C-q" "C-t" "C-i" "C-h" "C-j" "H-i" "H-m" "H-["
          "<f2>" "<f3>" "<f4>" "<f5>" "<f6>" "<f7>"
          "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
@@ -12,6 +17,9 @@
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
 
 (global-set-key (kbd "C-c o") 'switch-to-next-window)
+
+(global-set-key (kbd "C--") 'undo-tree-undo)
+(global-set-key (kbd "M-z") 'undo-tree-undo)
 
 (global-set-key (kbd "C-h ha") 'command-apropos)
 (global-set-key (kbd "C-h hc") 'describe-key-briefly)
@@ -28,6 +36,8 @@
 (global-set-key (kbd "C-h l") 'goto-line)
 (global-set-key (kbd "C-h re") 're-builder)
 (global-set-key (kbd "C-h ;") 'eval-expression)
+
+(global-set-key (kbd "C-j fm") 'follow-mode)
 
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)

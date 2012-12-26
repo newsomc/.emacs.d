@@ -21,6 +21,10 @@
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
+(defun insert-tab ()
+  (interactive)
+  (insert "  "))
+
 (defun kill-current-line (&optional n)
   (interactive "p")
   (save-excursion

@@ -23,6 +23,8 @@
 ;; set source directory (used for viewing c functions)
 (setq source-directory "~/projects/emacs/emacs-24.2")
 
+(setq is-mac (equal system-type 'darwin))
+
 ;; setup load paths
 (setq core-dir (concat user-emacs-directory "core"))
 (setq defuns-dir (concat user-emacs-directory "defuns"))
@@ -53,6 +55,9 @@
 (require 'appearance)
 (require 'sane-defaults)
 (require 'mode-mappings)
+
+(when is-mac (exec-path-from-shell-initialize))
+(when is-mac (require 'mac))
 
 ;; load functions
 (dolist (file (directory-files defuns-dir t "\\w+"))

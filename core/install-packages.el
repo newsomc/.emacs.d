@@ -9,6 +9,7 @@
    (cons 'diminish melpa)
    (cons 'elisp-slime-nav melpa)
    (cons 'eproject melpa)
+   (cons 'exec-path-from-shell melpa)
    (cons 'expand-region melpa)
    (cons 'feature-mode melpa)
    (cons 'find-file-in-project melpa)
