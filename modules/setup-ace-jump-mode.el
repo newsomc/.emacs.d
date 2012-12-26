@@ -3,4 +3,6 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 
+(setq ace-jump-mode-submode-list '(ace-jump-char-mode))
+
 (provide 'setup-ace-jump-mode)
