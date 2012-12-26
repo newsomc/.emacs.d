@@ -16,21 +16,22 @@
 
 (global-set-key (kbd "C-c o") 'switch-to-next-window)
 
-(global-set-key (kbd "C-h h a") 'command-apropos)
-(global-set-key (kbd "C-h h c") 'describe-key-briefly)
-(global-set-key (kbd "C-h h f") 'describe-function)
-(global-set-key (kbd "C-h h k") 'describe-key)
-(global-set-key (kbd "C-h h m") 'describe-mode)
-(global-set-key (kbd "C-h h t") 'help-with-tutorial)
-(global-set-key (kbd "C-h h v") 'describe-variable)
-(global-set-key (kbd "C-h h w") 'where-is)
+(global-set-key (kbd "C-h ha") 'command-apropos)
+(global-set-key (kbd "C-h hc") 'describe-key-briefly)
+(global-set-key (kbd "C-h hf") 'describe-function)
+(global-set-key (kbd "C-h hk") 'describe-key)
+(global-set-key (kbd "C-h hm") 'describe-mode)
+(global-set-key (kbd "C-h ht") 'help-with-tutorial)
+(global-set-key (kbd "C-h hv") 'describe-variable)
+(global-set-key (kbd "C-h hw") 'where-is)
 
 (global-set-key (kbd "C-]") 'er/expand-region)
-(global-set-key (kbd "C-h c i") 'change-inner)
-(global-set-key (kbd "C-h c a") 'change-outer)
+(global-set-key (kbd "C-h ci") 'change-inner)
+(global-set-key (kbd "C-h ca") 'change-outer)
 (global-set-key (kbd "C-h l") 'goto-line)
+(global-set-key (kbd "C-h re") 're-builder)
 
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
-(global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 
 (provide 'key-bindings)
