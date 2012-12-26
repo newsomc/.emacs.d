@@ -22,6 +22,7 @@
    (cons 'jump melpa)
    (cons 'jump-char melpa)
    (cons 'mark-multiple melpa)
+   (cons 'maxframe melpa)
    (cons 'multifiles melpa)
    (cons 'multiple-cursors melpa)
    (cons 'paredit melpa)
