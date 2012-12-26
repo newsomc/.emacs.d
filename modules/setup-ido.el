@@ -11,6 +11,10 @@
       ido-max-prospects 10)
 
 (add-hook 'ido-setup-hook #'(lambda ()
+  (define-key ido-completion-map (kbd "<return>")
+    'ido-exit-minibuffer)
+  (define-key ido-completion-map (kbd "<tab>")
+    'ido-complete)
   (define-key ido-file-completion-map (kbd "C-w")
     'ido-delete-backward-updir)
   (define-key ido-file-completion-map (kbd "C-x C-w")

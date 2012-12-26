@@ -6,6 +6,7 @@
 (define-key input-decode-map (kbd "C-i") (kbd "H-i"))
 (define-key input-decode-map (kbd "C-m") (kbd "H-m"))
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
+
 (global-set-key (kbd "<tab>") 'insert-tab)
 
 (-each '("C-q" "C-t" "C-i" "C-h" "C-j" "H-i" "H-m" "H-["
@@ -20,6 +21,8 @@
 
 (global-set-key (kbd "C--") 'undo-tree-undo)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "<return>") 'newline)
 
 (global-set-key (kbd "C-h ha") 'command-apropos)
 (global-set-key (kbd "C-h hc") 'describe-key-briefly)
@@ -39,6 +42,9 @@
 
 (global-set-key (kbd "C-j fm") 'follow-mode)
 
+(global-set-key (kbd "C-<return>") 'vi-open-line-below)
+(global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
+
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
@@ -46,10 +52,11 @@
 
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
+(global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 
 ;; ace-jump-mode
-(define-key global-map (kbd "C-c SPC") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(define-key global-map (kbd "H-m") 'ace-jump-char-mode)
+(define-key global-map (kbd "RET") 'ace-jump-mode-pop-mark)
 
 ;; bm
 (global-set-key (kbd "C-h bb") 'bm-toggle)
