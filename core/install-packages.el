@@ -11,13 +11,16 @@
    (cons 'geiser marmalade)
    (cons 'ido-ubiquitous melpa)
    (cons 'jade-mode melpa)
+   (cons 'js2-mode melpa)
    (cons 'jump-char melpa)
    (cons 'paredit melpa)
+   (cons 'perspective melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
    (cons 'smex melpa)
    (cons 'undo-tree melpa)
-   (cons 'yaml-mode melpa)))
+   (cons 'yaml-mode melpa)
+   (cons 'yasnippet melpa)))
 
 (condition-case nil
     (init--install-packages)
