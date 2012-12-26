@@ -3,7 +3,7 @@
 
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-(-each '("C-q" "C-t" "C-h" "C-j"
+(-each '("C-t" "C-h" "C-j"
          "<f2>" "<f3>" "<f4>" "<f5>" "<f6>" "<f7>"
          "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
