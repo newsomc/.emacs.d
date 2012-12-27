@@ -1,5 +1,6 @@
 .DS_Store
 .places
+.smex-items
 .vim_librarian
 auto-save-list
 backups

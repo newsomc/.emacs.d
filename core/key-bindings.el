@@ -84,7 +84,7 @@
 (global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
 (global-set-key (kbd "<tab>") 'insert-tab)
 
-;; smex
+;; smex C-s/C-r switches to the next/previous match.
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
 (global-set-key (kbd "C-x H-m") 'smex)
