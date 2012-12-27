@@ -4,3 +4,13 @@
       `((,re (0 (progn (compose-region (match-beginning 1)
                                        (match-end 1) ,unicode)
                        nil)))))))
+
+(defun noop ()
+  (interactive)
+  (message ""))
+
+(defun quiet (key)
+  (global-set-key (read-kbd-macro key)
+    (lambda ()
+      (interactive)
+      (message ""))))

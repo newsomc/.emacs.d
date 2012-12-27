@@ -9,12 +9,6 @@
     (let ((kill-whole-line t))
       (kill-line n))))
 
-(defun quiet (key)
-  (global-set-key (read-kbd-macro key)
-    (lambda ()
-      (interactive)
-      (message ""))))
-
 (defun vi-open-line-above ()
   "Insert a newline above the current line and put point at beginning."
   (interactive)
