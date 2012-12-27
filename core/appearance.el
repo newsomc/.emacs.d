@@ -12,13 +12,9 @@
 (setq whitespace-style '(trailing lines space-before-tab
                                   indentation space-after-tab))
 
-(set-default 'indent-tabs-mode nil)
 (setq-default indent-tabs-mode nil)
-(set-default 'tab-width 2)
 (setq-default tab-width 2)
-(set-default 'indicate-empty-lines t)
 (setq-default indicate-empty-lines t)
-(set-default 'truncate-lines t)
 (setq-default truncate-lines t)
 
 (set-face-attribute 'linum nil :background "#333")

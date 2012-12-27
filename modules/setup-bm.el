@@ -4,7 +4,7 @@
 
 (setq-default bm-buffer-persistence t)
 (setq-default bm-persistent-face
-  '(:foreground "#333333" :background "#7099BC"))
+  '(:foreground "#eee" :background "#8abeb7"))
 
 (add-hook' after-init-hook 'bm-repository-load)
 (add-hook 'find-file-hooks 'bm-buffer-restore)

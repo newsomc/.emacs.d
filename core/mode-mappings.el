@@ -21,6 +21,9 @@
   (lambda ()
     (local-set-key (kbd "<tab>") 'indent-for-tab-command)))
 
+;; tab characters
+(setq js2-basic-offset 2)
+
 ;; jade, stylus (sws = significant whitespace)
 (autoload 'sws-mode "sws-mode")
 (autoload 'jade-mode "jade-mode")
