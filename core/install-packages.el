@@ -21,6 +21,7 @@
    (cons 'js2-refactor melpa)
    (cons 'jump melpa)
    (cons 'jump-char melpa)
+   (cons 'magit melpa)
    (cons 'mark-multiple melpa)
    (cons 'maxframe melpa)
    (cons 'multifiles melpa)
