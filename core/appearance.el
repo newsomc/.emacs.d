@@ -1,15 +1,18 @@
 (require 'linum)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
-
 (global-hl-line-mode 1)
 
-(setq column-number-mode t)
-(setq fill-column 80)
-(setq line-number-mode t)
-(setq linum-format "%3d ")
-(setq whitespace-line-column 100)
-(setq whitespace-style '(trailing lines space-before-tab
+(setq color-theme-is-global t
+      column-number-mode t
+      fill-column 80
+      font-lock-maximum-decoration t
+      line-number-mode t
+      linum-format "%3d "
+      truncate-partial-width-windows nil
+      visible-bell t
+      whitespace-line-column 100
+      whitespace-style '(trailing lines space-before-tab
                                   indentation space-after-tab))
 
 (setq-default indent-tabs-mode nil)
@@ -19,6 +22,7 @@
 
 (set-face-attribute 'linum nil :background "#333")
 (set-face-background 'hl-line "#333")
+(set-face-foreground 'font-lock-warning-face "#ff6666")
 
 (show-paren-mode 1)
 

@@ -24,6 +24,7 @@
 (set-default 'imenu-auto-rescan t)
 
 (add-to-list 'ido-ignore-directories "node_modules")
+(add-to-list 'ido-ignore-files "\\.DS_Store")
 
 ;; use ido everywhere
 (require 'ido-ubiquitous)

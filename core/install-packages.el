@@ -30,6 +30,7 @@
    (cons 's melpa)
    (cons 'sicp melpa)
    (cons 'smex melpa)
+   (cons 'smooth-scrolling melpa)
    (cons 'undo-tree melpa)
    (cons 'yaml-mode melpa)
    (cons 'yasnippet melpa)))

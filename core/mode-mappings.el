@@ -23,6 +23,7 @@
 
 ;; tab characters
 (setq js2-basic-offset 2)
+(setq-default js2-basic-offset 2)
 
 ;; jade, stylus (sws = significant whitespace)
 (autoload 'sws-mode "sws-mode")

@@ -84,7 +84,11 @@
 (global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
 (global-set-key (kbd "<tab>") 'insert-tab)
 
-;; smex C-s/C-r switches to the next/previous match.
+;; smex
+;;  C-s/C-r [switches to the next/previous match]
+;;  C-h f [describe-function]
+;;  C-h w [where-is]
+;;  M-. [jumps to the definition]
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
 (global-set-key (kbd "C-x H-m") 'smex)
