@@ -2,6 +2,9 @@
 (global-unset-key (kbd "C-x C-c"))
 (global-unset-key (kbd "C-x m"))
 
+;; quiet keys
+(-each '("M-`") 'quiet)
+
 ;; globally remap keys
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
@@ -84,11 +87,12 @@
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
-(global-set-key (kbd "C-x C-m") 'smex)
+(global-set-key (kbd "C-x H-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; undo-tree
+(global-set-key (kbd "C-x C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C--") 'undo-tree-undo)
 (global-set-key (kbd "C-_") 'undo-tree-undo)
 (global-set-key (kbd "M--") 'undo-tree-redo)

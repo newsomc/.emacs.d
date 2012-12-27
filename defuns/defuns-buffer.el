@@ -38,6 +38,12 @@
   (other-window 1)
   (delete-other-windows))
 
+(defun quiet (key)
+  (global-set-key (read-kbd-macro key)
+    (lambda ()
+      (interactive)
+      (message ""))))
+
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
