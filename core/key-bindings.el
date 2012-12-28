@@ -111,5 +111,7 @@
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
 (global-set-key (kbd "C-<right>") 'windmove-right)
+(global-set-key (kbd "C-x -") 'rotate-windows)
+(global-set-key (kbd "C-x C--") 'toggle-window-split)
 
 (provide 'key-bindings)

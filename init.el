@@ -51,11 +51,6 @@
 (require 'dash)
 (require 's)
 
-;; core
-(require 'appearance)
-(require 'sane-defaults)
-(require 'mode-mappings)
-
 (when is-mac (exec-path-from-shell-initialize))
 (when is-mac (require 'mac))
 
@@ -71,6 +66,10 @@
 (dolist (file (directory-files vendor-dir t "\\w+"))
   (require (intern (file-name-from-path-no-ext file))))
 
+;; core
+(require 'appearance)
+(require 'sane-defaults)
+(require 'mode-mappings)
 (require 'key-bindings)
 
 ;; diminish
