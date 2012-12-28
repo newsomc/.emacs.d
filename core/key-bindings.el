@@ -78,6 +78,7 @@
 (global-set-key (kbd "M-p") 'scroll-down-command)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-t") 'find-file-in-project)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
