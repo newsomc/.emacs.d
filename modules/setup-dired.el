@@ -18,8 +18,6 @@
   (interactive)
   (backward-char (- (current-column) 2)))
 
-(define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
-
 ;; M-up is nicer in dired if it moves to the third line - straight to the ".."
 (defun dired-back-to-top ()
   (interactive)
@@ -45,6 +43,9 @@
   (vector 'remap 'smart-down) 'dired-jump-to-bottom)
 
 ;; delete with C-x C-k to match file buffers and magit
+(define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
 (define-key dired-mode-map (kbd "C-x C-k") 'dired-do-delete)
+(define-key dired-mode-map (kbd "M-<up>") 'dired-back-to-top)
+(define-key dired-mode-map (kbd "M-<down>") 'dired-jump-to-bottom)
 
 (provide 'setup-dired)
