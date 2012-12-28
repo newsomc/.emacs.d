@@ -46,27 +46,28 @@ Symbols matching the text at point are put first in the completion list."
   (imenu--make-index-alist)
   (let ((name-and-pos '())
         (symbol-names '()))
-    (flet ((addsymbols (symbol-list)
-                       (when (listp symbol-list)
-                         (dolist (symbol symbol-list)
-                           (let ((name nil) (position nil))
-                             (cond
-                              ((and (listp symbol) (imenu--subalist-p symbol))
-                               (addsymbols symbol))
+    (flet
+      ((addsymbols (symbol-list)
+       (when (listp symbol-list)
+         (dolist (symbol symbol-list)
+           (let ((name nil) (position nil))
+             (cond
+              ((and (listp symbol) (imenu--subalist-p symbol))
+               (addsymbols symbol))
 
-                              ((listp symbol)
-                               (setq name (car symbol))
-                               (setq position (cdr symbol)))
+              ((listp symbol)
+               (setq name (car symbol))
+               (setq position (cdr symbol)))
 
-                              ((stringp symbol)
-                               (setq name symbol)
-                               (setq position (get-text-property 1 'org-imenu-marker symbol))))
+              ((stringp symbol)
+               (setq name symbol)
+               (setq position (get-text-property 1 'org-imenu-marker symbol))))
 
-                             (unless (or (null position) (null name))
-                               (add-to-list 'symbol-names name)
-                               (add-to-list 'name-and-pos
-                                 (cons name position))))))))
-      (addsymbols imenu--index-alist))
+             (unless (or (null position) (null name))
+               (add-to-list 'symbol-names name)
+               (add-to-list 'name-and-pos (cons name position))))))))
+       (addsymbols imenu--index-alist))
+
     ;; matching symbols at point? put them at the beginning of `symbol-names'.
     (let ((symbol-at-point (thing-at-point 'symbol)))
       (when symbol-at-point
@@ -78,6 +79,7 @@ Symbols matching the text at point are put first in the completion list."
             (mapc (lambda (symbol) (setq symbol-names
               (cons symbol (delete symbol symbol-names))))
                   matching-symbols)))))
+
     (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
            (position (cdr (assoc selected-symbol name-and-pos))))
       (push-mark (point))
