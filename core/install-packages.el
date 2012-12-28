@@ -16,6 +16,7 @@
    (cons 'find-file-in-project melpa)
    (cons 'fold-this melpa)
    (cons 'geiser marmalade)
+   (cons 'helm melpa)
    (cons 'ido-ubiquitous melpa)
    (cons 'jade-mode melpa)
    (cons 'js2-mode melpa)
