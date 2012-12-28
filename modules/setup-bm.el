@@ -2,6 +2,7 @@
 
 (require 'bm)
 
+(setq-default bm-repository-size 1000)
 (setq-default bm-repository-file "~/.emacs.d/.bm-repository")
 (setq-default bm-buffer-persistence t)
 (setq-default bm-persistent-face
