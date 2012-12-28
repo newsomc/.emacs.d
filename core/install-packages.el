@@ -38,6 +38,7 @@
    (cons 's melpa)
    (cons 'shell-command melpa)
    (cons 'sicp melpa)
+   (cons 'smartparens melpa)
    (cons 'smex melpa)
    (cons 'smooth-scrolling melpa)
    (cons 'top-mode melpa)
