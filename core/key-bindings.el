@@ -69,7 +69,7 @@
 (global-set-key (kbd "M-M") 'jump-char-backward)
 
 ;; ido
-(global-set-key (kbd "C-x f") 'ido-recentf-open)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; mac-friendly

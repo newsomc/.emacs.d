@@ -36,6 +36,10 @@
 (defun file-name-from-path-no-ext (file)
   (file-name-sans-extension (file-name-nondirectory file)))
 
+(defun file-name-with-one-directory (file-name)
+  (concat (cadr (reverse (split-string file-name "/"))) "/"
+          (file-name-nondirectory file-name)))
+
 (defun find-or-create-file-at-point ()
   "Guesses what parts of the buffer under point is a file name and opens it."
   (interactive)
@@ -45,6 +49,24 @@
   "Guesses what parts of the buffer under point is a file name and opens it."
   (interactive)
   (find-file-other-window (file-name-at-point)))
+
+(defun ido-recentf-open ()
+  "Use `ido-completing-read' to \\[find-file] a recent file"
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+
+(defun recentf--file-cons (file-name)
+  (cons (file-name-with-one-directory file-name) file-name))
+
+(defun recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let* ((recent-files (mapcar 'recentf--file-cons recentf-list))
+         (files (mapcar 'car recent-files))
+         (file (completing-read "Choose recent file: " files)))
+    (find-file (cdr (assoc file recent-files)))))
 
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
