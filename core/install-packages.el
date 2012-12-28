@@ -4,7 +4,6 @@
    (cons 'bm melpa)
    (cons 'browse-kill-ring melpa)
    (cons 'change-inner melpa)
-   (cons 'coffee-mode melpa)
    (cons 'dash melpa)
    (cons 'diminish melpa)
    (cons 'elisp-slime-nav melpa)
