@@ -43,7 +43,7 @@
 (add-to-list 'load-path vendor-dir)
 
 ;; load color theme
-(require 'tomorrow-night-theme)
+(require 'subatomic-theme)
 
 ;; elpa packages
 (require 'setup-package)
