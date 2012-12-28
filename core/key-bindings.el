@@ -43,6 +43,9 @@
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
 
+;; elisp-slime-nav
+;;  M-. / M-, or M-*
+
 ;; expand-region
 (global-set-key (kbd "C-'") 'er/expand-region)
 
