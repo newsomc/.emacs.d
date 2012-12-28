@@ -8,13 +8,11 @@
 ;; globally remap keys
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-;; reclaim C-i/C-m/C-[
-(define-key input-decode-map (kbd "C-i") (kbd "H-i"))
-(define-key input-decode-map (kbd "C-m") (kbd "H-m"))
+;; reclaim C-[
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("C-t" "H-i" "H-[" "C-j" "C-v" "H-m" "C-,"
+(-each '("C-t" "H-[" "C-j" "C-v" "C-,"
          "<f3>" "<f4>" "<f5>" "<f6>" "<f7>"
          "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
@@ -23,8 +21,8 @@
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
 
 ;; ace-jump-mode
-(define-key global-map (kbd "H-m") 'ace-jump-char-mode)
-(define-key global-map (kbd "RET") 'ace-jump-mode-pop-mark)
+(define-key global-map (kbd "C-v") 'ace-jump-char-mode)
+(define-key global-map (kbd "C-S-v") 'ace-jump-mode-pop-mark)
 
 ;; bm
 (global-set-key (kbd "<f2>") 'bm-toggle)
@@ -64,7 +62,7 @@
 
 ;; ido
 (global-set-key (kbd "C-x f") 'ido-recentf-open)
-(global-set-key (kbd "C-x H-i") 'ido-imenu)
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; mac-friendly
 (global-set-key (kbd "M-l") 'goto-line)
@@ -80,10 +78,8 @@
 (global-set-key (kbd "C-j re") 're-builder)
 
 ;; return/tab
-(global-set-key (kbd "<return>") 'newline)
 (global-set-key (kbd "C-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
-(global-set-key (kbd "<tab>") 'insert-tab)
 
 ;; smex
 ;;  C-s/C-r [switches to the next/previous match]
@@ -92,7 +88,6 @@
 ;;  M-. [jumps to the definition]
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
-(global-set-key (kbd "C-x H-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
