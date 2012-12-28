@@ -76,6 +76,8 @@
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
+(global-set-key (kbd "M-<return>") 'vi-open-line-below)
+(global-set-key (kbd "M-S-<return>") 'vi-open-line-above)
 
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)
