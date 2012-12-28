@@ -64,6 +64,7 @@
 
 ;; ido
 (global-set-key (kbd "C-x f") 'ido-recentf-open)
+(global-set-key (kbd "C-x H-i") 'ido-imenu)
 
 ;; mac-friendly
 (global-set-key (kbd "M-l") 'goto-line)
