@@ -6,6 +6,7 @@
    (cons 'change-inner melpa)
    (cons 'dash melpa)
    (cons 'diminish melpa)
+   (cons 'dired-details melpa)
    (cons 'elisp-slime-nav melpa)
    (cons 'eproject melpa)
    (cons 'exec-path-from-shell melpa)

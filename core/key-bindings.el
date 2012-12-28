@@ -43,6 +43,11 @@
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
 
+;; dired
+(global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
+(global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))
+(global-set-key (kbd "C-j ff") 'find-name-dired)
+
 ;; elisp-slime-nav
 ;;  M-. / M-, or M-*
 
