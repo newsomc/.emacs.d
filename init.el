@@ -1,3 +1,6 @@
+;; quick defun to check if buffer's exist
+(defun buffer-exists (bufname) (not (eq nil (get-buffer bufname))))
+
 ;; turn off mouse interface
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -8,7 +11,7 @@
 
 ;; kill *Messages* early
 (setq message-log-max nil)
-(kill-buffer "*Messages*")
+(if (buffer-exists "*Messages*") (kill-buffer "*Messages*"))
 
 ;; turn off autosave/backup
 (setq make-backup-files nil)
