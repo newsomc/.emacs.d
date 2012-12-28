@@ -21,6 +21,7 @@
    (cons 'geiser marmalade)
    (cons 'golden-ratio melpa)
    (cons 'helm melpa)
+   (cons 'icicles melpa)
    (cons 'ido-ubiquitous melpa)
    (cons 'jade-mode melpa)
    (cons 'js2-mode melpa)
