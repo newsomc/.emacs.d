@@ -5,6 +5,7 @@
 .vim_librarian
 auto-save-list
 backups
+bookmarks
 elpa
 eshell
 geiser-history.racket
