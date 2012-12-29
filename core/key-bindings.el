@@ -85,6 +85,11 @@
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
 (global-set-key (kbd "M-S-<return>") 'vi-open-line-above)
 
+;; multiple-cursors
+(global-set-key (kbd "C-j cl") 'mc/edit-lines)
+(global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
+(global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
+
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)
 
