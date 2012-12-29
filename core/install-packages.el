@@ -1,7 +1,6 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'ace-jump-mode melpa)
-   (cons 'bash-completion melpa)
    (cons 'bm melpa)
    (cons 'bookmark+ melpa)
    (cons 'browse-kill-ring melpa)
@@ -37,7 +36,6 @@
    (cons 'paredit melpa)
    (cons 'perspective melpa)
    (cons 's melpa)
-   (cons 'shell-command melpa)
    (cons 'sicp melpa)
    (cons 'smartparens melpa)
    (cons 'smex melpa)
