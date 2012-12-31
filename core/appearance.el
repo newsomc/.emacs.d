@@ -20,7 +20,7 @@
 (setq-default indicate-empty-lines t)
 (setq-default truncate-lines t)
 
-(set-face-attribute 'linum nil :background "#333")
+(set-face-attribute 'linum nil :background "#222")
 (set-face-background 'hl-line "#333")
 (set-face-foreground 'font-lock-warning-face "#ff6666")
 
