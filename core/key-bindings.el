@@ -12,9 +12,8 @@
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("C-t" "H-[" "C-j" "C-v" "C-,"
-         "<f3>" "<f4>" "<f5>" "<f6>" "<f7>"
-         "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
+(-each '("H-[" "C-j" "C-v" "C-,"
+         "<f5>" "<f6>" "<f7>" "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
          (define-prefix-command (intern (concat key "-map")))
