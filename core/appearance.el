@@ -10,7 +10,7 @@
       line-number-mode t
       linum-format "%3d "
       truncate-partial-width-windows nil
-      visible-bell t
+      visible-bell nil
       whitespace-line-column 100
       whitespace-style '(trailing lines space-before-tab
                                   indentation space-after-tab))

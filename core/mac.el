@@ -8,6 +8,8 @@
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash/emacs")
 
+(mouse-wheel-mode -1)
+
 ;; use aspell for spell checking: brew install aspell --lang=en
 (setq ispell-program-name "/usr/local/bin/aspell")
 
