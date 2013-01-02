@@ -20,8 +20,8 @@
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
 
 ;; ace-jump-mode
-(define-key global-map (kbd "C-v") 'ace-jump-char-mode)
-(define-key global-map (kbd "C-S-v") 'ace-jump-mode-pop-mark)
+(define-key global-map (kbd "C-v") 'ace-jump-mode)
+(define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
 ;; bm
 (global-set-key (kbd "<f2>") 'bm-toggle)
@@ -51,7 +51,7 @@
 ;;  M-. / M-, or M-*
 
 ;; expand-region
-(global-set-key (kbd "C-'") 'er/expand-region)
+(global-set-key (kbd "C-;") 'er/expand-region)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
