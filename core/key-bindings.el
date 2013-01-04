@@ -40,6 +40,9 @@
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
+
 ;; change-inner
 (global-set-key (kbd "M-i") 'change-inner)
 (global-set-key (kbd "M-o") 'change-outer)
@@ -123,6 +126,9 @@
 
 ;; window movement
 (global-set-key (kbd "C-c o") 'switch-to-next-window)
+(global-set-key (kbd "C-c C-o") 'switch-to-next-window)
+(global-set-key (kbd "C-x C-o") 'switch-to-next-window)
+
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
 (global-set-key (kbd "C-<left>") 'windmove-left)
