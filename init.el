@@ -79,6 +79,7 @@
 (require 'diminish)
 (diminish 'yas-minor-mode)
 (diminish 'smartparens-mode)
+(diminish 'icicle-mode)
 
 ;; start emacs server
 (require 'server)
