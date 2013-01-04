@@ -1,3 +1,9 @@
+(defun buffer-file-name-body ()
+  (file-name-nondirectory (buffer-file-name)))
+
+(defun buffer-file-name-body-no-ext ()
+  (file-name-sans-extension (file-name-nondirectory (buffer-file-name))))
+
 (defun copy-current-file-path ()
   "Add current file path to kill ring.
   Limits the filename to project root if possible."
