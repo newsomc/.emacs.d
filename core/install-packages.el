@@ -39,11 +39,9 @@
    (cons 'smartparens melpa)
    (cons 'smex melpa)
    (cons 'smooth-scrolling melpa)
-   (cons 'top-mode melpa)
    (cons 'undo-tree melpa)
    (cons 'yaml-mode melpa)
-   (cons 'yasnippet melpa)
-   (cons 'zoom-frm melpa)))
+   (cons 'yasnippet melpa)))
 
 (condition-case nil
     (init--install-packages)
