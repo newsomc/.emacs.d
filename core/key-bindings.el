@@ -95,6 +95,7 @@
 ;; return/tab
 (global-set-key (kbd "C-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
+(global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
 
 ;; smex
 ;;  C-s/C-r [switches to the next/previous match]
