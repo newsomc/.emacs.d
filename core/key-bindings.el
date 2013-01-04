@@ -128,4 +128,7 @@
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 
+;; yasnippet
+(global-set-key (kbd "C-j sl") 'yas-describe-tables)
+
 (provide 'key-bindings)
