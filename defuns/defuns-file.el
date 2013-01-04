@@ -57,17 +57,6 @@
       (message "Opening file...")
     (message "Aborting")))
 
-(defun recentf--file-cons (file-name)
-  (cons (file-name-with-one-directory file-name) file-name))
-
-(defun recentf-ido-find-file ()
-  "Find a recent file using ido."
-  (interactive)
-  (let* ((recent-files (mapcar 'recentf--file-cons recentf-list))
-         (files (mapcar 'car recent-files))
-         (file (completing-read "Choose recent file: " files)))
-    (find-file (cdr (assoc file recent-files)))))
-
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)
