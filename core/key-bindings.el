@@ -72,6 +72,7 @@
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; mac-friendly
+(global-set-key (kbd "M-c") 'kill-ring-save) ;; subword-capitalize
 (global-set-key (kbd "M-l") 'goto-line)
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
