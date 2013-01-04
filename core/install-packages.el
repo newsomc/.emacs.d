@@ -33,7 +33,6 @@
    (cons 'maxframe melpa)
    (cons 'multifiles melpa)
    (cons 'multiple-cursors melpa)
-   (cons 'paredit melpa)
    (cons 'perspective melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
