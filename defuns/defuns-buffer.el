@@ -95,6 +95,11 @@ Symbols matching the text at point are put first in the completion list."
   (other-window 1)
   (delete-other-windows))
 
+(defun kill-and-close-buffer ()
+  (interactive)
+  (kill-buffer (current-buffer))
+  (delete-window))
+
 (defun turn-off-whitespace ()
   (whitespace-mode nil))
 

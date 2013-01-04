@@ -24,6 +24,7 @@
       (when (yes-or-no-p "Are you sure you want to remove this file? ")
         (delete-file filename)
         (kill-buffer buffer)
+        (delete-window)
         (message "File '%s' successfully removed" filename)))))
 
 (defun file-name-at-point ()

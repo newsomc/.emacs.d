@@ -37,6 +37,8 @@
 ;; buffers
 (global-set-key (kbd "C-x C-b") 'list-existing-buffers)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
+(global-set-key (kbd "C-j k") 'kill-and-close-buffer)
+(global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 
 ;; change-inner
 (global-set-key (kbd "M-i") 'change-inner)
@@ -129,6 +131,10 @@
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 
 ;; yasnippet
+(global-set-key (kbd "C-j se") 'yas-visit-snippet-file)
+(global-set-key (kbd "C-j si") 'yas-insert-snippet)
 (global-set-key (kbd "C-j sl") 'yas-describe-tables)
+(global-set-key (kbd "C-j sn") 'yas-create-new-snippet)
+(global-set-key (kbd "C-j sr") 'yas-reload-all)
 
 (provide 'key-bindings)
