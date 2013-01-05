@@ -63,6 +63,9 @@
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
 
+;; grep
+(global-set-key (kbd "C-j fa") 'ag-fullscreen)
+
 ;; hippie-expand
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
 (global-set-key (kbd "C->") 'hippie-expand-lines)

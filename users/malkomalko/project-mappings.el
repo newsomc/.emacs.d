@@ -10,6 +10,12 @@
                  (when (string-match-p ,name (dired-current-directory))
                    ,@body)))))
 
+;; useful ideas inside project-specifics macro
+;;  (ffip-local-excludes "node_modules")
+;;  (ffip-local-patterns "*.js" "*.css")
+;;  (set (make-local-variable 'your-var-name) "is_awesome")
+;;  (buffer-local-set-key (kbd "KEY COMBO") 'your-awesome-function)
+
 ;; emacs
 (defun custom-persp/emacs ()
   (interactive)
@@ -23,4 +29,9 @@
 (defun custom-persp/instajams ()
   (interactive)
   (custom-persp "instajams"
-                (find-file "~/projects/js/jam_mode")))
+                (find-file "~/projects/js/jam_mode/")))
+
+(project-specifics "projects/js/jam_mode"
+  (set (make-local-variable 'git-base-path)
+    "~/projects/js/jam_mode/")
+  (ffip-local-patterns "*.js"))
