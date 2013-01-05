@@ -38,8 +38,8 @@
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 
-(global-set-key (kbd "C-c N") 'cleanup-buffer)
-(global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c N") 'cleanup-buffer-safe)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; change-inner
@@ -130,6 +130,9 @@
 (global-set-key (kbd "C-M--") 'undo-tree-redo)
 (global-set-key (kbd "C-M-z") 'undo-tree-redo)
 (global-set-key (kbd "C-M-Z") 'undo-tree-redo)
+
+;; vim - help with transition
+(global-set-key (kbd "C-, be") 'list-existing-buffers)
 
 ;; window movement
 (global-set-key (kbd "C-c o") 'switch-to-next-window)
