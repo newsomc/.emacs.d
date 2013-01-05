@@ -23,14 +23,6 @@
 (define-key global-map (kbd "C-v") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
-;; bm
-(global-set-key (kbd "<f2>") 'bm-toggle)
-(global-set-key (kbd "C-<f2>") 'bm-next)
-(global-set-key (kbd "M-<f2>") 'bm-previous)
-(global-set-key (kbd "C-j bd") 'bm-remove-all-current-buffer)
-(global-set-key (kbd "C-j bl") 'bm-show-all)
-(global-set-key (kbd "C-j bq") 'bm-remove-all-all-buffers)
-
 ;; browse-kill-ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
 
