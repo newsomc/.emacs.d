@@ -1,5 +1,6 @@
 .bm-repository
 .DS_Store
+.mc-lists.el
 .places
 .smex-items
 .vim_librarian
