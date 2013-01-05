@@ -24,10 +24,10 @@
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
 ;; bookmark+
-(global-set-key (kbd "C-j pd") 'icicle-bookmark-dired)
-(global-set-key (kbd "C-j pl") 'icicle-bookmark)
-(global-set-key (kbd "C-j pt") 'icicle-tag-a-file)
-(global-set-key (kbd "C-j pT") 'icicle-untag-a-file)
+(global-set-key (kbd "C-j bd") 'icicle-bookmark-dired)
+(global-set-key (kbd "C-j bl") 'icicle-bookmark)
+(global-set-key (kbd "C-j bt") 'icicle-tag-a-file)
+(global-set-key (kbd "C-j bT") 'icicle-untag-a-file)
 
 ;; browse-kill-ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
@@ -38,7 +38,8 @@
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
+(global-set-key (kbd "C-c N") 'cleanup-buffer)
+(global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; change-inner
@@ -92,6 +93,10 @@
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
+
+;; perspectives
+(define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
+(define-key persp-mode-map (kbd "C-j p-") 'custom-persp-last)
 
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)

@@ -3,7 +3,7 @@
 (setq ffip-project-root-function 'eproject-root)
 (setq ffip-limit 4096)
 
-;; melper methods to create local settings
+;; helper methods to create local settings
 (defun ffip--create-exclude-find-options (names)
   (mapconcat (lambda (name)
                (concat "-not -regex \".*" name ".*\"")) names " "))

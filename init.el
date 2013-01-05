@@ -34,12 +34,15 @@
 (setq elpa-dir (concat user-emacs-directory "elpa"))
 (setq modules-dir (concat user-emacs-directory "modules"))
 (setq themes-dir (concat user-emacs-directory "themes"))
+(setq user-settings-dir
+      (concat user-emacs-directory "users/" user-login-name))
 (setq vendor-dir (concat user-emacs-directory "vendor"))
 
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path core-dir)
 (add-to-list 'load-path modules-dir)
 (add-to-list 'load-path themes-dir)
+(add-to-list 'load-path user-settings-dir)
 (add-to-list 'load-path vendor-dir)
 
 ;; load color theme
@@ -88,3 +91,10 @@
 ;; start emacs server
 (require 'server)
 (unless (server-running-p) (server-start))
+
+;; conclude init by setting up specifics for the current user
+(when (file-exists-p user-settings-dir)
+  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
+
+;; open default perspective
+(custom-persp/emacs)
