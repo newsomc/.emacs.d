@@ -81,6 +81,10 @@
 (diminish 'smartparens-mode)
 (diminish 'icicle-mode)
 
+;; customize
+(setq custom-file "~/.emacs.d/core/custom.el")
+(load custom-file)
+
 ;; start emacs server
 (require 'server)
 (unless (server-running-p) (server-start))
