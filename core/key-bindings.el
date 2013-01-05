@@ -23,6 +23,12 @@
 (define-key global-map (kbd "C-v") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
+;; bookmark+
+(global-set-key (kbd "C-j pd") 'icicle-bookmark-dired)
+(global-set-key (kbd "C-j pl") 'icicle-bookmark)
+(global-set-key (kbd "C-j pt") 'icicle-tag-a-file)
+(global-set-key (kbd "C-j pT") 'icicle-untag-a-file)
+
 ;; browse-kill-ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
 
