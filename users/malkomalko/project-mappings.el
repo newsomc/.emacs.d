@@ -18,3 +18,9 @@
 
 (project-specifics ".emacs.d"
   (ffip-local-patterns "*.el" "*.md"))
+
+;; instajams
+(defun custom-persp/instajams ()
+  (interactive)
+  (custom-persp "instajams"
+                (find-file "~/projects/js/jam_mode")))

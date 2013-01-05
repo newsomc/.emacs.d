@@ -49,13 +49,16 @@
 ;; dired
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
 (global-set-key (kbd "C-x M-j") '(lambda () (interactive) (dired-jump 1)))
-(global-set-key (kbd "C-j ff") 'find-name-dired)
 
 ;; elisp-slime-nav
 ;;  M-. / M-, or M-*
 
 ;; expand-region
 (global-set-key (kbd "C-;") 'er/expand-region)
+
+;; find files
+(global-set-key (kbd "C-j fd") 'find-name-dired)
+(global-set-key (kbd "C-j ff") 'find-file-in-project)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
@@ -96,6 +99,7 @@
 
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
+(define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
 (define-key persp-mode-map (kbd "C-j p-") 'custom-persp-last)
 
 ;; regular expressions
