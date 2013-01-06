@@ -100,6 +100,9 @@
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
 
+;; occur
+(global-set-key (kbd "C-c o") 'occur)
+
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
@@ -142,8 +145,6 @@
 (global-set-key (kbd "C-, ff") 'ag-fullscreen)
 
 ;; window movement
-(global-set-key (kbd "C-c o") 'switch-to-next-window)
-(global-set-key (kbd "C-c C-o") 'switch-to-next-window)
 (global-set-key (kbd "C-x C-o") 'switch-to-next-window)
 
 (global-set-key (kbd "C-<up>") 'windmove-up)
