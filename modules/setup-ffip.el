@@ -2,6 +2,7 @@
 
 (setq ffip-project-root-function 'eproject-root)
 (setq ffip-limit 4096)
+(setq ffip-full-paths t)
 
 ;; helper methods to create local settings
 (defun ffip--create-exclude-find-options (names)
@@ -15,7 +16,8 @@ Example:
 (ffip-local-excludes \"target\" \"overlays\")
 "
   (set (make-local-variable 'ffip-find-options)
-       (ffip--create-exclude-find-options names)))
+       (ffip--create-exclude-find-options
+         (-distinct (-concat ffip-default-excludes names)))))
 
 (defun ffip-local-patterns (&rest patterns)
   "An exhaustive list of file name patterns to look for.
@@ -34,11 +36,10 @@ Example:
         (find-file-in-project)))))
 
 ;; default excludes - override with ffip-local-excludes
+(defvar ffip-default-excludes
+  '("node_modules" "\.DS_Store" ".*\.log" "target" "overlays" "vendor"))
+
 (setq ffip-find-options
-      (ffip--create-exclude-find-options
-       '("node_modules"
-         "target"
-         "overlays"
-         "vendor")))
+      (ffip--create-exclude-find-options ffip-default-excludes))
 
 (provide 'setup-ffip)

@@ -30,7 +30,10 @@
 (project-specifics "projects/js/jam_mode"
   (set (make-local-variable 'git-base-path)
     "~/projects/js/jam_mode/")
-  (ffip-local-patterns "*.js"))
+  (ffip-local-excludes
+    "public/apps/.*/js/libs"
+    "public/apps/.*/js/specs/libs")
+  (ffip-local-patterns "*.js" "*.css" "*.styl"))
 
 ;; project switcher
 (defvar project-switcher-list
