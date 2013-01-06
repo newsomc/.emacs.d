@@ -16,3 +16,7 @@
   (persp-switch (persp-name persp-last)))
 
 (provide 'setup-perspective)
+
+;; ibuffer hook
+(add-hook 'ibuffer-hook (lambda ()
+  (ibuffer-perspective-list)))
