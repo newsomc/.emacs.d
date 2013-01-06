@@ -12,20 +12,22 @@
             (confirm (equal current-prefix-arg '(3))))
        (list regexp dir confirm))
      ))
-  (if (>= (length regexp) 3)
-    (let ((command (format "cd %s && ag --nogroup --literal %s %S"
-                           (if (boundp 'git-base-path) git-base-path dir)
-                           (if (s-lowercase? regexp) "--ignore-case" "")
-                           regexp))
-          (grep-use-null-device nil))
-      (when confirm
-        (setq command (read-shell-command "Run ag: " command 'ag-history)))
-      (window-configuration-to-register ?$)
-      (grep command)
-      (switch-to-buffer "*grep*")
-      (delete-other-windows)
-      (beginning-of-buffer))
-    (message "Whoops! Your search must contain 3 characters or more")))
+  (if (executable-find "ag")
+    (if (>= (length regexp) 3)
+      (let ((command (format "cd %s && ag --nogroup --literal %s %S"
+                             (if (boundp 'git-base-path) git-base-path dir)
+                             (if (s-lowercase? regexp) "--ignore-case" "")
+                             regexp))
+            (grep-use-null-device nil))
+        (when confirm
+          (setq command (read-shell-command "Run ag: " command 'ag-history)))
+        (window-configuration-to-register ?$)
+        (grep command)
+        (switch-to-buffer "*grep*")
+        (delete-other-windows)
+        (beginning-of-buffer))
+      (message "Whoops! Your search must contain 3 characters or more"))
+    (message "Command not found: brew install the_silver_searcher")))
 
 (defvar git-grep-switches "--extended-regexp -I -n"
   "Switches to pass to `git grep'.")
