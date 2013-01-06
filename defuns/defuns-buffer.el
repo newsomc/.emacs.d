@@ -109,6 +109,11 @@ Symbols matching the text at point are put first in the completion list."
   (kill-buffer (current-buffer))
   (delete-window))
 
+(defun multi-occur-in-all-open-buffers (regexp &optional allbufs)
+  "Show all lines matching REGEXP in all buffers."
+  (interactive (occur-read-primary-args))
+  (multi-occur-in-matching-buffers ".*" regexp))
+
 (defun turn-off-whitespace ()
   (whitespace-mode nil))
 

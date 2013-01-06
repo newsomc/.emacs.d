@@ -103,7 +103,7 @@
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
 (global-set-key (kbd "C-j om") 'multi-occur)
-(global-set-key (kbd "C-j ob") 'multi-occur-in-matching-buffers)
+(global-set-key (kbd "C-j ob") 'multi-occur-in-all-open-buffers)
 
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
 (define-key occur-mode-map (kbd "n") 'next-line)
