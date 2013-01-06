@@ -12,7 +12,7 @@
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("H-[" "C-j" "C-v" "C-,"
+(-each '("H-[" "C-j" "C-,"
          "<f5>" "<f6>" "<f7>" "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
@@ -71,6 +71,11 @@
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
 (global-set-key (kbd "C->") 'hippie-expand-lines)
 
+;; icicles
+(global-set-key (kbd "H-[ <backtab>") 'icicle-complete-keys)
+(global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
+(global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
+
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)
 
@@ -124,6 +129,9 @@
 (global-set-key (kbd "C-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
 (global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
+
+;; scratch js buffer
+(global-set-key (kbd "C-j sj") 'create-scratch-js-buffer)
 
 ;; smex
 ;;  C-s/C-r [switches to the next/previous match]
