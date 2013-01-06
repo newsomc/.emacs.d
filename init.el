@@ -96,8 +96,7 @@
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
 
 ;; default perspective
-(custom-persp/emacs)
-(switch-to-buffer "*scratch* (emacs)")
-
-(run-at-time "1 sec" nil (lambda ()
-                           (persp-kill "main")))
+(if (fboundp 'custom-persp/emacs)
+  (progn
+    (custom-persp/emacs)
+    (switch-to-buffer "*scratch* (emacs)")))
