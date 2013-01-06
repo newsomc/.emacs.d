@@ -40,10 +40,6 @@
 ;; http://github.com/purcell/ibuffer-vc
 
 ;;; Code:
-(require 'ibuffer)
-(require 'ibuf-ext)
-(require 'perspective)
-
 (define-ibuffer-filter perspective-filter
     "Ibuffer perspective filter"
   (:description "Ibuffer perspective filter"
