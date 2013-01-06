@@ -106,6 +106,8 @@
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
 (define-key persp-mode-map (kbd "C-j ps") 'project-switcher)
 
+(define-key ibuffer-mode-map (kbd "/p") 'ibuffer-filter-by-perspective-filter)
+
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)
 

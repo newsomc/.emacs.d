@@ -6,6 +6,9 @@
 
 (add-hook 'ibuffer-hook (lambda ()
   (ibuffer-auto-mode 1)
+  (ibuffer-filter-disable)
+  (if (boundp 'persp-curr)
+    (ibuffer-filter-by-perspective-filter (persp-name persp-curr)))
   (ibuffer-perspective-list)))
 
 (provide 'setup-ibuffer)
