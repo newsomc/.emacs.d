@@ -62,6 +62,7 @@
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
+(global-set-key (kbd "C-j fe") 'next-error-follow-minor-mode)
 
 ;; grep
 (global-set-key (kbd "C-j fa") 'ag-fullscreen)
