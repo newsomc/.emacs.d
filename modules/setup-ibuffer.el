@@ -5,6 +5,7 @@
 (setq ibuffer-show-empty-filter-groups nil)
 
 (add-hook 'ibuffer-hook (lambda ()
+  (ibuffer-auto-mode 1)
   (ibuffer-perspective-list)))
 
 (provide 'setup-ibuffer)
