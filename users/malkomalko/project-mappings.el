@@ -17,6 +17,8 @@
                 (find-file "~/.emacs.d/init.el")))
 
 (project-specifics ".emacs.d"
+  (set (make-local-variable 'git-base-path)
+    "~/.emacs.d/")
   (ffip-local-patterns "*.el" "*.md"))
 
 ;; instajams

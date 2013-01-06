@@ -2,6 +2,8 @@
 
 (persp-mode t)
 
+(persp-turn-off-modestring)
+
 (defmacro custom-persp (name &rest body)
   `(let ((initialize (not (gethash ,name perspectives-hash)))
          (current-perspective persp-curr))

@@ -82,7 +82,6 @@
 (require 'diminish)
 (diminish 'yas-minor-mode)
 (diminish 'smartparens-mode)
-(diminish 'icicle-mode)
 
 ;; customize
 (setq custom-file "~/.emacs.d/core/custom.el")
@@ -95,3 +94,10 @@
 ;; conclude init by setting up specifics for the current user
 (when (file-exists-p user-settings-dir)
   (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
+
+;; default perspective
+(custom-persp/emacs)
+(switch-to-buffer "*scratch* (emacs)")
+
+(run-at-time "1 sec" nil (lambda ()
+                           (persp-kill "main")))
