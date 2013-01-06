@@ -89,7 +89,6 @@
 (global-set-key (kbd "M-p") 'scroll-down-command)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-t") 'find-file-in-project)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
@@ -130,6 +129,13 @@
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; transpose
+(global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+(global-set-key (kbd "M-t l") 'transpose-lines)
+(global-set-key (kbd "M-t w") 'transpose-words)
+(global-set-key (kbd "M-t s") 'transpose-sexps)
+(global-set-key (kbd "M-t p") 'transpose-params)
 
 ;; undo-tree
 (global-set-key (kbd "C-x C-u") 'undo-tree-visualize)
