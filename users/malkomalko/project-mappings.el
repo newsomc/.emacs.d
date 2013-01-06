@@ -31,3 +31,14 @@
   (set (make-local-variable 'git-base-path)
     "~/projects/js/jam_mode/")
   (ffip-local-patterns "*.js"))
+
+;; project switcher
+(defvar project-switcher-list
+  '("emacs" "instajams"))
+
+(defun project-switcher ()
+  (interactive)
+  (apply
+    (intern (concat "custom-persp/"
+              (ido-completing-read "Project name: " project-switcher-list)))
+    '()))

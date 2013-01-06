@@ -104,7 +104,7 @@
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
-(define-key persp-mode-map (kbd "C-j ps") 'persp-switch)
+(define-key persp-mode-map (kbd "C-j ps") 'project-switcher)
 
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)

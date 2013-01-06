@@ -30,6 +30,15 @@ might be bad."
     (switch-to-buffer (get-buffer-create bufname))
     (emacs-lisp-mode)))
 
+(defun create-scratch-js-buffer ()
+  "Create or switch to a javascript mode scratch buffer"
+  (interactive)
+  (if (not (eq nil (get-buffer "scratch-js")))
+      (switch-to-buffer "scratch-js")
+    (set-buffer (get-buffer-create "scratch-js"))
+    (js2-mode)
+    (switch-to-buffer "scratch-js")))
+
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
