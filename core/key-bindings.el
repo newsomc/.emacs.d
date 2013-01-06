@@ -101,7 +101,13 @@
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
 
 ;; occur
-(global-set-key (kbd "C-c o") 'occur)
+(global-set-key (kbd "C-j oo") 'occur)
+(global-set-key (kbd "C-j om") 'multi-occur)
+(global-set-key (kbd "C-j ob") 'multi-occur-in-matching-buffers)
+
+(define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
+(define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "p") 'previous-line)
 
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
