@@ -103,7 +103,7 @@
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
-(define-key persp-mode-map (kbd "C-j p-") 'custom-persp-last)
+(define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
 
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)
@@ -136,6 +136,7 @@
 
 ;; vim - help with transition
 (global-set-key (kbd "C-, be") 'list-existing-buffers)
+(global-set-key (kbd "C-, ff") 'ag-fullscreen)
 
 ;; window movement
 (global-set-key (kbd "C-c o") 'switch-to-next-window)

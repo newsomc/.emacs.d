@@ -1,13 +1,20 @@
 (require 'grep)
 
-(defun ag-fullscreen (regexp &optional confirm)
+(defun ag-fullscreen (regexp &optional dir confirm)
   (interactive
-   (let* ((regexp (read-string "Search for: "))
-          (confirm (equal current-prefix-arg '(2))))
-     (list regexp confirm)))
+   (if (boundp 'git-base-path)
+     (let* ((regexp (read-string "Search for: "))
+            (confirm (equal current-prefix-arg '(2))))
+       (list regexp confirm))
+     (let* ((regexp (read-string "Search for: "))
+            (dir (read-directory-name "Base directory: "
+                                    nil default-directory t))
+            (confirm (equal current-prefix-arg '(3))))
+       (list regexp dir confirm))
+     ))
   (if (>= (length regexp) 3)
     (let ((command (format "cd %s && ag --nogroup --literal %s %S"
-                           git-base-path
+                           (if (boundp 'git-base-path) git-base-path dir)
                            (if (s-lowercase? regexp) "--ignore-case" "")
                            regexp))
           (grep-use-null-device nil))
