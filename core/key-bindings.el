@@ -81,7 +81,8 @@
 
 ;; lines
 (define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)
-(define-key global-map (kbd "C-j lm") 'malko/mark-lines)
+(define-key global-map (kbd "C-j lc") 'malko/mark-lines-copy)
+(define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
 
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)

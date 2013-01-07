@@ -46,7 +46,8 @@ region-end is used. Adds the duplicated text to the kill ring."
   "Function(s) to call after lines have been marked")
 
 (defun malko/mark-lines ()
-  (interactive)
+  (setq malko/mark-lines-hook nil)
+  (setq malko/mark-lines-point (point))
   (ace-jump-line-mode)
   (add-hook 'post-command-hook 'malko/mark-lines--jump-one))
 
@@ -58,7 +59,7 @@ region-end is used. Adds the duplicated text to the kill ring."
       (call-interactively 'set-mark-command)
       (ace-jump-line-mode)
       (add-hook 'post-command-hook 'malko/mark-lines--jump-two))
-    (if (not (eq this-command 'malko/mark-lines))
+    (if (not (s-starts-with? "malko/mark-lines" (symbol-name this-command)))
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-one))))
 
 (defun malko/mark-lines--jump-two ()
@@ -67,8 +68,25 @@ region-end is used. Adds the duplicated text to the kill ring."
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-two)
       (call-interactively 'move-end-of-line)
       (run-hooks 'malko/mark-lines-hook))
-    (if (not (eq this-command 'malko/mark-lines))
+    (if (not (s-starts-with? "malko/mark-lines" (symbol-name this-command)))
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-two))))
+
+(defun malko/mark-lines-copy ()
+  (interactive)
+  (malko/mark-lines)
+  (add-hook 'malko/mark-lines-hook (lambda ()
+    (call-interactively 'kill-ring-save)
+    (goto-char malko/mark-lines-point)
+    )))
+
+(defun malko/mark-lines-paste ()
+  (interactive)
+  (malko/mark-lines)
+  (add-hook 'malko/mark-lines-hook (lambda ()
+    (call-interactively 'kill-ring-save)
+    (goto-char malko/mark-lines-point)
+    (yank)
+    )))
 
 ;; /end custom functions using ace-jump mode
 
