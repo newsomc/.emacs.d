@@ -53,6 +53,9 @@
 ;; elisp-slime-nav
 ;;  M-. / M-, or M-*
 
+;; eval-elisp
+(global-set-key (kbd "C-j eb") 'eval-buffer)
+
 ;; expand-region
 (global-set-key (kbd "C-;") 'er/expand-region)
 
@@ -76,8 +79,16 @@
 (global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
 
+;; lines
+(define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-j lm") 'malko/mark-lines)
+
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)
+
+;; logging
+(global-set-key (kbd "C-j mm") 'malko/log-messages-on)
+(global-set-key (kbd "C-j mo") 'malko/log-messages-off)
 
 ;; jump-char
 (global-set-key (kbd "M-m") 'jump-char-forward)

@@ -40,6 +40,30 @@ region-end is used. Adds the duplicated text to the kill ring."
     (let ((kill-whole-line t))
       (kill-line n))))
 
+(defun malko/mark-lines ()
+  (interactive)
+  (ace-jump-line-mode)
+  (add-hook 'post-command-hook 'malko/mark-lines--jump-one))
+
+(defun malko/mark-lines--jump-one ()
+  (if (eq this-command 'ace-jump-move)
+    (progn
+      (remove-hook 'post-command-hook 'malko/mark-lines--jump-one)
+      (push-mark)
+      (call-interactively 'set-mark-command)
+      (ace-jump-line-mode)
+      (add-hook 'post-command-hook 'malko/mark-lines--jump-two))
+    (if (not (eq this-command 'malko/mark-lines))
+      (remove-hook 'post-command-hook 'malko/mark-lines--jump-one))))
+
+(defun malko/mark-lines--jump-two ()
+  (if (eq this-command 'ace-jump-move)
+    (progn
+      (remove-hook 'post-command-hook 'malko/mark-lines--jump-two)
+      (call-interactively 'move-end-of-line))
+    (if (not (eq this-command 'malko/mark-lines))
+      (remove-hook 'post-command-hook 'malko/mark-lines--jump-two))))
+
 (defun move-line-down ()
   (interactive)
   (let ((col (current-column)))

@@ -9,10 +9,6 @@
 ;; turn off splash screen
 (setq inhibit-startup-message t)
 
-;; kill *Messages* early
-(setq message-log-max nil)
-(if (buffer-exists "*Messages*") (kill-buffer "*Messages*"))
-
 ;; turn off autosave/backup
 (setq make-backup-files nil)
 (setq auto-save-list-file-name nil)

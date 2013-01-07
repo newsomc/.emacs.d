@@ -14,3 +14,20 @@
     (lambda ()
       (interactive)
       (message ""))))
+
+(defun malko/log-messages-off ()
+  (interactive)
+  (message "Logging commands: (OFF)")
+  (remove-hook 'post-command-hook 'malko/log-messages-on-hook))
+
+(defun malko/log-messages-on ()
+  (interactive)
+  (message "Logging commands: (ON)")
+  (remove-hook 'post-command-hook 'malko/log-messages-on-hook)
+  (switch-to-buffer "*Messages*")
+  (add-hook 'post-command-hook 'malko/log-messages-on-hook))
+
+(defun malko/log-messages-on-hook ()
+  (message "curr: %s, prev: %s"
+    (symbol-name this-command)
+    (symbol-name last-command)))
