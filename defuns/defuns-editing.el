@@ -40,6 +40,11 @@ region-end is used. Adds the duplicated text to the kill ring."
     (let ((kill-whole-line t))
       (kill-line n))))
 
+;; custom functions using ace-jump mode
+
+(defvar malko/mark-lines-hook nil
+  "Function(s) to call after lines have been marked")
+
 (defun malko/mark-lines ()
   (interactive)
   (ace-jump-line-mode)
@@ -60,9 +65,12 @@ region-end is used. Adds the duplicated text to the kill ring."
   (if (eq this-command 'ace-jump-move)
     (progn
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-two)
-      (call-interactively 'move-end-of-line))
+      (call-interactively 'move-end-of-line)
+      (run-hooks 'malko/mark-lines-hook))
     (if (not (eq this-command 'malko/mark-lines))
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-two))))
+
+;; /end custom functions using ace-jump mode
 
 (defun move-line-down ()
   (interactive)
