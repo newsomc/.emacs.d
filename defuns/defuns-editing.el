@@ -88,6 +88,14 @@ region-end is used. Adds the duplicated text to the kill ring."
     (yank)
     )))
 
+(defun malko/mark-lines-comment ()
+  (interactive)
+  (malko/mark-lines)
+  (add-hook 'malko/mark-lines-hook (lambda ()
+    (call-interactively 'comment-or-uncomment-region)
+    (goto-char malko/mark-lines-point)
+    )))
+
 ;; /end custom functions using ace-jump mode
 
 (defun move-line-down ()
