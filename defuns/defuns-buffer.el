@@ -39,6 +39,11 @@ might be bad."
     (js2-mode)
     (switch-to-buffer "scratch-js")))
 
+(defun current-line ()
+  (save-excursion
+    (beginning-of-line)
+    (1+ (count-lines 1 (point)))))
+
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
@@ -47,6 +52,10 @@ might be bad."
         (linum-mode 1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
+
+(defun goto-line-and-column (line column)
+  (goto-line line)
+  (move-to-column column))
 
 (defun ido-imenu ()
   "Update the imenu index and then use ido to select a symbol to navigate to.

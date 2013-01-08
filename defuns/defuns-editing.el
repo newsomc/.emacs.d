@@ -48,6 +48,9 @@ region-end is used. Adds the duplicated text to the kill ring."
 (defun malko/mark-lines ()
   (setq malko/mark-lines-hook nil)
   (setq malko/mark-lines-point (point))
+  (setq malko/mark-lines-current-line (current-line))
+  (setq malko/mark-lines-current-column (current-column))
+
   (ace-jump-line-mode)
   (add-hook 'post-command-hook 'malko/mark-lines--jump-one))
 
@@ -71,12 +74,16 @@ region-end is used. Adds the duplicated text to the kill ring."
     (if (not (s-starts-with? "malko/mark-lines" (symbol-name this-command)))
       (remove-hook 'post-command-hook 'malko/mark-lines--jump-two))))
 
+(defun malko/mark-lines--jump-back ()
+  (goto-line-and-column malko/mark-lines-current-line
+                        malko/mark-lines-current-column))
+
 (defun malko/mark-lines-copy ()
   (interactive)
   (malko/mark-lines)
   (add-hook 'malko/mark-lines-hook (lambda ()
     (call-interactively 'kill-ring-save)
-    (goto-char malko/mark-lines-point)
+    (malko/mark-lines--jump-back)
     )))
 
 (defun malko/mark-lines-paste ()
@@ -84,7 +91,7 @@ region-end is used. Adds the duplicated text to the kill ring."
   (malko/mark-lines)
   (add-hook 'malko/mark-lines-hook (lambda ()
     (call-interactively 'kill-ring-save)
-    (goto-char malko/mark-lines-point)
+    (malko/mark-lines--jump-back)
     (yank)
     )))
 
@@ -93,7 +100,7 @@ region-end is used. Adds the duplicated text to the kill ring."
   (malko/mark-lines)
   (add-hook 'malko/mark-lines-hook (lambda ()
     (call-interactively 'comment-or-uncomment-region)
-    (goto-char malko/mark-lines-point)
+    (malko/mark-lines--jump-back)
     )))
 
 ;; /end custom functions using ace-jump mode
