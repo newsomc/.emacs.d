@@ -81,30 +81,25 @@ region-end is used. Adds the duplicated text to the kill ring."
   (goto-line-and-column malko/mark-current-line
                         malko/mark-current-column))
 
-(defun malko/mark-lines-copy ()
-  (interactive)
-  (malko/mark-lines)
-  (add-hook 'malko/mark-lines-hook (lambda ()
-    (call-interactively 'kill-ring-save)
-    (malko/mark--jump-back)
-    )))
+(defmacro malko/mark-lines-cmd (name &rest body)
+  `(defun ,(intern (concat "malko/mark-lines-" name)) ()
+    (interactive)
+    (malko/mark-lines)
+    (add-hook 'malko/mark-lines-hook (lambda ()
+      ,@body))))
 
-(defun malko/mark-lines-paste ()
-  (interactive)
-  (malko/mark-lines)
-  (add-hook 'malko/mark-lines-hook (lambda ()
-    (call-interactively 'kill-ring-save)
-    (malko/mark--jump-back)
-    (yank)
-    )))
+(malko/mark-lines-cmd "copy"
+  (call-interactively 'kill-ring-save)
+  (malko/mark--jump-back))
 
-(defun malko/mark-lines-comment ()
-  (interactive)
-  (malko/mark-lines)
-  (add-hook 'malko/mark-lines-hook (lambda ()
-    (call-interactively 'comment-or-uncomment-region)
-    (malko/mark--jump-back)
-    )))
+(malko/mark-lines-cmd "paste"
+  (call-interactively 'kill-ring-save)
+  (malko/mark--jump-back)
+  (yank))
+
+(malko/mark-lines-cmd "comment"
+  (call-interactively 'comment-or-uncomment-region)
+  (malko/mark--jump-back))
 
 ;; /end custom functions using ace-jump mode
 
