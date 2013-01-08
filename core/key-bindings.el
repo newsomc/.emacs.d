@@ -13,7 +13,7 @@
 
 ;; leader keys
 (-each '("H-[" "C-j" "C-,"
-         "<f5>" "<f6>" "<f7>" "<f8>" "<f9>" "<f10>" "<f11>" "<f12>")
+         "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
          (define-prefix-command (intern (concat key "-map")))
@@ -111,6 +111,11 @@
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
 (global-set-key (kbd "M-S-<return>") 'vi-open-line-above)
+
+;; macros
+(global-set-key [f10]  'start-kbd-macro)
+(global-set-key [f11]  'end-kbd-macro)
+(global-set-key [f12]  'call-last-kbd-macro)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
