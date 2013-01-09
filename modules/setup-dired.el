@@ -47,5 +47,6 @@
 (define-key dired-mode-map (kbd "C-x C-k") 'dired-do-delete)
 (define-key dired-mode-map (kbd "M-<up>") 'dired-back-to-top)
 (define-key dired-mode-map (kbd "M-<down>") 'dired-jump-to-bottom)
+(define-key dired-mode-map (kbd "M-o") 'malko/step-out)
 
 (provide 'setup-dired)

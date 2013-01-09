@@ -15,6 +15,59 @@
       (interactive)
       (message ""))))
 
+;; stepping in/out
+(defun malko/step-in ()
+  (interactive)
+  (cond
+    ((malko/grep-active?)
+     (malko/next-error-and-close))
+    (t)))
+
+(defun malko/step-out ()
+  (interactive)
+  (cond
+    ((malko/grep-active?)
+     (malko/previous-error-and-close))
+    (t)))
+
+;; grep
+(defun malko/grep-active? ()
+  (-contains? (buffer-names) "*grep*"))
+
+(defun malko/grep-visible? ()
+  (-contains? (visible-buffer-names) "*grep*"))
+
+(defun malko/kill-grep ()
+  (interactive)
+  (if (malko/grep-active?)
+    (if (malko/grep-visible?)
+      (progn
+        (switch-to-window-by-name "*grep*")
+        (kill-and-close-buffer))
+      (kill-buffer "*grep*"))))
+
+(defmacro malko/cycle-grep (name)
+  `(defun ,(intern (format "malko/%s-error-and-close" name)) ()
+    (interactive)
+    (if (malko/grep-active?)
+      (if (malko/grep-visible?)
+        (progn
+          (if (current-buffer-name-sw "*grep*")
+            (progn
+              (funcall ',(intern (format "%s-error" name))))
+            (progn
+              (kill-buffer (current-buffer))
+              (delete-window)
+              (funcall ',(intern (format "%s-error" name))))))
+        (progn
+          (switch-to-buffer "*grep*")
+          (delete-other-windows)
+          (funcall ',(intern (format "%s-error" name))))))))
+
+(malko/cycle-grep "next")
+(malko/cycle-grep "previous")
+
+;; logging messages
 (defun malko/log-messages-off ()
   (interactive)
   (message "Logging commands: (OFF)")

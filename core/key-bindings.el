@@ -43,8 +43,8 @@
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; change-inner
-(global-set-key (kbd "M-i") 'change-inner)
-(global-set-key (kbd "M-o") 'change-outer)
+(global-set-key (kbd "C-j C-i") 'change-inner)
+(global-set-key (kbd "C-j C-o") 'change-outer)
 
 ;; dired
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
@@ -68,7 +68,11 @@
 (global-set-key (kbd "C-j fe") 'next-error-follow-minor-mode)
 
 ;; grep
-(global-set-key (kbd "C-j fa") 'ag-fullscreen)
+(global-set-key (kbd "C-j gg") 'ag-fullscreen)
+(global-set-key (kbd "C-j gk") 'malko/kill-grep)
+
+(global-set-key (kbd "M-i") 'malko/step-in)
+(global-set-key (kbd "M-o") 'malko/step-out)
 
 ;; hippie-expand
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
@@ -183,7 +187,7 @@
 (global-set-key (kbd "C-, be") 'list-existing-buffers)
 (global-set-key (kbd "C-, ff") 'ag-fullscreen)
 
-(global-set-key (kbd "C-, C-f") 'ag-fullscreen)
+(global-set-key (kbd "C-, C-g") 'ag-fullscreen)
 (global-set-key (kbd "C-, C-p") 'project-switcher)
 (global-set-key (kbd "C-, C-t") 'find-file-in-project)
 

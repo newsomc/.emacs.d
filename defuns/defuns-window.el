@@ -27,6 +27,11 @@
   (interactive)
   (other-window 1))
 
+(defun switch-to-window-by-name (name)
+  (if (-contains? (visible-buffer-names) name)
+    (if (not (current-buffer-name-sw name))
+      (switch-to-buffer-other-window name))))
+
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)

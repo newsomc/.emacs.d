@@ -1,5 +1,8 @@
 (require 'imenu)
 
+(defun buffer-names ()
+  (mapcar (function buffer-name) (buffer-list (selected-frame))))
+
 (defun cleanup-buffer ()
   "Perform a bunch of operations on the whitespace content of a buffer.
 Including indent-buffer, which should not be called automatically on save."
@@ -38,6 +41,12 @@ might be bad."
     (set-buffer (get-buffer-create "scratch-js"))
     (js2-mode)
     (switch-to-buffer "scratch-js")))
+
+(defun current-buffer-name ()
+  (buffer-name (current-buffer)))
+
+(defun current-buffer-name-sw (name)
+  (s-starts-with? name (current-buffer-name)))
 
 (defun current-line ()
   (save-excursion
@@ -116,7 +125,8 @@ Symbols matching the text at point are put first in the completion list."
 (defun kill-and-close-buffer ()
   (interactive)
   (kill-buffer (current-buffer))
-  (delete-window))
+  (if (> (visible-buffers-length) 1)
+    (delete-window)))
 
 (defun multi-occur-in-all-open-buffers (regexp &optional allbufs)
   "Show all lines matching REGEXP in all buffers."
@@ -132,3 +142,10 @@ Symbols matching the text at point are put first in the completion list."
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
+
+(defun visible-buffer-names ()
+  (mapcar (function buffer-name)
+          (mapcar (function window-buffer) (window-list nil 'no nil))))
+
+(defun visible-buffers-length ()
+  (length (window-list nil 'no nil)))
