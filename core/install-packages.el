@@ -28,7 +28,6 @@
    (cons 'jump-char melpa)
    (cons 'key-chord melpa)
    (cons 'magit melpa)
-   (cons 'mark-multiple melpa)
    (cons 'maxframe melpa)
    (cons 'multifiles melpa)
    (cons 'multiple-cursors melpa)
