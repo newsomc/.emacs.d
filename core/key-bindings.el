@@ -183,6 +183,10 @@
 (global-set-key (kbd "C-, be") 'list-existing-buffers)
 (global-set-key (kbd "C-, ff") 'ag-fullscreen)
 
+(global-set-key (kbd "C-, C-f") 'ag-fullscreen)
+(global-set-key (kbd "C-, C-p") 'project-switcher)
+(global-set-key (kbd "C-, C-t") 'find-file-in-project)
+
 ;; window movement
 (global-set-key (kbd "C-x C-o") 'switch-to-next-window)
 

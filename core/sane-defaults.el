@@ -16,6 +16,10 @@
 ;; cycle window layouts [C-c <- / C-c ->]
 (when (fboundp 'winner-mode) (winner-mode 1))
 
+;; saner windows
+(setq split-height-threshold 0)
+(setq split-width-threshold 0)
+
 (setq auto-revert-verbose nil
       delete-selection-mode 1
       echo-keystrokes 0.1
