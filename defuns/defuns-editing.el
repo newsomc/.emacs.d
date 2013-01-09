@@ -109,6 +109,10 @@ region-end is used. Adds the duplicated text to the kill ring."
   (call-interactively 'comment-or-uncomment-region)
   (malko/mark--jump-back))
 
+(malko/mark-lines-cmd "multifile"
+  (call-interactively 'mf/mirror-region-in-multifile)
+  (malko/mark--jump-back))
+
 ;; /end custom functions using ace-jump mode
 
 (defun move-line-down ()
