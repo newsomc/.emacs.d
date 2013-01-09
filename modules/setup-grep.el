@@ -29,6 +29,11 @@
       (message "Whoops! Your search must contain 3 characters or more"))
     (message "Command not found: brew install the_silver_searcher")))
 
+(defun ag-fullscreen-current-word ()
+  (interactive)
+  (if (current-word)
+    (ag-fullscreen (current-word))))
+
 (defvar git-grep-switches "--extended-regexp -I -n"
   "Switches to pass to `git grep'.")
 

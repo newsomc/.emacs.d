@@ -70,6 +70,7 @@
 ;; grep
 (global-set-key (kbd "C-j gg") 'ag-fullscreen)
 (global-set-key (kbd "C-j gk") 'malko/kill-grep)
+(global-set-key (kbd "C-j gw") 'ag-fullscreen-current-word)
 
 (global-set-key (kbd "M-i") 'malko/step-in)
 (global-set-key (kbd "M-o") 'malko/step-out)
