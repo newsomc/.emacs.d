@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
 
 ;; buffers
-(global-set-key (kbd "C-x C-b") 'list-existing-buffers)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
@@ -83,6 +83,9 @@
 (global-set-key (kbd "H-[ <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
+
+;; iedit - interactive text replacement
+(global-set-key (kbd "C-j C-r") 'iedit-mode)
 
 ;; lines
 (define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)

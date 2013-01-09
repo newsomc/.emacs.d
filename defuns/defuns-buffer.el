@@ -49,9 +49,7 @@ might be bad."
   (s-starts-with? name (current-buffer-name)))
 
 (defun current-line ()
-  (save-excursion
-    (beginning-of-line)
-    (1+ (count-lines 1 (point)))))
+  (line-number-at-pos))
 
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
@@ -115,12 +113,6 @@ Symbols matching the text at point are put first in the completion list."
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
-
-(defun list-existing-buffers ()
-  (interactive)
-  (ibuffer-list-buffers)
-  (other-window 1)
-  (delete-other-windows))
 
 (defun kill-and-close-buffer ()
   (interactive)
