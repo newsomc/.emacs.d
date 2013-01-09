@@ -7,6 +7,7 @@
 (add-hook 'ibuffer-hook (lambda ()
   (ibuffer-auto-mode 1)
   (ibuffer-filter-disable)
+  (local-unset-key (kbd "M-o"))
   (if (boundp 'persp-curr)
     (ibuffer-filter-by-perspective-filter (persp-name persp-curr)))
   (ibuffer-perspective-list)))

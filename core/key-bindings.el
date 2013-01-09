@@ -83,6 +83,7 @@
 (global-set-key (kbd "H-[ <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
+(global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
 ;; iedit - interactive text replacement
 (global-set-key (kbd "C-j C-r") 'iedit-mode)
@@ -116,7 +117,6 @@
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "M-s") 'save-buffer)
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)

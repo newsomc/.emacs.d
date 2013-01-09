@@ -94,5 +94,4 @@
 ;; default perspective
 (if (fboundp 'custom-persp/emacs)
   (progn
-    (custom-persp/emacs)
-    (switch-to-buffer "*scratch* (emacs)")))
+    (custom-persp/emacs)))

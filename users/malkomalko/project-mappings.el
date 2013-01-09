@@ -14,7 +14,7 @@
 (defun custom-persp/emacs ()
   (interactive)
   (custom-persp "emacs"
-                (find-file "~/.emacs.d/init.el")))
+                (find-file "~/.emacs.d/")))
 
 (project-specifics ".emacs.d"
   (set (make-local-variable 'git-base-path)
