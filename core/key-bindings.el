@@ -89,6 +89,8 @@
 
 ;; lines
 (define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
+(define-key global-map (kbd "C-j ld") 'malko/mark-lines-delete)
 (define-key global-map (kbd "C-j lc") 'malko/mark-lines-copy)
 (define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
 (define-key global-map (kbd "C-j lm") 'malko/mark-lines-comment)

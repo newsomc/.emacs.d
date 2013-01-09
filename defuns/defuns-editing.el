@@ -88,6 +88,14 @@ region-end is used. Adds the duplicated text to the kill ring."
     (add-hook 'malko/mark-lines-hook (lambda ()
       ,@body))))
 
+(malko/mark-lines-cmd "cut"
+  (call-interactively 'kill-region)
+  (delete-blank-lines))
+
+(malko/mark-lines-cmd "delete"
+  (call-interactively 'delete-region)
+  (delete-blank-lines))
+
 (malko/mark-lines-cmd "copy"
   (call-interactively 'kill-ring-save)
   (malko/mark--jump-back))
