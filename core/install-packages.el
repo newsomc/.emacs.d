@@ -23,6 +23,7 @@
    (cons 'ido-ubiquitous melpa)
    (cons 'iedit melpa)
    (cons 'jade-mode melpa)
+   (cons 'js-comint melpa)
    (cons 'js2-mode melpa)
    (cons 'js2-refactor melpa)
    (cons 'jump melpa)

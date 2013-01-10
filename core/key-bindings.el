@@ -19,8 +19,11 @@
          (define-prefix-command (intern (concat key "-map")))
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
 
+;; rebind set mark to be more vim friendly
+(define-key global-map (kbd "C-v") 'set-mark-command)
+
 ;; ace-jump-mode
-(define-key global-map (kbd "C-v") 'ace-jump-mode)
+(define-key global-map (kbd "C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
 ;; bookmark+
@@ -58,6 +61,7 @@
 
 ;; expand-region
 (global-set-key (kbd "C-;") 'er/expand-region)
+(global-set-key (kbd "C-'") 'er/contract-region)
 
 ;; find files
 (global-set-key (kbd "C-j fd") 'find-name-dired)
@@ -121,8 +125,6 @@
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
-(global-set-key (kbd "M-<return>") 'vi-open-line-below)
-(global-set-key (kbd "M-S-<return>") 'vi-open-line-above)
 
 ;; macros
 (global-set-key [f10]  'start-kbd-macro)
@@ -155,8 +157,8 @@
 (global-set-key (kbd "C-j re") 're-builder)
 
 ;; return/tab
-(global-set-key (kbd "C-<return>") 'vi-open-line-below)
-(global-set-key (kbd "C-S-<return>") 'vi-open-line-above)
+(global-set-key (kbd "M-<return>") 'vi-open-line-below)
+(global-set-key (kbd "C-<return>") 'vi-open-line-above)
 (global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
 
 ;; scratch js buffer
