@@ -35,9 +35,20 @@
     "public/apps/.*/js/specs/libs")
   (ffip-local-patterns "*.js" "*.css" "*.styl"))
 
+;; proglang-2012-001
+(defun custom-persp/proglang-2012-001 ()
+  (interactive)
+  (custom-persp "proglang-2012-001"
+                (find-file "~/projects/courses/proglang-2012-001/")))
+
+(project-specifics "projects/courses/proglang-2012-001"
+  (set (make-local-variable 'git-base-path)
+    "~/projects/courses/proglang-2012-001/")
+  (ffip-local-patterns "*.sml"))
+
 ;; project switcher
 (defvar project-switcher-list
-  '("emacs" "instajams"))
+  '("emacs" "instajams" "proglang-2012-001"))
 
 (defun project-switcher ()
   (interactive)
