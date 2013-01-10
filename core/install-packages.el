@@ -37,6 +37,7 @@
    (cons 'sicp melpa)
    (cons 'smartparens melpa)
    (cons 'smex melpa)
+   (cons 'sml-mode gnu)
    (cons 'smooth-scrolling melpa)
    (cons 'undo-tree melpa)
    (cons 'yaml-mode melpa)

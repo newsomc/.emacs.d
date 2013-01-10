@@ -1,6 +1,7 @@
 (require 'package)
 
 (defvar marmalade '("marmalade" . "http://marmalade-repo.org/packages/"))
+(defvar gnu '("gnu" . "http://elpa.gnu.org/packages/"))
 (defvar melpa '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (add-to-list 'package-archives marmalade)
