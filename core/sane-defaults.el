@@ -50,6 +50,8 @@
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+(put 'erase-buffer 'disabled nil)
+
 ;; when popping the mark, continue popping until the cursor actually moves
 ;; if the last command was a copy - skip past expand-region
 (defadvice pop-to-mark-command (around ensure-new-position activate)
