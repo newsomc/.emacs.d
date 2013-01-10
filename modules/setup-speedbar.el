@@ -1,7 +1,9 @@
 (require 'sr-speedbar)
 
-(setq-default sr-speedbar-width-x 250)
-(setq-default sr-speedbar-width-console 250)
-(setq-default sr-speedbar-max-width 250)
+(setq speedbar-use-images nil)
+
+(make-face 'speedbar-face)
+(set-face-font 'speedbar-face "Inconsolata-12")
+(setq speedbar-mode-hook '(lambda () (buffer-face-set 'speedbar-face)))
 
 (provide 'setup-speedbar)

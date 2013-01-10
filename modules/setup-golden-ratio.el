@@ -1,5 +1,5 @@
 (require 'golden-ratio)
 
-(golden-ratio-enable)
+(golden-ratio-disable)
 
 (provide 'setup-golden-ratio)

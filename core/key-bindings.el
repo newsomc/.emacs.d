@@ -204,7 +204,8 @@
 (global-set-key (kbd "C-, C-t") 'find-file-in-project)
 
 ;; window movement
-(global-set-key (kbd "C-x C-o") 'switch-to-next-window)
+(global-unset-key (kbd "C-x o")) ;; which used to be switch-to-next-window
+(global-unset-key (kbd "C-x C-o"))
 
 (global-set-key (kbd "C-<up>") 'windmove-up)
 (global-set-key (kbd "C-<down>") 'windmove-down)
