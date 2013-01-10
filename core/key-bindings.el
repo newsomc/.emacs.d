@@ -175,6 +175,9 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+;; speedbar
+(global-set-key (kbd "C-j C-j") 'sr-speedbar-toggle)
+
 ;; transpose
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
 (global-set-key (kbd "M-t l") 'transpose-lines)

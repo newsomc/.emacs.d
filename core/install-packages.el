@@ -39,6 +39,7 @@
    (cons 'smex melpa)
    (cons 'sml-mode gnu)
    (cons 'smooth-scrolling melpa)
+   (cons 'sr-speedbar melpa)
    (cons 'undo-tree melpa)
    (cons 'yaml-mode melpa)
    (cons 'yasnippet melpa)))
