@@ -66,6 +66,7 @@
 ;; find files
 (global-set-key (kbd "C-j fd") 'find-name-dired)
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
+(global-set-key (kbd "C-j C-f") 'find-file-in-project)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
@@ -73,6 +74,7 @@
 
 ;; grep
 (global-set-key (kbd "C-j gg") 'ag-fullscreen)
+(global-set-key (kbd "C-j C-g") 'ag-fullscreen)
 (global-set-key (kbd "C-j gk") 'malko/kill-grep)
 (global-set-key (kbd "C-j gw") 'ag-fullscreen-current-word)
 
@@ -150,6 +152,7 @@
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
 (define-key persp-mode-map (kbd "C-j ps") 'project-switcher)
+(define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
 
 (define-key ibuffer-mode-map (kbd "/p") 'ibuffer-filter-by-perspective-filter)
 
