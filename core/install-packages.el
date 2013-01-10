@@ -5,6 +5,7 @@
    (cons 'browse-kill-ring melpa)
    (cons 'change-inner melpa)
    (cons 'dash melpa)
+   (cons 'deft melpa)
    (cons 'diminish melpa)
    (cons 'dired-details melpa)
    (cons 'elisp-slime-nav melpa)
