@@ -33,7 +33,7 @@
   (ffip-local-excludes
     "public/apps/.*/js/libs"
     "public/apps/.*/js/specs/libs")
-  (ffip-local-patterns "*.js" "*.css" "*.styl"))
+  (ffip-local-patterns "*.js" "*.css" "*.styl" "*.jade"))
 
 ;; proglang-2012-001
 (defun custom-persp/proglang-2012-001 ()

@@ -25,6 +25,17 @@
 ;; fallback yasnippet trigger
 (define-key global-map (kbd "C-c TAB") 'noop)
 
+;; C-j C-... mappings
+(global-set-key (kbd "C-j C-f") 'find-file-in-project)
+(global-set-key (kbd "C-j C-g") 'ag-fullscreen)
+(global-set-key (kbd "C-j C-i") 'change-inner)
+(global-set-key (kbd "C-j C-j") 'sr-speedbar-toggle)
+(global-set-key (kbd "C-j C-l") 'ace-jump-line-mode)
+(global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
+(global-set-key (kbd "C-j C-o") 'change-outer)
+(define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
+(global-set-key (kbd "C-j C-r") 'iedit-mode)
+
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
@@ -42,15 +53,10 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
-(global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 (global-set-key (kbd "C-c N") 'cleanup-buffer-safe)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
-
-;; change-inner
-(global-set-key (kbd "C-j C-i") 'change-inner)
-(global-set-key (kbd "C-j C-o") 'change-outer)
 
 ;; dired
 (global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
@@ -69,7 +75,6 @@
 ;; find files
 (global-set-key (kbd "C-j fd") 'find-name-dired)
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
-(global-set-key (kbd "C-j C-f") 'find-file-in-project)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
@@ -77,7 +82,6 @@
 
 ;; grep
 (global-set-key (kbd "C-j gg") 'ag-fullscreen)
-(global-set-key (kbd "C-j C-g") 'ag-fullscreen)
 (global-set-key (kbd "C-j gk") 'malko/kill-grep)
 (global-set-key (kbd "C-j gw") 'ag-fullscreen-current-word)
 
@@ -93,9 +97,6 @@
 (global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
-
-;; iedit - interactive text replacement
-(global-set-key (kbd "C-j C-r") 'iedit-mode)
 
 ;; lines
 (define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)
@@ -141,6 +142,11 @@
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
 
+;; newline
+(global-set-key (kbd "M-<return>") 'vi-open-line-below)
+(global-set-key (kbd "C-<return>") 'vi-open-line-below)
+(global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
+
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
 (global-set-key (kbd "C-j om") 'multi-occur)
@@ -155,17 +161,11 @@
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
 (define-key persp-mode-map (kbd "C-j ps") 'project-switcher)
-(define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
 
 (define-key ibuffer-mode-map (kbd "/p") 'ibuffer-filter-by-perspective-filter)
 
 ;; regular expressions
 (global-set-key (kbd "C-j re") 're-builder)
-
-;; return/tab
-(global-set-key (kbd "M-<return>") 'vi-open-line-below)
-(global-set-key (kbd "C-<return>") 'vi-open-line-above)
-(global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
 
 ;; scratch js buffer
 (global-set-key (kbd "C-j sj") 'create-scratch-js-buffer)
@@ -180,9 +180,6 @@
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; speedbar
-(global-set-key (kbd "C-j C-j") 'sr-speedbar-toggle)
 
 ;; transpose
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
