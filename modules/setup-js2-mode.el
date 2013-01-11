@@ -22,6 +22,10 @@
 (require 'js2-imenu-extras)
 (js2-imenu-extras-setup)
 
+;; tab characters
+(setq js2-basic-offset 2)
+(setq-default js2-basic-offset 2)
+
 ;; js2-mode steals TAB, let's steal it back for yasnippet
 (defun js2-tab-properly ()
   (interactive)

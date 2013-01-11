@@ -71,7 +71,6 @@
 ;; core
 (require 'appearance)
 (require 'sane-defaults)
-(require 'mode-mappings)
 (require 'key-bindings)
 
 ;; diminish

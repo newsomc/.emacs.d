@@ -4,6 +4,8 @@
 (setq yas/snippet-dirs '("~/.emacs.d/snippets"))
 (yas/global-mode 1)
 
+(setq yas/indent-line 'fixed)
+
 ;; jump to end of snippet definition
 (define-key yas/keymap (kbd "<return>") 'yas/exit-all-snippets)
 
@@ -42,5 +44,11 @@
 
 ;; wrap around region
 (setq yas/wrap-around-region t)
+
+(add-hook 'yas-minor-mode-hook '(lambda ()
+  (define-key yas-minor-mode-map [(tab)] nil)
+  (define-key yas-minor-mode-map (kbd "TAB") nil)
+  (define-key yas-minor-mode-map (kbd "C-c TAB")
+    'yas-expand-from-trigger-key)))
 
 (provide 'setup-yasnippet)

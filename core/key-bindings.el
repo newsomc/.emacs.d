@@ -22,6 +22,9 @@
 ;; rebind set mark to be more vim friendly
 (define-key global-map (kbd "C-v") 'set-mark-command)
 
+;; fallback yasnippet trigger
+(define-key global-map (kbd "C-c TAB") 'noop)
+
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
