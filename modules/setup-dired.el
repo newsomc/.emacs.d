@@ -48,5 +48,7 @@
 (define-key dired-mode-map (kbd "M-<up>") 'dired-back-to-top)
 (define-key dired-mode-map (kbd "M-<down>") 'dired-jump-to-bottom)
 (define-key dired-mode-map (kbd "M-o") 'malko/step-out)
+(define-key dired-mode-map (kbd "C-j C-l") 'ace-jump-mode)
+(define-key dired-mode-map (kbd "C-j ll") 'ace-jump-mode)
 
 (provide 'setup-dired)
