@@ -131,6 +131,22 @@ Symbols matching the text at point are put first in the completion list."
 (defun turn-on-whitespace ()
   (whitespace-mode t))
 
+(defun unpop-to-mark-command ()
+  "Unpop off mark ring into the buffer's actual mark.
+Does not set point.  Does nothing if mark ring is empty."
+  (interactive)
+  (let ((num-times (if (equal last-command 'malko/step-in) 2
+                     (if (equal last-command 'malko/step-out) 1
+                       (error "Previous command was not a (un)pop-to-mark-command")))))
+    (dotimes (x num-times)
+      (when mark-ring
+        (setq mark-ring (cons (copy-marker (mark-marker)) mark-ring))
+        (set-marker (mark-marker) (+ 0 (car (last mark-ring))) (current-buffer))
+        (when (null (mark t)) (ding))
+        (setq mark-ring (nbutlast mark-ring))
+        (goto-char (mark t)))
+      (deactivate-mark))))
+
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))

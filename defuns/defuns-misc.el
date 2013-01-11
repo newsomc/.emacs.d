@@ -21,14 +21,16 @@
   (cond
     ((malko/grep-active?)
      (malko/next-error-and-close))
-    (t)))
+    (t
+      (unpop-to-mark-command))))
 
 (defun malko/step-out ()
   (interactive)
   (cond
     ((malko/grep-active?)
      (malko/previous-error-and-close))
-    (t)))
+    (t
+      (pop-to-mark-command))))
 
 ;; grep
 (defun malko/grep-active? ()
