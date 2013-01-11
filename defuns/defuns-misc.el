@@ -22,7 +22,7 @@
     ((malko/grep-active?)
      (malko/next-error-and-close))
     (t
-      (unpop-to-mark-command))))
+      (pop-to-mark-command))))
 
 (defun malko/step-out ()
   (interactive)
@@ -30,7 +30,7 @@
     ((malko/grep-active?)
      (malko/previous-error-and-close))
     (t
-      (pop-to-mark-command))))
+      (unpop-to-mark-command))))
 
 ;; grep
 (defun malko/grep-active? ()
