@@ -21,7 +21,6 @@
    (cons 'golden-ratio melpa)
    (cons 'icicles melpa)
    (cons 'ido-ubiquitous melpa)
-   (cons 'iedit melpa)
    (cons 'jade-mode melpa)
    (cons 'js2-mode melpa)
    (cons 'js2-refactor melpa)

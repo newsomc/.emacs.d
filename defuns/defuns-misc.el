@@ -69,6 +69,22 @@
 (malko/cycle-grep "next")
 (malko/cycle-grep "previous")
 
+;; occur
+(defun malko/occur-active? ()
+  (-contains? (buffer-names) "*Occur*"))
+
+(defun malko/occur-visible? ()
+  (-contains? (visible-buffer-names) "*Occur*"))
+
+(defun malko/kill-occur ()
+  (interactive)
+  (if (malko/occur-active?)
+    (if (malko/occur-visible?)
+      (progn
+        (switch-to-window-by-name "*Occur*")
+        (kill-and-close-buffer))
+      (kill-buffer "*occur*"))))
+
 ;; logging messages
 (defun malko/log-messages-off ()
   (interactive)

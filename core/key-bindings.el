@@ -34,7 +34,7 @@
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 (global-set-key (kbd "C-j C-o") 'change-outer)
 (define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
-(global-set-key (kbd "C-j C-r") 'iedit-mode)
+(global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-j C-;") 'eval-expression)
 
 ;; ace-jump-mode
@@ -151,6 +151,7 @@
 
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
+(global-set-key (kbd "C-j ok") 'malko/kill-occur)
 (global-set-key (kbd "C-j om") 'multi-occur)
 (global-set-key (kbd "C-j ob") 'multi-occur-in-all-open-buffers)
 
