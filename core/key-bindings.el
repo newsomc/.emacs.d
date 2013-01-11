@@ -106,6 +106,7 @@
 (define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
 (define-key global-map (kbd "C-j lm") 'malko/mark-lines-comment)
 (define-key global-map (kbd "C-j lf") 'malko/mark-lines-multifile)
+(define-key global-map (kbd "C-j li") 'malko/mark-lines-indent)
 
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)
