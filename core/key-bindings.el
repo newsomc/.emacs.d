@@ -35,6 +35,7 @@
 (global-set-key (kbd "C-j C-o") 'change-outer)
 (define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
 (global-set-key (kbd "C-j C-r") 'iedit-mode)
+(global-set-key (kbd "C-j C-;") 'eval-expression)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
