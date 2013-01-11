@@ -88,6 +88,8 @@ region-end is used. Adds the duplicated text to the kill ring."
     (add-hook 'malko/mark-lines-hook (lambda ()
       ,@body))))
 
+(malko/mark-lines-cmd "mark")
+
 (malko/mark-lines-cmd "cut"
   (call-interactively 'kill-region)
   (delete-blank-lines))
@@ -115,6 +117,10 @@ region-end is used. Adds the duplicated text to the kill ring."
 
 (malko/mark-lines-cmd "indent"
   (call-interactively 'indent-region)
+  (malko/mark--jump-back))
+
+(malko/mark-lines-cmd "fold-this"
+  (call-interactively 'fold-this-all)
   (malko/mark--jump-back))
 
 ;; /end custom functions using ace-jump mode

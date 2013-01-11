@@ -77,6 +77,11 @@
 (global-set-key (kbd "C-j fd") 'find-name-dired)
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
 
+;; fold-this
+(global-set-key (kbd "C-j ta") 'fold-this-all)
+(global-set-key (kbd "C-j tt") 'fold-this)
+(global-set-key (kbd "C-j tu") 'fold-this-unfold-all)
+
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
 (global-set-key (kbd "C-j fe") 'next-error-follow-minor-mode)
@@ -100,7 +105,7 @@
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
 ;; lines
-(define-key global-map (kbd "C-j ll") 'ace-jump-line-mode)
+(define-key global-map (kbd "C-j ll") 'malko/mark-lines-mark)
 (define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
 (define-key global-map (kbd "C-j ld") 'malko/mark-lines-delete)
 (define-key global-map (kbd "C-j lc") 'malko/mark-lines-copy)
@@ -108,6 +113,7 @@
 (define-key global-map (kbd "C-j lm") 'malko/mark-lines-comment)
 (define-key global-map (kbd "C-j lf") 'malko/mark-lines-multifile)
 (define-key global-map (kbd "C-j li") 'malko/mark-lines-indent)
+(define-key global-map (kbd "C-j lt") 'malko/mark-lines-fold-this)
 
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)
