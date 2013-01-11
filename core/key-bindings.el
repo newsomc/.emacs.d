@@ -54,8 +54,8 @@
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 
-(global-set-key (kbd "C-c n") 'cleanup-buffer)
-(global-set-key (kbd "C-c N") 'cleanup-buffer-safe)
+(global-set-key (kbd "C-c N") 'cleanup-buffer)
+(global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 ;; dired
