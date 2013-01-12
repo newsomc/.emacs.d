@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-j C-l") 'ace-jump-line-mode)
 (global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 (global-set-key (kbd "C-j C-o") 'change-outer)
-(define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
+(global-set-key (kbd "C-j C-p") 'project-switcher)
 (global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-j C-t") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j C-;") 'er/expand-region)
