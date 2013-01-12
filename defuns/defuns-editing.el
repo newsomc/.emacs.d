@@ -123,6 +123,9 @@ region-end is used. Adds the duplicated text to the kill ring."
   (call-interactively 'fold-this-all)
   (malko/mark--jump-back))
 
+(malko/mark-lines-cmd "mark-all-in-region"
+  (call-interactively 'mc/mark-all-in-region))
+
 ;; /end custom functions using ace-jump mode
 
 (defun move-line-down ()

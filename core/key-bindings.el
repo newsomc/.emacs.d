@@ -113,15 +113,16 @@
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
 ;; lines
-(define-key global-map (kbd "C-j ll") 'malko/mark-lines-mark)
-(define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
-(define-key global-map (kbd "C-j ld") 'malko/mark-lines-delete)
 (define-key global-map (kbd "C-j lc") 'malko/mark-lines-copy)
-(define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
-(define-key global-map (kbd "C-j lm") 'malko/mark-lines-comment)
-(define-key global-map (kbd "C-j lf") 'malko/mark-lines-multifile)
+(define-key global-map (kbd "C-j ld") 'malko/mark-lines-delete)
 (define-key global-map (kbd "C-j li") 'malko/mark-lines-indent)
+(define-key global-map (kbd "C-j ll") 'malko/mark-lines-mark)
+(define-key global-map (kbd "C-j lm") 'malko/mark-lines-multifile)
+(define-key global-map (kbd "C-j lr") 'malko/mark-lines-mark-all-in-region)
 (define-key global-map (kbd "C-j lt") 'malko/mark-lines-fold-this)
+(define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
+(define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
+(define-key global-map (kbd "C-j l/") 'malko/mark-lines-comment)
 
 ;; lisp
 (global-set-key (kbd "C-j ;") 'eval-expression)
