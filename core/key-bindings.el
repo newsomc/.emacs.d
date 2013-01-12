@@ -72,7 +72,9 @@
 
 ;; expand-region
 (global-set-key (kbd "C-;") 'er/expand-region)
+(global-set-key (kbd "M-;") 'er/expand-region) ;; comment-dwim
 (global-set-key (kbd "C-'") 'er/contract-region)
+(global-set-key (kbd "M-'") 'er/contract-region) ;; abbrev-prefix-mark
 
 ;; find files
 (global-set-key (kbd "C-j fd") 'find-name-dired)
