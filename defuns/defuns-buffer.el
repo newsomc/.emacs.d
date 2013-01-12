@@ -19,6 +19,16 @@ might be bad."
   (delete-trailing-whitespace)
   (set-buffer-file-coding-system 'utf-8))
 
+(defun clear-buffer ()
+  "clear whole buffer add contents to the kill ring"
+  (interactive)
+  (kill-region (point-min) (point-max)))
+
+(defun clear-buffer-permenantly ()
+  "clear whole buffer, contents is not added to the kill ring"
+  (interactive)
+  (delete-region (point-min) (point-max)))
+
 (defun create-scratch-buffer nil
   "create a new scratch buffer to work in."
   (interactive)
