@@ -37,6 +37,8 @@
 (global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-j C-t") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j C-;") 'eval-expression)
+(global-set-key (kbd "C-j H-[") 'hs-hide-all)
+(global-set-key (kbd "C-j C-]") 'hs-show-all)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
