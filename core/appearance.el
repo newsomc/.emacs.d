@@ -3,6 +3,12 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ; (global-hl-line-mode 1)
 
+;; wrap lines
+(global-visual-line-mode 1)
+
+(setq visual-line-fringe-indicators
+      '(left-curly-arrow right-curly-arrow))
+
 (setq color-theme-is-global t
       column-number-mode t
       fill-column 80
