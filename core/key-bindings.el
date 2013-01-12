@@ -36,6 +36,7 @@
 (global-set-key (kbd "C-j C-p") 'project-switcher)
 (global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-j C-t") 'hs-toggle-hiding)
+(global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-;") 'er/expand-region)
 (global-set-key (kbd "C-j C-'") 'er/contract-region)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
