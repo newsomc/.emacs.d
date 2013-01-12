@@ -40,4 +40,6 @@
 ;; don't redefine C-a for me please, js2-mode
 (define-key js2-mode-map (kbd "C-a") nil)
 
+(add-hook 'js2-mode-hook 'hs-minor-mode)
+
 (provide 'setup-js2-mode)

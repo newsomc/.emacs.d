@@ -35,6 +35,7 @@
 (global-set-key (kbd "C-j C-o") 'change-outer)
 (define-key persp-mode-map (kbd "C-j C-p") 'project-switcher)
 (global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-j C-t") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j C-;") 'eval-expression)
 
 ;; ace-jump-mode
@@ -78,9 +79,7 @@
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
 
 ;; fold-this
-(global-set-key (kbd "C-j ta") 'fold-this-all)
-(global-set-key (kbd "C-j tt") 'fold-this)
-(global-set-key (kbd "C-j tu") 'fold-this-unfold-all)
+(global-set-key (kbd "C-j tt") 'fold-this-unfold-all)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
@@ -93,6 +92,13 @@
 
 (global-set-key (kbd "M-i") 'malko/step-in)
 (global-set-key (kbd "M-o") 'malko/step-out)
+
+;; hide-show (code folding)
+(global-set-key (kbd "C-j zt") 'hs-toggle-hiding)
+(global-set-key (kbd "C-j zM") 'hs-hide-all)
+(global-set-key (kbd "C-j zm") 'hs-hide-block)
+(global-set-key (kbd "C-j zR") 'hs-show-all)
+(global-set-key (kbd "C-j zr") 'hs-show-block)
 
 ;; hippie-expand
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
