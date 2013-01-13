@@ -41,6 +41,7 @@
    (cons 'smex melpa)
    (cons 'sml-mode gnu)
    (cons 'smooth-scrolling melpa)
+   (cons 'solarized-theme melpa)
    (cons 'sr-speedbar melpa)
    (cons 'undo-tree melpa)
    (cons 'wrap-region melpa)

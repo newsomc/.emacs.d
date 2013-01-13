@@ -41,9 +41,6 @@
 (add-to-list 'load-path user-settings-dir)
 (add-to-list 'load-path vendor-dir)
 
-;; load color theme
-(require 'tomorrow-night-theme)
-
 ;; elpa packages
 (require 'setup-package)
 (require 'install-packages)
@@ -67,6 +64,9 @@
 ;; load vendor
 (dolist (file (directory-files vendor-dir t "\\w+"))
   (require (intern (file-name-from-path-no-ext file))))
+
+;; load color theme
+(require 'solarized-light-theme)
 
 ;; core
 (require 'appearance)
