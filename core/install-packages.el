@@ -38,6 +38,7 @@
    (cons 'perspective melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
+   (cons 'skewer-mode melpa)
    (cons 'smartparens melpa)
    (cons 'smex melpa)
    (cons 'sml-mode gnu)
