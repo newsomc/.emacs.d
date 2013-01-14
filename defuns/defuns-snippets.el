@@ -15,6 +15,7 @@
 # -*- mode: snippet -*-
 # name: $1
 # key: ${2:${1:$(replace-regexp-in-string \"\\\\\\\\(\\\\\\\\w+\\\\\\\\).*\" \"\\\\\\\\1\" yas-text)}}
+# binding: $3
 # --
 $0")))
 

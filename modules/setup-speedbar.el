@@ -26,35 +26,8 @@
 
 (define-key speedbar-mode-map (kbd "j") 'speedbar-next)
 (define-key speedbar-mode-map (kbd "k") 'speedbar-prev)
+(define-key speedbar-mode-map (kbd "o") 'speedbar-edit-line)
 (define-key speedbar-mode-map (kbd "C-j C-l") 'ace-jump-mode)
 (define-key speedbar-mode-map (kbd "C-j ll") 'ace-jump-mode)
-
-;; always use the last selected window for loading files from speedbar
-(defvar last-selected-window
-  (if (not (eq (selected-window) sr-speedbar-window))
-      (selected-window)
-    (other-window)))
-
-(defadvice select-window (after remember-selected-window activate)
-  "Remember the last selected window."
-  (unless (or (eq (selected-window) sr-speedbar-window)
-    (not (window-live-p (selected-window))))
-    (setq last-selected-window (selected-window))))
-
-(defun sr-speedbar-before-visiting-file-hook ()
-  "Function that hooks `speedbar-before-visiting-file-hook'."
-  (select-window last-selected-window))
-
-(defun sr-speedbar-before-visiting-tag-hook ()
-  "Function that hooks `speedbar-before-visiting-tag-hook'."
-  (select-window last-selected-window))
-
-(defun sr-speedbar-visiting-file-hook ()
-  "Function that hooks `speedbar-visiting-file-hook'."
-  (select-window last-selected-window))
-
-(defun sr-speedbar-visiting-tag-hook ()
-  "Function that hooks `speedbar-visiting-tag-hook'."
-  (select-window last-selected-window))
 
 (provide 'setup-speedbar)

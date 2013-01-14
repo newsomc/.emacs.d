@@ -12,12 +12,14 @@
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("H-[" "C-j" "C-,"
+(-each '("C-q" "H-[" "C-j" "C-,"
          "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
          (define-prefix-command (intern (concat key "-map")))
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
+
+(global-set-key "\C-x\C-q"  'quoted-insert)
 
 ;; rebind set mark to be more vim friendly
 (define-key global-map (kbd "C-v") 'set-mark-command)
@@ -246,6 +248,7 @@
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 
 ;; yasnippet
+(global-set-key (kbd "C-j sc") 'yas-create-new-snippet)
 (global-set-key (kbd "C-j se") 'yas-visit-snippet-file)
 (global-set-key (kbd "C-j si") 'yas-insert-snippet)
 (global-set-key (kbd "C-j sl") 'yas-describe-tables)
