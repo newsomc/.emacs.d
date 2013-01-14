@@ -1,4 +1,5 @@
 .bm-repository
+.dict
 .DS_Store
 .mc-lists.el
 .places
