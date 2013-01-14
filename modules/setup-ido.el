@@ -8,7 +8,8 @@
       ido-auto-merge-work-directories-length -1
       ido-create-new-buffer 'always
       ido-use-filename-at-point nil
-      ido-max-prospects 10)
+      ido-max-prospects 10
+      ido-everywhere t)
 
 (add-hook 'ido-setup-hook #'(lambda ()
   (define-key ido-completion-map (kbd "<return>")
