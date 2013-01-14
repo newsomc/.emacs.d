@@ -8,6 +8,8 @@
 
 ;; jump to end of snippet definition
 (define-key yas-keymap (kbd "<return>") 'yas-exit-all-snippets)
+(define-key yas-keymap (kbd "C-n") 'yas-next-field)
+(define-key yas-keymap (kbd "C-p") 'yas-prev-field)
 
 ;; don't expand yasnippets in every setting
 (setq yas-expand-only-for-last-commands

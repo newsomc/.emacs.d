@@ -33,7 +33,6 @@
 (global-set-key (kbd "C-j C-i") 'change-inner)
 (global-set-key (kbd "C-j C-j") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-j C-l") 'ace-jump-line-mode)
-(global-set-key (kbd "C-j C-k") 'delete-current-buffer-file)
 (global-set-key (kbd "C-j C-o") 'change-outer)
 (global-set-key (kbd "C-j C-p") 'project-switcher)
 (global-set-key (kbd "C-j C-r") 'mc/mark-all-like-this)
@@ -61,6 +60,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
+(global-set-key (kbd "C-j K") 'delete-current-buffer-file)
 
 (global-set-key (kbd "C-c N") 'cleanup-buffer)
 (global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
