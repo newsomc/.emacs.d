@@ -124,11 +124,26 @@ Symbols matching the text at point are put first in the completion list."
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun kill-all-buffers ()
+    "Kill all file-based buffers."
+    (interactive)
+    (mapc (lambda (buf) (kill-buffer-if-file buf))
+     (buffer-list)))
+
 (defun kill-and-close-buffer ()
   (interactive)
   (kill-buffer (current-buffer))
   (if (> (visible-buffers-length) 1)
     (delete-window)))
+
+(defun kill-buffer-if-file (buf)
+  "Kill a buffer only if it is file-based."
+  (when (buffer-file-name buf)
+    (when (buffer-modified-p buf)
+        (when (y-or-n-p (format "Buffer %s is modified - save it?" (buffer-name buf)))
+            (save-some-buffers nil buf)))
+    (set-buffer-modified-p nil)
+    (kill-buffer buf)))
 
 (defun multi-occur-in-all-open-buffers (regexp &optional allbufs)
   "Show all lines matching REGEXP in all buffers."
