@@ -75,8 +75,6 @@
 
 ;; diminish
 (require 'diminish)
-(diminish 'yas-minor-mode)
-; (diminish 'smartparens-mode)
 
 ;; customize
 (setq custom-file "~/.emacs.d/core/custom.el")
