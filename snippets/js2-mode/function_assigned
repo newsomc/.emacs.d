@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
-# name: function
+# name: function_assigned
 # key: f
-# binding: C-j C-k f
+# binding: C-j C-k a
 # --
-function($1){
+var ${1:name} = function($2){
   $0
 }`(snippet--function-punctuation)`

@@ -29,8 +29,6 @@
 
 (add-hook 'yas-minor-mode-hook '(lambda ()
   (define-key yas-minor-mode-map [(tab)] nil)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  (define-key yas-minor-mode-map (kbd "C-c TAB")
-    'yas-expand-from-trigger-key)))
+  (define-key yas-minor-mode-map (kbd "TAB") nil)))
 
 (provide 'setup-yasnippet)

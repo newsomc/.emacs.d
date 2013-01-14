@@ -1,11 +1,13 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 
-(global-auto-complete-mode t)
-(ac-config-default)
+; (global-auto-complete-mode t)
+; (ac-config-default)
 
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (add-to-list 'ac-user-dictionary-files "~/.emacs.d/.dict")
+
+(delq 'ac-source-yasnippet ac-sources)
 
 (setq ac-auto-show-menu 1.0)
 (setq ac-auto-start 3)
