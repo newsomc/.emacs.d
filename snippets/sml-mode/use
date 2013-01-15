@@ -3,4 +3,4 @@
 # key: u
 # binding: C-j C-k u
 # --
-use "$1.sml";
+use "$1";
