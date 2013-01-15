@@ -12,7 +12,7 @@
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("C-q" "H-[" "C-j" "C-,"
+(-each '("C-q" "H-[" "C-j" "C-z" "C-,"
          "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
@@ -215,37 +215,18 @@
 ;; undo-tree
 (global-set-key (kbd "C-x C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C--") 'undo-tree-undo)
-(global-set-key (kbd "C-_") 'undo-tree-undo)
-(global-set-key (kbd "M--") 'undo-tree-redo)
-(global-set-key (kbd "M-_") 'undo-tree-redo)
-(global-set-key (kbd "C-M--") 'undo-tree-redo)
-(global-set-key (kbd "C-M-z") 'undo-tree-redo)
-(global-set-key (kbd "C-M-Z") 'undo-tree-redo)
-
-;; vim - help with transition
-(global-set-key (kbd "C-, be") 'list-existing-buffers)
-(global-set-key (kbd "C-, ff") 'ag-fullscreen)
-
-(global-set-key (kbd "C-, C-g") 'ag-fullscreen)
-(global-set-key (kbd "C-, C-p") 'project-switcher)
-(global-set-key (kbd "C-, C-t") 'find-file-in-project)
+(global-set-key (kbd "C-_") 'undo-tree-redo)
 
 ;; window movement
 (global-set-key (kbd "C-x C-o") 'switch-to-next-window)
-(global-set-key (kbd "C-<up>") 'windmove-up)
-(global-set-key (kbd "C-<down>") 'windmove-down)
-(global-set-key (kbd "C-<left>") 'windmove-left)
-(global-set-key (kbd "C-<right>") 'windmove-right)
-(global-set-key (kbd "M-<up>") 'windmove-up)
-(global-set-key (kbd "M-<down>") 'windmove-down)
-(global-set-key (kbd "M-<left>") 'windmove-left)
-(global-set-key (kbd "M-<right>") 'windmove-right)
-(global-set-key (kbd "S-<up>") 'windmove-up)
-(global-set-key (kbd "S-<down>") 'windmove-down)
-(global-set-key (kbd "S-<left>") 'windmove-left)
-(global-set-key (kbd "S-<right>") 'windmove-right)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
+
+(-each '("C" "M" "S") (lambda (key)
+  (global-set-key (read-kbd-macro (concat key "-<up>")) 'windmove-up)
+  (global-set-key (read-kbd-macro (concat key "-<down>")) 'windmove-down)
+  (global-set-key (read-kbd-macro (concat key "-<left>")) 'windmove-left)
+  (global-set-key (read-kbd-macro (concat key "-<right>")) 'windmove-right)))
 
 ;; yasnippet
 (global-set-key (kbd "C-j sc") 'yas-create-new-snippet)
