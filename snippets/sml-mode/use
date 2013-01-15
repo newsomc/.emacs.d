@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: use
+# key: u
+# binding: C-j C-k u
+# --
+use "$1.sml";
