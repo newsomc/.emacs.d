@@ -20,7 +20,6 @@
    (cons 'frame-cmds melpa)
    (cons 'frame-fns melpa)
    (cons 'geiser marmalade)
-   (cons 'golden-ratio melpa)
    (cons 'icicles melpa)
    (cons 'ido-ubiquitous melpa)
    (cons 'inflections melpa)
