@@ -47,7 +47,6 @@
    (cons 'sr-speedbar melpa)
    (cons 'undo-tree melpa)
    (cons 'wgrep melpa)
-   (cons 'wrap-region melpa)
    (cons 'yaml-mode melpa)
    (cons 'yasnippet melpa)))
 
