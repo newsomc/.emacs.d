@@ -1,5 +1,7 @@
 (require 'icicles)
 
-(icy-mode)
+(defun malko/toggle-icy-mode ()
+  (interactive)
+  (call-interactively 'icy-mode))
 
 (provide 'setup-icicles)

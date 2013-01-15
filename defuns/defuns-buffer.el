@@ -1,5 +1,7 @@
 (require 'imenu)
 
+(fset 'quick-switch-buffer [?\C-x ?b return])
+
 (defun buffer-names ()
   (mapcar (function buffer-name) (buffer-list (selected-frame))))
 
@@ -149,6 +151,19 @@ Symbols matching the text at point are put first in the completion list."
   "Show all lines matching REGEXP in all buffers."
   (interactive (occur-read-primary-args))
   (multi-occur-in-matching-buffers ".*" regexp))
+
+(defun recentf--file-cons (file-name)
+  (cons (file-name-with-one-directory file-name) file-name))
+
+(defun recentf-ido-find-file ()
+  "Find a recent file using ido."
+  (interactive)
+  (let* ((recent-files (mapcar 'recentf--file-cons recentf-list))
+         (files (mapcar 'car recent-files))
+         (file (completing-read "Choose recent file: " files)))
+    (if (s-blank? file)
+      (find-file (cdr (assoc (car files) recent-files)))
+      (find-file (cdr (assoc file recent-files))))))
 
 (defun turn-off-whitespace ()
   (whitespace-mode nil))

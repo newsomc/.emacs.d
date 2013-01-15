@@ -42,6 +42,7 @@
 (global-set-key (kbd "C-j C-'") 'er/contract-region)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
+(global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
@@ -136,13 +137,14 @@
 ;; logging
 (global-set-key (kbd "C-j mm") 'malko/log-messages-on)
 (global-set-key (kbd "C-j mo") 'malko/log-messages-off)
+(global-set-key (kbd "C-j ms") 'malko/switch-to-messages-buffer)
 
 ;; jump-char
 (global-set-key (kbd "M-m") 'jump-char-forward)
 (global-set-key (kbd "M-M") 'jump-char-backward)
 
 ;; ido
-(global-set-key (kbd "C-x f") 'ido-recentf-open)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file) ; ido-recentf-open
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; mac-friendly
@@ -159,6 +161,9 @@
 (global-set-key [f10]  'start-kbd-macro)
 (global-set-key [f11]  'end-kbd-macro)
 (global-set-key [f12]  'call-last-kbd-macro)
+
+;; modes
+(global-set-key (kbd "C-j C-m i") 'malko/toggle-icy-mode)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)

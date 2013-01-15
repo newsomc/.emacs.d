@@ -1,8 +1,8 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 
-; (global-auto-complete-mode t)
-; (ac-config-default)
+(global-auto-complete-mode t)
+(ac-config-default)
 
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (add-to-list 'ac-user-dictionary-files "~/.emacs.d/.dict")

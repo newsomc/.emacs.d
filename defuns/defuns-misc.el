@@ -86,6 +86,10 @@
       (kill-buffer "*occur*"))))
 
 ;; logging messages
+(defun malko/switch-to-messages-buffer ()
+  (interactive)
+  (switch-to-buffer "*Messages*"))
+
 (defun malko/log-messages-off ()
   (interactive)
   (message "Logging commands: (OFF)")
