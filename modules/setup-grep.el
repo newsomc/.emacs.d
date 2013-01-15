@@ -1,4 +1,5 @@
 (require 'grep)
+(require 'wgrep)
 
 (defun ag-fullscreen (regexp &optional dir confirm)
   (interactive
