@@ -34,6 +34,7 @@
    (cons 'multiple-cursors melpa)
    (cons 'paredit melpa)
    (cons 'perspective melpa)
+   (cons 'pomodoro melpa)
    (cons 'popup melpa)
    (cons 'rainbow-delimiters melpa)
    (cons 's melpa)
