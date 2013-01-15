@@ -35,6 +35,7 @@
    (cons 'paredit melpa)
    (cons 'perspective melpa)
    (cons 'popup melpa)
+   (cons 'rainbow-delimiters melpa)
    (cons 's melpa)
    (cons 'sicp melpa)
    (cons 'simple-httpd melpa)
