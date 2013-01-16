@@ -189,6 +189,7 @@
 
 ;; modes
 (global-set-key (kbd "C-j C-m i") 'malko/toggle-icy-mode)
+(global-set-key (kbd "C-j C-m s") 'malko/toggle-smartparens-mode)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
