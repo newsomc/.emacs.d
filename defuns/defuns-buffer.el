@@ -165,6 +165,12 @@ Symbols matching the text at point are put first in the completion list."
       (find-file (cdr (assoc (car files) recent-files)))
       (find-file (cdr (assoc file recent-files))))))
 
+(defun shell-command-on-whole-buffer (cmd)
+  (interactive
+    (let ((string (read-string "Command: " nil 'my-history)))
+      (list string)))
+  (shell-command-on-region (point-min) (point-max) cmd nil t))
+
 (defun turn-off-whitespace ()
   (whitespace-mode nil))
 
