@@ -88,6 +88,17 @@
 (global-set-key (kbd "C-j fd") 'find-name-dired)
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
 
+(global-set-key (kbd "C-j C-/ c")
+  (ffip-create-pattern-file-finder "*.css" "*styl"))
+(global-set-key (kbd "C-j C-/ e")
+  (ffip-create-pattern-file-finder "*.el"))
+(global-set-key (kbd "C-j C-/ h")
+  (ffip-create-pattern-file-finder "*.html" "*.jade"))
+(global-set-key (kbd "C-j C-/ j")
+  (ffip-create-pattern-file-finder "*.js"))
+(global-set-key (kbd "C-j C-/ r")
+  (ffip-create-pattern-file-finder "*.rb"))
+
 ;; fold-this
 (global-set-key (kbd "C-j tt") 'fold-this-unfold-all)
 
