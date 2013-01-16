@@ -7,8 +7,8 @@
       speedbar-indentation-width 2
       speedbar-update-flag t
       sr-speedbar-auto-refresh t
-      sr-speedbar-skip-other-window-p t
-      sr-speedbar-right-side nil)
+      sr-speedbar-skip-other-window-p nil
+      sr-speedbar-right-side t)
 
 (make-face 'speedbar-face)
 (set-face-font 'speedbar-face "Inconsolata-12")
