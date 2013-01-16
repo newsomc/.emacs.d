@@ -134,7 +134,9 @@
 
 ;; icicles
 (global-set-key (kbd "H-[ <backtab>") 'icicle-complete-keys)
+(global-set-key (kbd "C-q <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-j <backtab>") 'icicle-complete-keys)
+(global-set-key (kbd "C-z <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
