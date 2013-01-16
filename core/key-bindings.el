@@ -139,6 +139,9 @@
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
 ;; lines
+(define-key global-map (kbd "C-a") 'beginning-of-line)
+(define-key global-map (kbd "C-e") 'end-of-line)
+
 (define-key global-map (kbd "C-j lc") 'malko/mark-lines-copy)
 (define-key global-map (kbd "C-j ld") 'malko/mark-lines-delete)
 (define-key global-map (kbd "C-j li") 'malko/mark-lines-indent)
