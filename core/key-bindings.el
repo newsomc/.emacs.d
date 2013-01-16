@@ -133,6 +133,7 @@
 (define-key global-map (kbd "C-j l/") 'malko/mark-lines-comment)
 
 ;; lisp
+(global-set-key (kbd "C-c C-e") 'eval-and-replace)
 (global-set-key (kbd "C-j ;") 'eval-expression)
 
 ;; logging
