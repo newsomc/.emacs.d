@@ -12,5 +12,6 @@ bookmarks
 elpa
 eshell
 geiser-history.racket
+semanticdb
 *~
 *.elc

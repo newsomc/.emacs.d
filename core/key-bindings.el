@@ -140,6 +140,7 @@
 (define-key global-map (kbd "C-j lr") 'malko/mark-lines-mark-all-in-region)
 (define-key global-map (kbd "C-j lt") 'malko/mark-lines-fold-this)
 (define-key global-map (kbd "C-j lv") 'malko/mark-lines-paste)
+(define-key global-map (kbd "C-j lw") 'mark-whole-buffer)
 (define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
 (define-key global-map (kbd "C-j l/") 'malko/mark-lines-comment)
 
