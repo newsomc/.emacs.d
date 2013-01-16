@@ -1,4 +1,4 @@
-(smartparens-global-mode 1)
+; (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 
 (setq sp-highlight-pair-overlay nil)
