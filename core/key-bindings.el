@@ -19,6 +19,15 @@
          (define-prefix-command (intern (concat key "-map")))
          (global-set-key (read-kbd-macro key) (intern (concat key "-map")))))
 
+;; prefix binding
+(defun c-pf-key (prefix key fun)
+  (global-set-key (read-kbd-macro (concat "C-" prefix " " key)) fun)
+  (global-set-key (read-kbd-macro (concat "C-" prefix " C-" key)) fun))
+
+(defun h-pf-key (prefix key fun)
+  (global-set-key (read-kbd-macro (concat "H-" prefix " " key)) fun)
+  (global-set-key (read-kbd-macro (concat "H-" prefix " C-" key)) fun))
+
 (global-set-key "\C-x\C-q"  'quoted-insert)
 
 ;; rebind set mark to be more vim friendly
@@ -44,6 +53,13 @@
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
 (global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
+
+;; C-q
+
+;; C-z
+
+;; C-,
+(c-pf-key "," "d" 'duplicate-current-line-or-region)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
@@ -197,6 +213,10 @@
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-j >")
+  (make-repeatable-command 'mc/mark-next-like-this))
+(global-set-key (kbd "C-j <")
+  (make-repeatable-command 'mc/mark-previous-like-this))
 
 ;; newline
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
