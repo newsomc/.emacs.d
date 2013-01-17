@@ -219,6 +219,8 @@
   (make-repeatable-command 'mc/mark-previous-like-this))
 
 ;; newline
+(global-set-key (kbd "<return>") 'newline-and-indent)
+(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-M-<return>") 'vi-open-line-above)

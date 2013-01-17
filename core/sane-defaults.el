@@ -63,4 +63,6 @@
     (dotimes (i 10)
       (when (= p (point)) ad-do-it))))
 
+(add-hook 'before-save-hook 'cleanup-buffer-safe)
+
 (provide 'sane-defaults)
