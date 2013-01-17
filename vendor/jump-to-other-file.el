@@ -28,16 +28,14 @@
         new-spec) spec))
 
 (defun jf/jump-to (spec &optional matches make)
-  (if (eq nil matches)
-      (message "error: no pattern found for current file")
+  (if (eq nil matches) nil
     (if (eq nil git-base-path)
         (message "error: make sure git-base-path is set to project root")
       (let (
             (f (concat git-base-path (jf/jump-insert-matches spec matches))))
         (if (file-exists-p f)
             (find-file f)
-          (progn
-            (message "error: jump-to file doesn't exist")))))))
+          (progn nil))))))
 
 (defun jf/jump-from (spec)
   (cond ((stringp spec)
