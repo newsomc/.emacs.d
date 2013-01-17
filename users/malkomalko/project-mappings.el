@@ -19,6 +19,7 @@
 (project-specifics ".emacs.d"
   (set (make-local-variable 'git-base-path)
     "~/.emacs.d/")
+
   (ffip-local-patterns "*.el" "*.md"))
 
 ;; instajams
@@ -30,6 +31,13 @@
 (project-specifics "projects/js/jam_mode"
   (set (make-local-variable 'git-base-path)
     "~/projects/js/jam_mode/")
+  (set (make-local-variable 'jump-from-test--pattern)
+    '("public/apps/\\1/js/specs/\\2/\\3.spec.js" .
+      "public/apps/\\1/js/\\2/\\3.js"))
+  (set (make-local-variable 'jump-to-test--pattern)
+    '("public/apps/\\1/js/\\2/\\3.js" .
+      "public/apps/\\1/js/specs/\\2/\\3.spec.js"))
+
   (ffip-local-excludes
     "public/apps/.*/js/libs"
     "public/apps/.*/js/specs/libs")
@@ -44,6 +52,7 @@
 (project-specifics "projects/courses/proglang-2012-001"
   (set (make-local-variable 'git-base-path)
     "~/projects/courses/proglang-2012-001/")
+
   (ffip-local-patterns "*.sml"))
 
 ;; project switcher

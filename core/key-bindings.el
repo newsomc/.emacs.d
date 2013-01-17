@@ -28,7 +28,11 @@
   (global-set-key (read-kbd-macro (concat "H-" prefix " " key)) fun)
   (global-set-key (read-kbd-macro (concat "H-" prefix " C-" key)) fun))
 
+;; quoted insert since we use C-q as prefix key
 (global-set-key "\C-x\C-q"  'quoted-insert)
+
+;; rebind help apropos
+(define-key help-map "a" 'apropos)
 
 ;; rebind set mark to be more vim friendly
 (define-key global-map (kbd "C-v") 'set-mark-command)
@@ -37,6 +41,7 @@
 (define-key global-map (kbd "C-c TAB") 'noop)
 
 ;; C-j C-... mappings
+(global-set-key (kbd "C-j C-b") 'ibuffer)
 (global-set-key (kbd "C-j C-f") 'find-file-in-project)
 (global-set-key (kbd "C-j C-g") 'ag-fullscreen)
 (global-set-key (kbd "C-j C-i") 'change-inner)
@@ -60,6 +65,7 @@
 
 ;; C-,
 (c-pf-key "," "d" 'duplicate-current-line-or-region)
+(c-pf-key "," "k" 'kill-to-beginning-of-line)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
@@ -79,6 +85,7 @@
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j K") 'delete-current-buffer-file)
+(global-set-key (kbd "C-j be") 'ibuffer)
 
 (global-set-key (kbd "C-c N") 'cleanup-buffer)
 (global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
@@ -222,6 +229,7 @@
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-<return>") 'vi-open-line-below)
 (global-set-key (kbd "C-M-<return>") 'vi-open-line-above)
+(global-set-key (kbd "M-S-<return>") 'vi-open-line-above)
 
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
