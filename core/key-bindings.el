@@ -213,6 +213,7 @@
 (global-set-key [f12]  'call-last-kbd-macro)
 
 ;; modes
+(global-set-key (kbd "C-j C-m g") 'malko/toggle-glasses-mode)
 (global-set-key (kbd "C-j C-m i") 'malko/toggle-icy-mode)
 (global-set-key (kbd "C-j C-m s") 'malko/toggle-smartparens-mode)
 

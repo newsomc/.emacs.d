@@ -93,6 +93,11 @@ and so on."
 (malko/cycle-grep "next")
 (malko/cycle-grep "previous")
 
+;; modes
+(defun malko/toggle-glasses-mode ()
+  (interactive)
+  (call-interactively 'glasses-mode))
+
 ;; occur
 (defun malko/occur-active? ()
   (-contains? (buffer-names) "*Occur*"))
