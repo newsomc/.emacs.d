@@ -54,7 +54,7 @@
 (global-set-key (kbd "C-j C-t") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-v") 'magit-status)
-(global-set-key (kbd "C-j C-;") 'switch-to-next-window)
+(global-set-key (kbd "C-j C-w") 'switch-to-next-window)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
 (global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
