@@ -7,6 +7,12 @@
 (global-font-lock-mode t)
 (pending-delete-mode t)
 
+;; disable some prompts
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq kill-buffer-query-functions
+  (remq 'process-kill-buffer-query-function
+         kill-buffer-query-functions))
+
 ;; smooth scroll
 (require 'smooth-scrolling)
 

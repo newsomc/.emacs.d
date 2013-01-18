@@ -1,7 +1,6 @@
 (require 'linum)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
-; (global-hl-line-mode 1)
 
 ;; wrap lines
 (global-visual-line-mode 1)
@@ -27,7 +26,6 @@
 (setq-default truncate-lines t)
 
 (set-face-attribute 'linum nil :background "#222")
-; (set-face-background 'hl-line "#333")
 (set-face-foreground 'font-lock-warning-face "#ff6666")
 
 (show-paren-mode 1)
