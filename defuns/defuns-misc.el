@@ -7,6 +7,55 @@
                                        (match-end 1) ,unicode)
                        nil)))))))
 
+;; grep
+(malko/create-buffer-specific-cmds "grep" "*grep*")
+
+(defmacro malko/cycle-grep (name)
+  `(defun ,(intern (format "malko/%s-error-and-close" name)) ()
+    (interactive)
+    (if (malko/grep-active?)
+      (if (malko/grep-visible?)
+        (progn
+          (if (current-buffer-name-sw "*grep*")
+            (progn
+              (funcall ',(intern (format "%s-error" name))))
+            (progn
+              (kill-buffer (current-buffer))
+              (delete-window)
+              (funcall ',(intern (format "%s-error" name))))))
+        (progn
+          (switch-to-buffer "*grep*")
+          (delete-other-windows)
+          (funcall ',(intern (format "%s-error" name))))))))
+
+(malko/cycle-grep "next")
+(malko/cycle-grep "previous")
+
+;; help
+(malko/create-buffer-specific-cmds "help" "*Help*")
+
+;; logging messages
+(defun malko/switch-to-messages-buffer ()
+  (interactive)
+  (switch-to-buffer "*Messages*"))
+
+(defun malko/log-messages-off ()
+  (interactive)
+  (message "Logging commands: (OFF)")
+  (remove-hook 'post-command-hook 'malko/log-messages-on-hook))
+
+(defun malko/log-messages-on ()
+  (interactive)
+  (message "Logging commands: (ON)")
+  (remove-hook 'post-command-hook 'malko/log-messages-on-hook)
+  (switch-to-buffer "*Messages*")
+  (add-hook 'post-command-hook 'malko/log-messages-on-hook))
+
+(defun malko/log-messages-on-hook ()
+  (message "curr: %s, prev: %s"
+    (symbol-name this-command)
+    (symbol-name last-command)))
+
 (defun make-repeatable-command (cmd)
   "Returns a new command that is a repeatable version of CMD.
 The new command is named CMD-repeat.  CMD should be a quoted
@@ -29,9 +78,17 @@ and so on."
            (repeat nil)))
   (intern (concat (symbol-name cmd) "-repeat")))
 
+;; modes
+(defun malko/toggle-glasses-mode ()
+  (interactive)
+  (call-interactively 'glasses-mode))
+
 (defun noop ()
   (interactive)
   (message ""))
+
+;; occur
+(malko/create-buffer-specific-cmds "occur" "*Occur*")
 
 (defun quiet (key)
   (global-set-key (read-kbd-macro key)
@@ -55,83 +112,3 @@ and so on."
      (malko/previous-error-and-close))
     (t
       (unpop-to-mark-command))))
-
-;; grep
-(defun malko/grep-active? ()
-  (-contains? (buffer-names) "*grep*"))
-
-(defun malko/grep-visible? ()
-  (-contains? (visible-buffer-names) "*grep*"))
-
-(defun malko/kill-grep ()
-  (interactive)
-  (if (malko/grep-active?)
-    (if (malko/grep-visible?)
-      (progn
-        (switch-to-window-by-name "*grep*")
-        (kill-and-close-buffer))
-      (kill-buffer "*grep*"))))
-
-(defmacro malko/cycle-grep (name)
-  `(defun ,(intern (format "malko/%s-error-and-close" name)) ()
-    (interactive)
-    (if (malko/grep-active?)
-      (if (malko/grep-visible?)
-        (progn
-          (if (current-buffer-name-sw "*grep*")
-            (progn
-              (funcall ',(intern (format "%s-error" name))))
-            (progn
-              (kill-buffer (current-buffer))
-              (delete-window)
-              (funcall ',(intern (format "%s-error" name))))))
-        (progn
-          (switch-to-buffer "*grep*")
-          (delete-other-windows)
-          (funcall ',(intern (format "%s-error" name))))))))
-
-(malko/cycle-grep "next")
-(malko/cycle-grep "previous")
-
-;; modes
-(defun malko/toggle-glasses-mode ()
-  (interactive)
-  (call-interactively 'glasses-mode))
-
-;; occur
-(defun malko/occur-active? ()
-  (-contains? (buffer-names) "*Occur*"))
-
-(defun malko/occur-visible? ()
-  (-contains? (visible-buffer-names) "*Occur*"))
-
-(defun malko/kill-occur ()
-  (interactive)
-  (if (malko/occur-active?)
-    (if (malko/occur-visible?)
-      (progn
-        (switch-to-window-by-name "*Occur*")
-        (kill-and-close-buffer))
-      (kill-buffer "*occur*"))))
-
-;; logging messages
-(defun malko/switch-to-messages-buffer ()
-  (interactive)
-  (switch-to-buffer "*Messages*"))
-
-(defun malko/log-messages-off ()
-  (interactive)
-  (message "Logging commands: (OFF)")
-  (remove-hook 'post-command-hook 'malko/log-messages-on-hook))
-
-(defun malko/log-messages-on ()
-  (interactive)
-  (message "Logging commands: (ON)")
-  (remove-hook 'post-command-hook 'malko/log-messages-on-hook)
-  (switch-to-buffer "*Messages*")
-  (add-hook 'post-command-hook 'malko/log-messages-on-hook))
-
-(defun malko/log-messages-on-hook ()
-  (message "curr: %s, prev: %s"
-    (symbol-name this-command)
-    (symbol-name last-command)))

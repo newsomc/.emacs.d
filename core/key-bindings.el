@@ -44,6 +44,7 @@
 (global-set-key (kbd "C-j C-b") 'ibuffer)
 (global-set-key (kbd "C-j C-f") 'find-file-in-project)
 (global-set-key (kbd "C-j C-g") 'ag-fullscreen)
+(global-set-key (kbd "C-j C-h") 'malko/kill-help)
 (global-set-key (kbd "C-j C-i") 'change-inner)
 (global-set-key (kbd "C-j C-j") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-j C-l") 'ace-jump-line-mode)
@@ -55,6 +56,7 @@
 (global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-v") 'magit-status)
 (global-set-key (kbd "C-j C-w") 'switch-to-next-window)
+(global-set-key (kbd "C-j C-;") 'set-mark-command)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
 (global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
@@ -144,6 +146,9 @@
 (global-set-key (kbd "M-i") 'malko/step-in)
 (global-set-key (kbd "M-o") 'malko/step-out)
 
+;; help
+(global-set-key (kbd "C-j hk") 'malko/kill-help)
+
 ;; hide-show (code folding)
 (global-set-key (kbd "C-j zt") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j zM") 'hs-hide-all)
@@ -213,7 +218,7 @@
 (global-set-key [f12]  'call-last-kbd-macro)
 
 ;; modes
-(global-set-key (kbd "C-j C-m g") 'malko/toggle-glasses-mode)
+(global-set-key (kbd "C-j C-m c") 'malko/toggle-glasses-mode)
 (global-set-key (kbd "C-j C-m i") 'malko/toggle-icy-mode)
 (global-set-key (kbd "C-j C-m s") 'malko/toggle-smartparens-mode)
 
@@ -238,8 +243,11 @@
 (global-set-key (kbd "C-j om") 'multi-occur)
 (global-set-key (kbd "C-j ob") 'multi-occur-in-all-open-buffers)
 
+(define-key occur-mode-map (kbd "o") 'occur-mode-display-occurrence)
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
+(define-key occur-mode-map (kbd "j") 'next-line)
 (define-key occur-mode-map (kbd "n") 'next-line)
+(define-key occur-mode-map (kbd "k") 'previous-line)
 (define-key occur-mode-map (kbd "p") 'previous-line)
 
 ;; perspectives

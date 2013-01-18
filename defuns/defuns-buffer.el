@@ -147,6 +147,24 @@ Symbols matching the text at point are put first in the completion list."
     (set-buffer-modified-p nil)
     (kill-buffer buf)))
 
+(defmacro malko/create-buffer-specific-cmds (cmd buffer-name)
+  `(progn
+
+    (defun ,(intern (format "malko/%s-active?" cmd)) ()
+      (-contains? (buffer-names) ,buffer-name))
+
+    (defun ,(intern (format "malko/%s-visible?" cmd)) ()
+      (-contains? (visible-buffer-names) ,buffer-name))
+
+    (defun ,(intern (format "malko/kill-%s" cmd)) ()
+      (interactive)
+      (if (funcall ',(intern (format "malko/%s-active?" cmd)))
+        (if (funcall ',(intern (format "malko/%s-visible?" cmd)))
+          (progn
+            (switch-to-window-by-name ,buffer-name)
+            (kill-and-close-buffer))
+          (kill-buffer ,buffer-name))))))
+
 (defun multi-occur-in-all-open-buffers (regexp &optional allbufs)
   "Show all lines matching REGEXP in all buffers."
   (interactive (occur-read-primary-args))
