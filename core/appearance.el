@@ -5,6 +5,9 @@
 ;; wrap lines
 (global-visual-line-mode 1)
 
+;; winner-mode
+(winner-mode 1)
+
 (setq visual-line-fringe-indicators
       '(left-curly-arrow right-curly-arrow))
 
