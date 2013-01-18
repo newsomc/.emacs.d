@@ -168,6 +168,17 @@
 (global-set-key (kbd "C-, <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "M-s <backtab>") 'icicle-complete-keys)
 
+;; ido
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file) ; ido-recentf-open
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+;; jump-char
+(global-set-key (kbd "M-m") 'jump-char-forward)
+(global-set-key (kbd "M-M") 'jump-char-backward)
+
+;; layouts
+(define-key global-map (kbd "C-j yy") 'malko/layouts-spec-and-file)
+
 ;; lines
 (define-key global-map (kbd "C-a") 'beginning-of-line)
 (define-key global-map (kbd "C-e") 'end-of-line)
@@ -193,14 +204,6 @@
 (global-set-key (kbd "C-j mm") 'malko/log-messages-on)
 (global-set-key (kbd "C-j mo") 'malko/log-messages-off)
 (global-set-key (kbd "C-j ms") 'malko/switch-to-messages-buffer)
-
-;; jump-char
-(global-set-key (kbd "M-m") 'jump-char-forward)
-(global-set-key (kbd "M-M") 'jump-char-backward)
-
-;; ido
-(global-set-key (kbd "C-x f") 'recentf-ido-find-file) ; ido-recentf-open
-(global-set-key (kbd "C-x C-i") 'ido-imenu)
 
 ;; mac-friendly
 (global-set-key (kbd "M-c") 'kill-ring-save) ;; subword-capitalize
@@ -240,8 +243,7 @@
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
 (global-set-key (kbd "C-j ok") 'malko/kill-occur)
-(global-set-key (kbd "C-j om") 'multi-occur)
-(global-set-key (kbd "C-j ob") 'multi-occur-in-all-open-buffers)
+(global-set-key (kbd "C-j om") 'multi-occur-in-all-open-buffers)
 
 (define-key occur-mode-map (kbd "o") 'occur-mode-display-occurrence)
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
