@@ -59,11 +59,11 @@
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
 (global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
 
-;; C-q
+;; C-q / H-[ / C-z / C-,
+(h-pf-key "[" "[" (make-repeatable-command 'winner-undo))
+(global-set-key (kbd "H-[ H-[") (make-repeatable-command 'winner-undo))
+(h-pf-key "[" "]" 'winner-redo)
 
-;; C-z
-
-;; C-,
 (c-pf-key "," "d" 'duplicate-current-line-or-region)
 (c-pf-key "," "k" 'kill-to-beginning-of-line)
 
