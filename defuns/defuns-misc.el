@@ -7,12 +7,21 @@
                                        (match-end 1) ,unicode)
                        nil)))))))
 
+;; buffer local variables
+(defmacro bvar (name value)
+  `(set (make-local-variable ,name) ,value))
+
 ;; folding
 (defun jao-toggle-selective-display (column)
   (interactive "P")
   (set-selective-display
-   (if selective-display nil
-     (if column (1- (* 2 column)) 1))))
+    (cond
+      ((number-or-marker-p column)
+       (bvar 'sd--column (1- (* 2 column)))
+       sd--column)
+      ((eq selective-display nil)
+       (if (boundp 'sd--column) sd--column 1))
+      (t nil))))
 
 ;; grep
 (malko/create-buffer-specific-cmds "grep" "*grep*")
