@@ -165,6 +165,10 @@
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
 (global-set-key (kbd "C->") 'hippie-expand-lines)
 
+;; ibuffer
+(define-key ibuffer-mode-map (kbd "j") 'ibuffer-forward-line)
+(define-key ibuffer-mode-map (kbd "k") 'ibuffer-backward-line)
+
 ;; icicles
 (global-set-key (kbd "H-[ <backtab>") 'icicle-complete-keys)
 (global-set-key (kbd "C-q <backtab>") 'icicle-complete-keys)
