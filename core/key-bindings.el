@@ -149,6 +149,11 @@
 ;; help
 (global-set-key (kbd "C-j hk") 'malko/kill-help)
 
+(define-key help-mode-map (kbd "j") 'next-line)
+(define-key help-mode-map (kbd "n") 'next-line)
+(define-key help-mode-map (kbd "k") 'previous-line)
+(define-key help-mode-map (kbd "p") 'previous-line)
+
 ;; hide-show (code folding)
 (global-set-key (kbd "C-j zt") 'hs-toggle-hiding)
 (global-set-key (kbd "C-j zM") 'hs-hide-all)
