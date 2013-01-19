@@ -41,7 +41,7 @@
 (define-key global-map (kbd "C-c TAB") 'noop)
 
 ;; C-j C-... mappings
-(global-set-key (kbd "C-j C-b") 'ibuffer)
+(global-set-key (kbd "C-j C-e") 'ibuffer)
 (global-set-key (kbd "C-j C-f") 'find-file-in-project)
 (global-set-key (kbd "C-j C-g") 'ag-fullscreen)
 (global-set-key (kbd "C-j C-h") 'malko/kill-help)
