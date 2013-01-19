@@ -131,8 +131,15 @@
 (global-set-key (kbd "C-j C-/ r")
   (ffip-create-pattern-file-finder "*.rb"))
 
-;; fold-this
+;; folding
 (global-set-key (kbd "C-j tt") 'fold-this-unfold-all)
+(global-set-key [f1] 'jao-toggle-selective-display)
+
+(global-set-key (kbd "C-j zt") 'hs-toggle-hiding) ;; hide-show
+(global-set-key (kbd "C-j zM") 'hs-hide-all)
+(global-set-key (kbd "C-j zm") 'hs-hide-block)
+(global-set-key (kbd "C-j zR") 'hs-show-all)
+(global-set-key (kbd "C-j zr") 'hs-show-block)
 
 ;; follow-mode
 (global-set-key (kbd "C-j fm") 'follow-mode)
@@ -153,13 +160,6 @@
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "k") 'previous-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
-
-;; hide-show (code folding)
-(global-set-key (kbd "C-j zt") 'hs-toggle-hiding)
-(global-set-key (kbd "C-j zM") 'hs-hide-all)
-(global-set-key (kbd "C-j zm") 'hs-hide-block)
-(global-set-key (kbd "C-j zR") 'hs-show-all)
-(global-set-key (kbd "C-j zr") 'hs-show-block)
 
 ;; hippie-expand
 (global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)

@@ -7,6 +7,13 @@
                                        (match-end 1) ,unicode)
                        nil)))))))
 
+;; folding
+(defun jao-toggle-selective-display (column)
+  (interactive "P")
+  (set-selective-display
+   (if selective-display nil
+     (if column (1- (* 2 column)) 1))))
+
 ;; grep
 (malko/create-buffer-specific-cmds "grep" "*grep*")
 
