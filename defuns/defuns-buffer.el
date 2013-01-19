@@ -63,6 +63,10 @@ might be bad."
 (defun current-line ()
   (line-number-at-pos))
 
+(defun current-major-mode ()
+  "Returns the major mode associated with current buffer"
+  (with-current-buffer (current-buffer) major-mode))
+
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)

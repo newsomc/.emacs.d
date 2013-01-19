@@ -17,8 +17,7 @@
                 (find-file "~/.emacs.d/")))
 
 (project-specifics ".emacs.d"
-  (set (make-local-variable 'git-base-path)
-    "~/.emacs.d/")
+  (bvarp 'git-base-path "~/.emacs.d/")
 
   (ffip-local-patterns "*.el" "*.md"))
 
@@ -28,13 +27,13 @@
   (custom-persp "instajams"
                 (find-file "~/projects/js/jam_mode/")))
 
+;; (put 'magit--bisect-info 'permanent-local t)
 (project-specifics "projects/js/jam_mode"
-  (set (make-local-variable 'git-base-path)
-    "~/projects/js/jam_mode/")
-  (set (make-local-variable 'jump-from-test--pattern)
+  (bvarp 'git-base-path "~/projects/js/jam_mode/")
+  (bvarp 'jump-from-test--pattern
     '("public/apps/\\1/js/specs/\\2/\\3.spec.js" .
       "public/apps/\\1/js/\\2/\\3.js"))
-  (set (make-local-variable 'jump-to-test--pattern)
+  (bvarp 'jump-to-test--pattern
     '("public/apps/\\1/js/\\2/\\3.js" .
       "public/apps/\\1/js/specs/\\2/\\3.spec.js"))
 
@@ -50,8 +49,7 @@
                 (find-file "~/projects/courses/proglang-2012-001/")))
 
 (project-specifics "projects/courses/proglang-2012-001"
-  (set (make-local-variable 'git-base-path)
-    "~/projects/courses/proglang-2012-001/")
+  (bvarp 'git-base-path "~/projects/courses/proglang-2012-001/")
 
   (ffip-local-patterns "*.sml"))
 

@@ -41,6 +41,7 @@
 (define-key global-map (kbd "C-c TAB") 'noop)
 
 ;; C-j C-... mappings
+(global-set-key (kbd "C-j C-a") 'malko/apply-macro-to-end-of-buffer)
 (global-set-key (kbd "C-j C-e") 'ibuffer)
 (global-set-key (kbd "C-j C-f") 'find-file-in-project)
 (global-set-key (kbd "C-j C-g") 'ag-fullscreen)
@@ -56,6 +57,7 @@
 (global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-v") 'magit-status)
 (global-set-key (kbd "C-j C-w") 'switch-to-next-window)
+(global-set-key (kbd "C-j C-y") 'malko/layouts-spec-and-file)
 (global-set-key (kbd "C-j C-;") 'set-mark-command)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
@@ -231,7 +233,7 @@
 
 ;; modes
 (global-set-key (kbd "C-j C-m c") 'malko/toggle-glasses-mode)
-(global-set-key (kbd "C-j C-m i") 'malko/toggle-icy-mode)
+(global-set-key (kbd "C-j C-m h") 'malko/toggle-icy-mode)
 (global-set-key (kbd "C-j C-m s") 'malko/toggle-smartparens-mode)
 
 ;; multiple-cursors

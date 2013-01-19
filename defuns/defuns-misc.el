@@ -11,6 +11,11 @@
 (defmacro bvar (name value)
   `(set (make-local-variable ,name) ,value))
 
+(defmacro bvarp (name value)
+  `(progn
+    (set (make-local-variable ,name) ,value)
+    (put ,name 'permanent-local t)))
+
 ;; folding
 (defun jao-toggle-selective-display (column)
   (interactive "P")
@@ -72,6 +77,17 @@
     (symbol-name this-command)
     (symbol-name last-command)))
 
+;; macros
+(defun malko/apply-macro-to-end-of-buffer ()
+  (interactive)
+  (unless (null last-kbd-macro)
+    (save-excursion
+      (beginning-of-line)
+      (push-mark (point))
+      (push-mark (point-max) nil t)
+      (call-interactively 'apply-macro-to-region-lines))))
+
+;; make repeatable commands
 (defun make-repeatable-command (cmd)
   "Returns a new command that is a repeatable version of CMD.
 The new command is named CMD-repeat.  CMD should be a quoted
