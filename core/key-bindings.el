@@ -13,7 +13,7 @@
 
 ;; leader keys
 (-each '("C-q" "H-[" "C-j" "C-z" "C-,"
-         "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
+         "<f2>" "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
          (define-prefix-command (intern (concat key "-map")))
