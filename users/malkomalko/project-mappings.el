@@ -14,7 +14,7 @@
 (defun custom-persp/emacs ()
   (interactive)
   (custom-persp "emacs"
-                (find-file "~/.emacs.d/")))
+                (find-file "~/.emacs.d/core/key-bindings.el")))
 
 (project-specifics ".emacs.d"
   (bvarp 'git-base-path "~/.emacs.d/")
@@ -27,7 +27,6 @@
   (custom-persp "instajams"
                 (find-file "~/projects/js/jam_mode/")))
 
-;; (put 'magit--bisect-info 'permanent-local t)
 (project-specifics "projects/js/jam_mode"
   (bvarp 'git-base-path "~/projects/js/jam_mode/")
   (bvarp 'jump-from-test--pattern
