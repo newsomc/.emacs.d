@@ -66,7 +66,7 @@
   (require (intern (file-name-from-path-no-ext file))))
 
 ;; load color theme
-(require 'tomorrow-night-theme)
+(require 'subatomic-theme)
 
 ;; core
 (require 'appearance)
