@@ -38,6 +38,9 @@
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
 
+;; message buffer size
+(setq message-log-max 10000)
+
 ;; utf-8
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
