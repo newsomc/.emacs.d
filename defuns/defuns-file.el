@@ -43,6 +43,9 @@
 (defun file-name-from-path-no-ext (file)
   (file-name-sans-extension (file-name-nondirectory file)))
 
+(defun file-name-no-extension ()
+  (file-name-sans-extension buffer-file-name))
+
 (defun file-name-with-one-directory (file-name)
   (concat (cadr (reverse (split-string file-name "/"))) "/"
           (file-name-nondirectory file-name)))
