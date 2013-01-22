@@ -137,7 +137,7 @@
   (ffip-create-pattern-file-finder "*.rb"))
 
 ;; folding
-(global-set-key (kbd "C-j tt") 'fold-this-unfold-all)
+(global-set-key (kbd "C-j zT") 'fold-this-unfold-all)
 (global-set-key [f1] 'jao-toggle-selective-display)
 
 (global-set-key (kbd "C-j zt") 'hs-toggle-hiding) ;; hide-show
@@ -209,6 +209,7 @@
 (define-key global-map (kbd "C-j lw") 'mark-whole-buffer) ;; C-x h
 (define-key global-map (kbd "C-j lx") 'malko/mark-lines-cut)
 (define-key global-map (kbd "C-j l/") 'malko/mark-lines-comment)
+(define-key global-map (kbd "C-j l;") 'malko/mark-lines-comment)
 
 ;; lisp
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)
