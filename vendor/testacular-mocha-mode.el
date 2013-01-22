@@ -13,11 +13,21 @@
   (malko/kill-tm-tests)
   (split-window-below)
   (windmove-down)
+  (halve-current-window-height)
   (let ((tm-git-base-path git-base-path))
     (ansi-term "/bin/bash" (tm-mode--compilation-buffer-name))
+    (tm/setup-term-mode-map)
     (tm-run-shell-commands "PROMPT_COMMAND=\"PS1='> '\""
                            "clear"
                            (tm-compile-command tm-git-base-path test-cmd))))
+
+(defun tm-next-failure ()
+  (interactive)
+  (search-forward "FAILED"))
+
+(defun tm-prev-failure ()
+  (interactive)
+  (search-backward "FAILED"))
 
 (defun tm-compile-command (tm-git-base-path test-cmd)
   (format "cd %s; %s" tm-git-base-path test-cmd))
@@ -36,14 +46,22 @@
       ((s-contains? "public/apps/main" (buffer-file-name))
        (tm-open-term (format "make main_tests FILE=%s" spec-file))))))
 
-(define-key tm-mode-map
-  (kbd "C-j ta") 'tm-run-all-tests)
+(defun tm-switch-to-test-window ()
+  (interactive)
+  (switch-to-window-by-name "*tm-test*")
+  (balance-windows))
 
-(define-key tm-mode-map
-  (kbd "C-j tt") 'tm-run-test)
+(define-key tm-mode-map (kbd "C-j ta") 'tm-run-all-tests)
+(define-key tm-mode-map (kbd "C-j ts") 'tm-switch-to-test-window)
+(define-key tm-mode-map (kbd "C-j tt") 'tm-run-test)
 
-(defun tm-mode--compilation-buffer-name (&rest ignore)
-  "*tm-test*")
+(defun tm/setup-term-mode-map ()
+  (when (term-in-char-mode)
+    (use-local-map term-old-mode-map)
+    (define-key term-old-mode-map (kbd "M-n") 'tm-next-failure)
+    (define-key term-old-mode-map (kbd "M-p") 'tm-prev-failure)))
+
+(defun tm-mode--compilation-buffer-name (&rest ignore) "tm-test")
 
 (define-minor-mode testacular-mocha-mode
   "Testacular-Mocha mode" nil " TM" tm-mode-map
