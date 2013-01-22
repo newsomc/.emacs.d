@@ -1,3 +1,13 @@
+(defun halve-current-window-height ()
+  "Contract current window to use half of the other window's lines."
+  (interactive)
+  (enlarge-window (- (/ (window-height) 2))))
+
+(defun halve-other-window-height ()
+  "Expand current window to use half of the other window's lines."
+  (interactive)
+  (enlarge-window (/ (window-height) 2)))
+
 (defun rotate-windows ()
   "Rotate your windows"
   (interactive)

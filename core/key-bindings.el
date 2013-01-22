@@ -303,10 +303,16 @@
 (global-set-key (kbd "C--") 'undo-tree-undo)
 (global-set-key (kbd "C-_") 'undo-tree-redo)
 
-;; window movement
+;; windows
 (global-set-key (kbd "C-x C-o") 'switch-to-next-window)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
+
+(global-set-key (kbd "C-j [")
+  (make-repeatable-command 'halve-current-window-height))
+(global-set-key (kbd "C-j ]")
+  (make-repeatable-command 'halve-other-window-height))
+(global-set-key (kbd "C-j \\") 'balance-windows)
 
 (-each '("C" "M" "S") (lambda (key)
   (global-set-key (read-kbd-macro (concat key "-<up>")) 'windmove-up)
