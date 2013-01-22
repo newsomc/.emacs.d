@@ -43,6 +43,7 @@
 ;; C-j C-... mappings
 (global-set-key (kbd "C-j C-a") 'malko/apply-macro-to-end-of-buffer)
 (global-set-key (kbd "C-j C-c") 'copy-whole-lines)
+(global-set-key (kbd "C-j C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-j C-e") 'ibuffer)
 (global-set-key (kbd "C-j C-f") 'find-file-in-project)
 (global-set-key (kbd "C-j C-g") 'ag-fullscreen)
@@ -225,6 +226,7 @@
 (global-set-key (kbd "M-p") 'scroll-down-command)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-x") 'kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
 
@@ -284,7 +286,6 @@
 ;;  C-h f [describe-function]
 ;;  C-h w [where-is]
 ;;  M-. [jumps to the definition]
-(global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
