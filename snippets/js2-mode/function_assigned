@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: function_assigned
-# key: f
-# binding: C-j C-k a
+# key: fa
+# binding: C-q a
 # --
 var ${1:name} = function($2){
   $0

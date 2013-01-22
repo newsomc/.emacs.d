@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: function
 # key: f
-# binding: C-j C-k f
+# binding: C-q f
 # --
 function($1){
   $0

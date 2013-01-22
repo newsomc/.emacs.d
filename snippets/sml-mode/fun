@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: fun
 # key: f
-# binding: C-j C-k f
+# binding: C-q f
 # --
 fun ${1:fun_name} ($2) =
     $0

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: use
 # key: u
-# binding: C-j C-k u
+# binding: C-q u
 # --
 use "$1";

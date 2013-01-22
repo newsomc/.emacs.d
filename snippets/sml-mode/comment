@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: comment
 # key: (*
-# binding: C-j C-k /
+# binding: C-q /
 # --
 (* $1 *)

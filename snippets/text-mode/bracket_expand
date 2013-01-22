@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: bracket_expand
-# binding: C-j C-k k
+# binding: C-q k
 # --
 {
   $0
