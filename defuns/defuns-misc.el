@@ -3,9 +3,9 @@
 (defun add-font-lock-kw (mode kw unicode)
   (let ((re (concat "\\(" kw "\\)")))
     (font-lock-add-keywords mode
-      `((,re (0 (progn (compose-region (match-beginning 1)
-                                       (match-end 1) ,unicode)
-                       nil)))))))
+                            `((,re (0 (progn (compose-region (match-beginning 1)
+                                                             (match-end 1) ,unicode)
+                                             nil)))))))
 
 ;; buffer local variables
 (defmacro bvar (name value)
@@ -13,41 +13,41 @@
 
 (defmacro bvarp (name value)
   `(progn
-    (set (make-local-variable ,name) ,value)
-    (put ,name 'permanent-local t)))
+     (set (make-local-variable ,name) ,value)
+     (put ,name 'permanent-local t)))
 
 ;; folding
 (defun jao-toggle-selective-display (column)
   (interactive "P")
   (set-selective-display
-    (cond
-      ((number-or-marker-p column)
-       (bvar 'sd--column (1- (* 2 column)))
-       sd--column)
-      ((eq selective-display nil)
-       (if (boundp 'sd--column) sd--column 1))
-      (t nil))))
+   (cond
+    ((number-or-marker-p column)
+     (bvar 'sd--column (1- (* 2 column)))
+     sd--column)
+    ((eq selective-display nil)
+     (if (boundp 'sd--column) sd--column 1))
+    (t nil))))
 
 ;; grep
 (malko/create-buffer-specific-cmds "grep" "*grep*")
 
 (defmacro malko/cycle-grep (name)
   `(defun ,(intern (format "malko/%s-error-and-close" name)) ()
-    (interactive)
-    (if (malko/grep-active?)
-      (if (malko/grep-visible?)
-        (progn
-          (if (current-buffer-name-sw "*grep*")
-            (progn
-              (funcall ',(intern (format "%s-error" name))))
-            (progn
-              (kill-buffer (current-buffer))
-              (delete-window)
-              (funcall ',(intern (format "%s-error" name))))))
-        (progn
-          (switch-to-buffer "*grep*")
-          (delete-other-windows)
-          (funcall ',(intern (format "%s-error" name))))))))
+     (interactive)
+     (if (malko/grep-active?)
+         (if (malko/grep-visible?)
+             (progn
+               (if (current-buffer-name-sw "*grep*")
+                   (progn
+                     (funcall ',(intern (format "%s-error" name))))
+                 (progn
+                   (kill-buffer (current-buffer))
+                   (delete-window)
+                   (funcall ',(intern (format "%s-error" name))))))
+           (progn
+             (switch-to-buffer "*grep*")
+             (delete-other-windows)
+             (funcall ',(intern (format "%s-error" name))))))))
 
 (malko/cycle-grep "next")
 (malko/cycle-grep "previous")
@@ -75,8 +75,8 @@
 
 (defun malko/log-messages-on-hook ()
   (message "curr: %s, prev: %s"
-    (symbol-name this-command)
-    (symbol-name last-command)))
+           (symbol-name this-command)
+           (symbol-name last-command)))
 
 ;; macros
 (defun malko/apply-macro-to-end-of-buffer ()
@@ -125,23 +125,23 @@ and so on."
 
 (defun quiet (key)
   (global-set-key (read-kbd-macro key)
-    (lambda ()
-      (interactive)
-      (message ""))))
+                  (lambda ()
+                    (interactive)
+                    (message ""))))
 
 ;; stepping in/out
 (defun malko/step-in ()
   (interactive)
   (cond
-    ((malko/grep-visible?)
-     (malko/next-error-and-close))
-    (t
-      (pop-to-mark-command))))
+   ((malko/grep-visible?)
+    (malko/next-error-and-close))
+   (t
+    (winner-undo))))
 
 (defun malko/step-out ()
   (interactive)
   (cond
-    ((malko/grep-visible?)
-     (malko/previous-error-and-close))
-    (t
-      (unpop-to-mark-command))))
+   ((malko/grep-visible?)
+    (malko/previous-error-and-close))
+   (t
+    (winner-redo))))

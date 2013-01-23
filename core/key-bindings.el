@@ -126,15 +126,15 @@
 (global-set-key (kbd "C-j ff") 'find-file-in-project)
 
 (global-set-key (kbd "C-j C-/ c")
-  (ffip-create-pattern-file-finder "*.css" "*styl"))
+                (ffip-create-pattern-file-finder "*.css" "*styl"))
 (global-set-key (kbd "C-j C-/ e")
-  (ffip-create-pattern-file-finder "*.el"))
+                (ffip-create-pattern-file-finder "*.el"))
 (global-set-key (kbd "C-j C-/ h")
-  (ffip-create-pattern-file-finder "*.html" "*.jade"))
+                (ffip-create-pattern-file-finder "*.html" "*.jade"))
 (global-set-key (kbd "C-j C-/ j")
-  (ffip-create-pattern-file-finder "*.js"))
+                (ffip-create-pattern-file-finder "*.js"))
 (global-set-key (kbd "C-j C-/ r")
-  (ffip-create-pattern-file-finder "*.rb"))
+                (ffip-create-pattern-file-finder "*.rb"))
 
 ;; folding
 (global-set-key (kbd "C-j zT") 'fold-this-unfold-all)
@@ -246,9 +246,9 @@
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-j ca") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-j >")
-  (make-repeatable-command 'mc/mark-next-like-this))
+                (make-repeatable-command 'mc/mark-next-like-this))
 (global-set-key (kbd "C-j <")
-  (make-repeatable-command 'mc/mark-previous-like-this))
+                (make-repeatable-command 'mc/mark-previous-like-this))
 
 ;; newline
 (global-set-key (kbd "M-<return>") 'vi-open-line-below)
@@ -309,18 +309,19 @@
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 (global-set-key (kbd "C-j j") (make-repeatable-command 'other-window))
+(global-set-key (kbd "C-j wr") 'reset-winner-mode)
 
 (global-set-key (kbd "C-j [")
-  (make-repeatable-command 'halve-current-window-height))
+                (make-repeatable-command 'halve-current-window-height))
 (global-set-key (kbd "C-j ]")
-  (make-repeatable-command 'halve-other-window-height))
+                (make-repeatable-command 'halve-other-window-height))
 (global-set-key (kbd "C-j \\") 'balance-windows)
 
 (-each '("C" "M" "S") (lambda (key)
-  (global-set-key (read-kbd-macro (concat key "-<up>")) 'windmove-up)
-  (global-set-key (read-kbd-macro (concat key "-<down>")) 'windmove-down)
-  (global-set-key (read-kbd-macro (concat key "-<left>")) 'windmove-left)
-  (global-set-key (read-kbd-macro (concat key "-<right>")) 'windmove-right)))
+                        (global-set-key (read-kbd-macro (concat key "-<up>")) 'windmove-up)
+                        (global-set-key (read-kbd-macro (concat key "-<down>")) 'windmove-down)
+                        (global-set-key (read-kbd-macro (concat key "-<left>")) 'windmove-left)
+                        (global-set-key (read-kbd-macro (concat key "-<right>")) 'windmove-right)))
 
 ;; yasnippet
 (global-set-key (kbd "C-j sc") 'yas-create-new-snippet)

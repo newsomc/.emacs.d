@@ -8,6 +8,10 @@
   (interactive)
   (enlarge-window (/ (window-height) 2)))
 
+(defun reset-winner-mode ()
+  (interactive)
+  (setq winner-ring-alist nil))
+
 (defun rotate-windows ()
   "Rotate your windows"
   (interactive)
@@ -39,8 +43,8 @@
 
 (defun switch-to-window-by-name (name)
   (if (-contains? (visible-buffer-names) name)
-    (if (not (current-buffer-name-sw name))
-      (switch-to-buffer-other-window name))))
+      (if (not (current-buffer-name-sw name))
+          (switch-to-buffer-other-window name))))
 
 (defun toggle-window-split ()
   (interactive)
@@ -66,4 +70,3 @@
           (set-window-buffer (next-window) next-win-buffer)
           (select-window first-win)
           (if this-win-2nd (other-window 1))))))
-
