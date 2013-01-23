@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: expect
+# key: ex
+# binding: C-q C-e
+# --
+expect(${1:subject}).${2:eql}${3:($4)}

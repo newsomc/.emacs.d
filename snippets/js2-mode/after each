@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: after each
+# key: ae
+# binding: C-q C-a
+# --
+afterEach(function(){
+  $0
+})

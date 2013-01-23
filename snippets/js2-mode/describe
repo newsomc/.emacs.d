@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: describe
+# key: des
+# binding: C-q C-d
+# --
+describe("$1", function(){
+
+  $0
+
+})

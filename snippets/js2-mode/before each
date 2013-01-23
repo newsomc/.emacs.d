@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: before each
+# key: be
+# binding: C-q C-b
+# --
+beforeEach(function(){
+  $0
+})
