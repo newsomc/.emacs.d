@@ -55,11 +55,11 @@
                                      "\\([0-9]+\\)"
                                      ":"
                                      "\\([0-9]+\\))") nil t)
-    (let* ((file (replace-regexp-in-string "\n" "" (match-string 1)))
-           (line (string-to-number
-             (replace-regexp-in-string "\n" "" (match-string 2))))
-           (column (string-to-number
-             (replace-regexp-in-string "\n" "" (match-string 3)))))
+    (let ((file (replace-regexp-in-string "\n" "" (match-string 1)))
+          (line (string-to-number
+            (replace-regexp-in-string "\n" "" (match-string 2))))
+          (column (string-to-number
+            (replace-regexp-in-string "\n" "" (match-string 3)))))
       (message file)
       (windmove-up)
       (find-file file)
@@ -68,9 +68,16 @@
 (defun tm-switch-to-test-window ()
   (interactive)
   (switch-to-window-by-name "*tm-test*")
-  (balance-windows))
+  (end-of-buffer))
+
+(defun tm-switch-to-test-window-and-expand ()
+  (interactive)
+  (switch-to-window-by-name "*tm-test*")
+  (balance-windows)
+  (end-of-buffer))
 
 (define-key tm-mode-map (kbd "C-j ta") 'tm-run-all-tests)
+(define-key tm-mode-map (kbd "C-j te") 'tm-switch-to-test-window-and-expand)
 (define-key tm-mode-map (kbd "C-j ts") 'tm-switch-to-test-window)
 (define-key tm-mode-map (kbd "C-j tt") 'tm-run-test)
 
