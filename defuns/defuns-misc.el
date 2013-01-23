@@ -133,7 +133,7 @@ and so on."
 (defun malko/step-in ()
   (interactive)
   (cond
-    ((malko/grep-active?)
+    ((malko/grep-visible?)
      (malko/next-error-and-close))
     (t
       (pop-to-mark-command))))
@@ -141,7 +141,7 @@ and so on."
 (defun malko/step-out ()
   (interactive)
   (cond
-    ((malko/grep-active?)
+    ((malko/grep-visible?)
      (malko/previous-error-and-close))
     (t
       (unpop-to-mark-command))))
