@@ -48,7 +48,22 @@
        (tm-open-term (format "make main_tests FILE=%s" spec-file))))))
 
 (defun tm-jump-to-failure ()
-  (interactive))
+  (interactive)
+  (if (search-forward-regexp (concat "("
+                                     "\\(/[\0-\377[:nonascii:]]*\\)"
+                                     ":"
+                                     "\\([0-9]+\\)"
+                                     ":"
+                                     "\\([0-9]+\\))") nil t)
+    (let* ((file (replace-regexp-in-string "\n" "" (match-string 1)))
+           (line (string-to-number
+             (replace-regexp-in-string "\n" "" (match-string 2))))
+           (column (string-to-number
+             (replace-regexp-in-string "\n" "" (match-string 3)))))
+      (message file)
+      (windmove-up)
+      (find-file file)
+      (goto-line-and-column line column))))
 
 (defun tm-switch-to-test-window ()
   (interactive)
