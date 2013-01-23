@@ -40,30 +40,53 @@
 (defun tm-run-test ()
   (interactive)
   (let ((spec-file
-        (car (last (split-string (file-name-no-extension) "specs/")))))
+         (car (last (split-string (file-name-no-extension) "specs/")))))
     (cond
-      ((s-contains? "public/apps/jam" (buffer-file-name))
-       (tm-open-term (format "make jam_tests FILE=%s" spec-file)))
-      ((s-contains? "public/apps/main" (buffer-file-name))
-       (tm-open-term (format "make main_tests FILE=%s" spec-file))))))
+     ((s-contains? "public/apps/jam" (buffer-file-name))
+      (tm-open-term (format "make jam_tests FILE=%s" spec-file)))
+     ((s-contains? "public/apps/main" (buffer-file-name))
+      (tm-open-term (format "make main_tests FILE=%s" spec-file))))))
+
+(defun tm--error-body-with-newlines ()
+  (save-excursion
+    (push-mark (point) t)
+    (tm-next-failure)
+    (buffer-substring-no-properties (region-beginning) (region-end))))
+
+(defun tm--error-body ()
+  (replace-regexp-in-string "\n" "" (tm--error-body-with-newlines)))
+
+(defun tm--match-string-all (&optional string)
+  "Return the list of all expressions matched in last search.
+
+  STRING is optionally what was given to `string-match'."
+  (let ((n-matches (1- (/ (length (match-data)) 2))))
+    (mapcar (lambda (i) (match-string i string))
+            (number-sequence 1 n-matches))))
+
+(defun tm--match-strings-all (re str &optional pos)
+  (if (string-match re str (or pos 0))
+      (cons (tm--match-string-all str)
+            (tm--match-strings-all re str (match-end 0)))
+    '()))
+
+(defun tm--error-stack ()
+  (let ((error-body (tm--error-body)))
+    (tm--match-strings-all
+     "(\\([^\)]*\\):\\([0-9]+\\):\\([0-9]+\\))" error-body)))
 
 (defun tm-jump-to-failure ()
   (interactive)
-  (if (search-forward-regexp (concat "("
-                                     "\\(/[\0-\377[:nonascii:]]*\\)"
-                                     ":"
-                                     "\\([0-9]+\\)"
-                                     ":"
-                                     "\\([0-9]+\\))") nil t)
-    (let ((file (replace-regexp-in-string "\n" "" (match-string 1)))
-          (line (string-to-number
-            (replace-regexp-in-string "\n" "" (match-string 2))))
-          (column (string-to-number
-            (replace-regexp-in-string "\n" "" (match-string 3)))))
-      (message file)
-      (windmove-up)
-      (find-file file)
-      (goto-line-and-column line column))))
+  (let* ((error-stack (tm--error-stack))
+         (last-error (car error-stack)))
+    (if error-stack
+        (let ((file (nth 0 last-error))
+              (line (string-to-number (nth 1 last-error)))
+              (column (string-to-number (nth 2 last-error))))
+          (message file)
+          (windmove-up)
+          (find-file file)
+          (goto-line-and-column line column)))))
 
 (defun tm-switch-to-test-window ()
   (interactive)
