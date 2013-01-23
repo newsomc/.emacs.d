@@ -237,9 +237,9 @@
 (global-set-key [f12]  'call-last-kbd-macro)
 
 ;; modes
-(global-set-key (kbd "C-j C-m c") 'malko/toggle-glasses-mode)
-(global-set-key (kbd "C-j C-m h") 'malko/toggle-icy-mode)
-(global-set-key (kbd "C-j C-m s") 'malko/toggle-smartparens-mode)
+(c-pf-key "j C-m" "c" 'malko/toggle-glasses-mode)
+(c-pf-key "j C-m" "h" 'malko/toggle-icy-mode)
+(c-pf-key "j C-m" "s" 'malko/toggle-smartparens-mode)
 
 ;; multiple-cursors
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
