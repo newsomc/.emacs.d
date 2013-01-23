@@ -83,7 +83,6 @@
         (let ((file (nth 0 last-error))
               (line (string-to-number (nth 1 last-error)))
               (column (string-to-number (nth 2 last-error))))
-          (message file)
           (windmove-up)
           (find-file file)
           (goto-line-and-column line column)))))
