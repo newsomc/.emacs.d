@@ -136,7 +136,7 @@ and so on."
    ((malko/grep-visible?)
     (malko/next-error-and-close))
    (t
-    (winner-undo))))
+    (call-interactively 'change-inner))))
 
 (defun malko/step-out ()
   (interactive)
@@ -144,4 +144,4 @@ and so on."
    ((malko/grep-visible?)
     (malko/previous-error-and-close))
    (t
-    (winner-redo))))
+    (call-interactively 'change-outer))))
