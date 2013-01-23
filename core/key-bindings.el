@@ -40,6 +40,9 @@
 ;; fallback yasnippet trigger
 (define-key global-map (kbd "C-c TAB") 'noop)
 
+(global-set-key (kbd "C-9") '(lambda () (interactive) (insert "(")))
+(global-set-key (kbd "C-0") '(lambda () (interactive) (insert ")")))
+
 ;; C-j C-... mappings
 (global-set-key (kbd "C-j C-a") 'malko/apply-macro-to-end-of-buffer)
 (global-set-key (kbd "C-j C-c") 'copy-whole-lines)
@@ -78,11 +81,18 @@
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-M-v") 'ace-jump-mode-pop-mark)
 
-;; bookmark+
-(global-set-key (kbd "C-j bd") 'icicle-bookmark-dired)
-(global-set-key (kbd "C-j bl") 'icicle-bookmark)
-(global-set-key (kbd "C-j bt") 'icicle-tag-a-file)
-(global-set-key (kbd "C-j bT") 'icicle-untag-a-file)
+;; bm
+(global-set-key (kbd "<f2>") 'bm-toggle)
+(global-set-key (kbd "<f3>") 'bm-next)
+(global-set-key (kbd "<f4>") 'bm-previous)
+
+(global-set-key (kbd "C-j bj")
+                (make-repeatable-command 'bm-next))
+(global-set-key (kbd "C-j bk")
+                (make-repeatable-command 'bm-previous))
+(global-set-key (kbd "C-j bd") 'bm-remove-all-current-buffer)
+(global-set-key (kbd "C-j bD") 'bm-remove-all-all-buffers)
+(global-set-key (kbd "C-j bl") 'bm-show-all)
 
 ;; browse-kill-ring
 (global-set-key (kbd "C-x C-y") 'browse-kill-ring)
@@ -92,7 +102,6 @@
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j K") 'delete-current-buffer-file)
-(global-set-key (kbd "C-j be") 'ibuffer)
 
 (global-set-key (kbd "C-c N") 'cleanup-buffer)
 (global-set-key (kbd "C-c n") 'cleanup-buffer-safe)
