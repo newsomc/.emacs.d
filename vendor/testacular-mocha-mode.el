@@ -1,5 +1,3 @@
-(require 'compile)
-
 (defvar tm-mode-map (make-sparse-keymap)
   "tm-mode keymap")
 
@@ -17,17 +15,20 @@
   (let ((tm-git-base-path git-base-path))
     (ansi-term "/bin/bash" (tm-mode--compilation-buffer-name))
     (tm/setup-term-mode-map)
+    (visual-line-mode -1)
     (tm-run-shell-commands "PROMPT_COMMAND=\"PS1='> '\""
                            "clear"
                            (tm-compile-command tm-git-base-path test-cmd))))
 
 (defun tm-next-failure ()
   (interactive)
-  (search-forward "FAILED"))
+  (end-of-line)
+  (search-forward "FAILED" nil t))
 
 (defun tm-prev-failure ()
   (interactive)
-  (search-backward "FAILED"))
+  (beginning-of-line)
+  (search-backward "FAILED" nil t))
 
 (defun tm-compile-command (tm-git-base-path test-cmd)
   (format "cd %s; %s" tm-git-base-path test-cmd))
@@ -46,6 +47,9 @@
       ((s-contains? "public/apps/main" (buffer-file-name))
        (tm-open-term (format "make main_tests FILE=%s" spec-file))))))
 
+(defun tm-jump-to-failure ()
+  (interactive))
+
 (defun tm-switch-to-test-window ()
   (interactive)
   (switch-to-window-by-name "*tm-test*")
@@ -58,17 +62,14 @@
 (defun tm/setup-term-mode-map ()
   (when (term-in-char-mode)
     (use-local-map term-old-mode-map)
+    (define-key term-old-mode-map (kbd "<return>") 'tm-jump-to-failure)
     (define-key term-old-mode-map (kbd "M-n") 'tm-next-failure)
     (define-key term-old-mode-map (kbd "M-p") 'tm-prev-failure)))
 
 (defun tm-mode--compilation-buffer-name (&rest ignore) "tm-test")
 
 (define-minor-mode testacular-mocha-mode
-  "Testacular-Mocha mode" nil " TM" tm-mode-map
-  (if testacular-mocha-mode
-      (progn
-        (add-to-list 'compilation-error-regexp-alist '("(\\([^: ]+\\):\\([0-9]+\\):\\([0-9]+\\))" 1 2 3))
-        (set (make-local-variable 'compilation-buffer-name-function) 'tm-mode--compilation-buffer-name))))
+  "Testacular-Mocha mode" nil " TM" tm-mode-map)
 
 ;;;###autoload
 (add-hook 'js2-mode-hook (lambda () (testacular-mocha-mode)))

@@ -308,6 +308,7 @@
 (global-set-key (kbd "C-x C-o") 'switch-to-next-window)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
+(global-set-key (kbd "C-j j") (make-repeatable-command 'other-window))
 
 (global-set-key (kbd "C-j [")
   (make-repeatable-command 'halve-current-window-height))
