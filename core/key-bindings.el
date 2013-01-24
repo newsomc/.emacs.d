@@ -79,7 +79,7 @@
 (c-pf-key "s" "d" 'duplicate-region)
 (c-pf-key "s" "m" 'mf/mirror-region-in-multifile)
 (c-pf-key "s" "i" 'indent-region)
-(c-pf-key "s" "/" 'comment-region)
+(c-pf-key "s" "/" 'comment-or-uncomment-region)
 (c-pf-key "s" "k" 'mc/mark-all-in-region)
 (c-pf-key "s" "f" 'fold-this-all)
 
