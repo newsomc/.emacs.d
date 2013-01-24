@@ -13,7 +13,7 @@
   (split-window-below)
   (windmove-down)
   (halve-current-window-height)
-  (ansi-term "/bin/bash" "*run-shell-cmds*")
+  (ansi-term "/bin/bash" "run-shell-cmds")
   (malko/setup-term-mode-map)
   (visual-line-mode -1)
   (malko/run-shell-commands "PROMPT_COMMAND=\"PS1='> '\""
@@ -23,3 +23,12 @@
 (defun malko/setup-term-mode-map ()
   (when (term-in-char-mode)
     (use-local-map term-old-mode-map)))
+
+(defun malko/bind-term-cmd (cmd)
+  (interactive
+    (let ((string (read-string "Command: " nil 'my-history)))
+      (list string)))
+  (setq bind--term-cmd cmd)
+  (global-set-key (kbd "C-j C-,") '(lambda ()
+    (interactive)
+    (malko/open-term bind--term-cmd))))
