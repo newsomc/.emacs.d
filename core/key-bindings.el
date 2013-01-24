@@ -199,7 +199,18 @@
 
 ;; isearch
 (global-set-key (kbd "C-/") 'isearch-forward)
-(global-set-key (kbd "C-?") 'isearch-back)
+(global-set-key (kbd "C-?") 'isearch-backward)
+
+(define-key isearch-mode-map (kbd "C-n") 'isearch-repeat-forward)
+(define-key isearch-mode-map (kbd "C-p") 'isearch-repeat-backward)
+
+(define-key isearch-mode-map (kbd "C-q") nil)
+(define-key isearch-mode-map (kbd "C-j") nil)
+(define-key isearch-mode-map (kbd "C-s") nil)
+(define-key isearch-mode-map (kbd "C-r") nil)
+(define-key isearch-mode-map (kbd "C-z") nil)
+(define-key isearch-mode-map (kbd "H-[") nil)
+(define-key isearch-mode-map (kbd "C-,") nil)
 
 ;; jump-char
 (global-set-key (kbd "M-m") 'jump-char-forward)
