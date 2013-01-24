@@ -320,6 +320,9 @@
 ;; scratch js buffer
 (global-set-key (kbd "C-j sj") 'create-scratch-js-buffer)
 
+;; shell
+(global-set-key (kbd "C-j a") 'malko/open-term)
+
 ;; smex
 ;;  C-s/C-r [switches to the next/previous match]
 ;;  C-h f [describe-function]
