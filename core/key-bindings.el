@@ -12,7 +12,7 @@
 (define-key input-decode-map (kbd "C-[") (kbd "H-["))
 
 ;; leader keys
-(-each '("C-q" "H-[" "C-j" "C-z" "C-,"
+(-each '("C-q" "C-r" "H-[" "C-s" "C-j" "C-z" "C-,"
          "<f2>" "<f3>" "<f4>" "<f5>" "<f6>" "<f7>" "<f8>" "<f9>")
        (lambda (key)
          (global-unset-key (read-kbd-macro key))
@@ -53,7 +53,7 @@
 (global-set-key (kbd "C-j C-h") 'malko/kill-help)
 (global-set-key (kbd "C-j C-i") 'change-inner)
 (global-set-key (kbd "C-j C-j") 'other-window)
-(global-set-key (kbd "C-j C-k") 'smex)
+(global-set-key (kbd "C-j C-k") 'set-mark-command)
 (global-set-key (kbd "C-j C-l") 'ace-jump-line-mode)
 (global-set-key (kbd "C-j C-o") 'change-outer)
 (global-set-key (kbd "C-j C-p") 'project-switcher)
@@ -64,7 +64,7 @@
 (global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-v") 'magit-status)
 (global-set-key (kbd "C-j C-y") 'malko/layouts-spec-and-file)
-(global-set-key (kbd "C-j C-;") 'set-mark-command)
+(global-set-key (kbd "C-j C-;") 'eval-expression)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
 (global-set-key (kbd "C-j C-]") 'hs-show-all)
 (global-set-key (kbd "C-j C-SPC") 'quick-switch-buffer)
@@ -313,6 +313,7 @@
 ;;  C-h f [describe-function]
 ;;  C-h w [where-is]
 ;;  M-. [jumps to the definition]
+(global-set-key (kbd "C-r") 'smex)
 (global-set-key (kbd "C-x m") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
