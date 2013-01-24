@@ -45,6 +45,7 @@
    (cons 'smooth-scrolling melpa)
    (cons 'solarized-theme melpa)
    (cons 'sr-speedbar melpa)
+   (cons 'switch-window melpa)
    (cons 'undo-tree melpa)
    (cons 'wgrep melpa)
    (cons 'yaml-mode melpa)

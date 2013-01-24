@@ -81,6 +81,9 @@
 (setq custom-file "~/.emacs.d/core/custom.el")
 (load custom-file)
 
+;; easily switch windows
+(require 'switch-window)
+
 ;; start emacs server
 (require 'server)
 (unless (server-running-p) (server-start))
