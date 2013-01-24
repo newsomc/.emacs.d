@@ -33,6 +33,7 @@
    (cons 'perspective melpa)
    (cons 'pomodoro melpa)
    (cons 'popup melpa)
+   (cons 'powerline melpa)
    (cons 'rainbow-delimiters melpa)
    (cons 's melpa)
    (cons 'sicp melpa)

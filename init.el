@@ -67,6 +67,7 @@
 
 ;; load color theme
 (require 'subatomic-theme)
+(powerline-default)
 
 ;; core
 (require 'appearance)
