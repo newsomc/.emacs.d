@@ -10,6 +10,7 @@
     (let ((string (read-string "Command: " nil 'my-history)))
       (list string)))
   (malko/kill-run-shell-cmds)
+  (move-to-upper-left)
   (split-window-below)
   (windmove-down)
   (halve-current-window-height)

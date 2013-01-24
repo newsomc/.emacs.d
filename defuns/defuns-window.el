@@ -8,6 +8,10 @@
   (interactive)
   (enlarge-window (/ (window-height) 2)))
 
+(defun move-to-upper-left ()
+  (interactive)
+  (apply-to-window-index 'select-window 1 "Moved to upper left"))
+
 (defun reset-winner-mode ()
   (interactive)
   (setq winner-ring-alist nil))
