@@ -80,7 +80,7 @@
 (c-pf-key "s" "m" 'mf/mirror-region-in-multifile)
 (c-pf-key "s" "i" 'indent-region)
 (c-pf-key "s" "/" 'comment-or-uncomment-region)
-(c-pf-key "s" "k" 'mc/mark-all-in-region)
+(c-pf-key "s" "k" 'malko/mark-all-in-region)
 (c-pf-key "s" "f" 'fold-this-all)
 
 (c-pf-key "," "d" 'duplicate-current-line-or-region)
