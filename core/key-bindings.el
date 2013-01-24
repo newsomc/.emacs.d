@@ -63,6 +63,7 @@
 (global-set-key (kbd "C-j C-t") 'sr-speedbar-toggle)
 (global-set-key (kbd "C-j C-u") 'undo-tree-visualize)
 (global-set-key (kbd "C-j C-v") 'magit-status)
+(global-set-key (kbd "C-j C-w") 'switch-window)
 (global-set-key (kbd "C-j C-y") 'malko/layouts-spec-and-file)
 (global-set-key (kbd "C-j C-;") 'eval-expression)
 (global-set-key (kbd "C-j H-[") 'hs-hide-all)
@@ -296,6 +297,7 @@
 (global-set-key (kbd "C-j oo") 'occur)
 (global-set-key (kbd "C-j ok") 'malko/kill-occur)
 (global-set-key (kbd "C-j om") 'multi-occur-in-all-open-buffers)
+(global-set-key (kbd "C-j os") 'malko/switch-to-occur-buffer)
 
 (define-key occur-mode-map (kbd "o") 'occur-mode-display-occurrence)
 (define-key occur-mode-map (kbd "v") 'occur-mode-display-occurrence)
@@ -342,7 +344,7 @@
 (global-set-key (kbd "C-_") 'undo-tree-redo)
 
 ;; windows
-(global-set-key (kbd "C-x C-o") 'switch-to-next-window)
+(global-set-key (kbd "C-x C-o") 'switch-window)
 (global-set-key (kbd "C-x -") 'rotate-windows)
 (global-set-key (kbd "C-x C--") 'toggle-window-split)
 (global-set-key (kbd "C-j j") (make-repeatable-command 'other-window))

@@ -123,6 +123,10 @@ and so on."
 ;; occur
 (malko/create-buffer-specific-cmds "occur" "*Occur*")
 
+(defun malko/switch-to-occur-buffer ()
+  (interactive)
+  (icicle-select-window-by-name "*Occur*"))
+
 (defun quiet (key)
   (global-set-key (read-kbd-macro key)
                   (lambda ()
