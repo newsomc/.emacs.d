@@ -197,6 +197,10 @@
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file) ; ido-recentf-open
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
+;; isearch
+(global-set-key (kbd "C-/") 'isearch-forward)
+(global-set-key (kbd "C-?") 'isearch-back)
+
 ;; jump-char
 (global-set-key (kbd "M-m") 'jump-char-forward)
 (global-set-key (kbd "M-M") 'jump-char-backward)

@@ -4,4 +4,7 @@
 (setq undo-tree-mode-lighter "")
 (global-undo-tree-mode)
 
+(define-key undo-tree-map (kbd "C-/") nil)
+(define-key undo-tree-map (kbd "C-?") nil)
+
 (provide 'setup-undo-tree)
