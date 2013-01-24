@@ -85,6 +85,8 @@
 (global-set-key (kbd "<f2>") 'bm-toggle)
 (global-set-key (kbd "<f3>") 'bm-next)
 (global-set-key (kbd "<f4>") 'bm-previous)
+(global-set-key (kbd "C-<f3>") 'bm--turn-on-cycle-buffers)
+(global-set-key (kbd "C-<f4>") 'bm--turn-off-cycle-buffers)
 
 (global-set-key (kbd "C-j bj")
                 (make-repeatable-command 'bm-next))

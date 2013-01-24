@@ -7,8 +7,18 @@
 (setq-default bm-persistent-face
   '(:foreground "#2e3043" :background "#f9b529"))
 (setq-default bm-buffer-persistence t)
-(setq-default bm-cycle-all-buffers t)
+(setq-default bm-cycle-all-buffers nil)
 (setq-default bm-recenter t)
+
+(defun bm--turn-on-cycle-buffers ()
+  (interactive)
+  (message "bookmark cycle buffers: (on)")
+  (setq-default bm-cycle-all-buffers t))
+
+(defun bm--turn-off-cycle-buffers ()
+  (interactive)
+  (message "bookmark cycle buffers: (off)")
+  (setq-default bm-cycle-all-buffers nil))
 
 (add-hook 'after-init-hook 'bm-repository-load)
 (add-hook 'find-file-hooks 'bm-buffer-restore)
