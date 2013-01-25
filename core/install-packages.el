@@ -17,7 +17,6 @@
    (cons 'fold-this melpa)
    (cons 'frame-cmds melpa)
    (cons 'frame-fns melpa)
-   (cons 'geiser marmalade)
    (cons 'guide-key melpa)
    (cons 'icicles melpa)
    (cons 'ido-ubiquitous melpa)

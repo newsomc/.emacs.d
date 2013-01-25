@@ -1,3 +1,5 @@
+(load-file "~/.emacs.d/geiser-0.3/elisp/geiser.el")
+
 (setq geiser-active-implementations '(racket))
 (setq geiser-racket-binary
   "/Applications/Racket v5.3.1/bin/racket")
