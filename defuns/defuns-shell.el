@@ -30,6 +30,6 @@
     (let ((string (read-string "Command: " nil 'my-history)))
       (list string)))
   (setq bind--term-cmd cmd)
-  (global-set-key (kbd "C-j C-,") '(lambda ()
+  (global-set-key (kbd "C-j C-'") '(lambda ()
     (interactive)
     (malko/open-term bind--term-cmd))))

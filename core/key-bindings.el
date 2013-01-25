@@ -321,8 +321,8 @@
 (global-set-key (kbd "C-j sj") 'create-scratch-js-buffer)
 
 ;; shell
-(global-set-key (kbd "C-j aa") 'malko/open-term)
-(global-set-key (kbd "C-j a,") 'malko/bind-term-cmd)
+(global-set-key (kbd "C-j a") 'malko/open-term)
+(global-set-key (kbd "C-j '") 'malko/bind-term-cmd)
 
 ;; smex
 ;;  C-s/C-r [switches to the next/previous match]
