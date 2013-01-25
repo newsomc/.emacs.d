@@ -6,6 +6,14 @@
 (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
 (add-hook 'geiser-repl-mode-hook      (lambda () (paredit-mode +1)))
 
+;; making paredit work with delete-selection-mode
+(put 'paredit-forward-delete 'delete-selection 'supersede)
+(put 'paredit-backward-delete 'delete-selection 'supersede)
+(put 'paredit-open-round 'delete-selection t)
+(put 'paredit-open-square 'delete-selection t)
+(put 'paredit-doublequote 'delete-selection t)
+(put 'paredit-newline 'delete-selection t)
+
 (defun paredit--is-at-start-of-sexp ()
   (and (looking-at "(\\|\\[")
        (not (nth 3 (syntax-ppss))) ;; inside string
