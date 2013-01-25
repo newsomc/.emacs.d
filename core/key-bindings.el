@@ -330,8 +330,6 @@
 ;;  C-h w [where-is]
 ;;  M-. [jumps to the definition]
 (global-set-key (kbd "C-r") 'smex)
-(global-set-key (kbd "C-x m") 'smex)
-(global-set-key (kbd "C-x C-m") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
