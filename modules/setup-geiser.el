@@ -6,4 +6,9 @@
 (setq geiser-repl-history-filename "~/.emacs.d/geiser-history")
 (setq geiser-repl-startup-time 20000)
 
+(eval-after-load 'geiser-repl
+  '(progn
+    (define-key geiser-repl-mode-map (kbd "C-<return>")
+      'electrify-return-if-match)))
+
 (provide 'setup-geiser)

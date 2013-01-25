@@ -14,6 +14,22 @@
 (put 'paredit-doublequote 'delete-selection t)
 (put 'paredit-newline 'delete-selection t)
 
+(defvar electrify-return-match
+  "[\]}\)\"]"
+  "If this regexp matches the text after the cursor, do an \"electric\"
+return.")
+
+(defun electrify-return-if-match (arg)
+  "If the text after the cursor matches `electrify-return-match' then
+open and indent an empty line between the cursor and the text.  Move the
+cursor to the new line."
+  (interactive "P")
+  (let ((case-fold-search nil))
+    (if (looking-at electrify-return-match)
+      (save-excursion))
+    (newline arg)
+    (indent-according-to-mode)))
+
 (defun paredit--is-at-start-of-sexp ()
   (and (looking-at "(\\|\\[")
        (not (nth 3 (syntax-ppss))) ;; inside string
@@ -47,5 +63,6 @@
 
 (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
 (define-key paredit-mode-map (kbd "M-q") 'save-buffers-kill-terminal)
+(define-key paredit-mode-map (kbd "RET") 'electrify-return-if-match)
 
 (provide 'setup-paredit)
