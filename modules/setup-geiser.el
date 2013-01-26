@@ -8,6 +8,10 @@
 
 (eval-after-load 'geiser-repl
   '(progn
+    (define-key geiser-repl-mode-map (kbd "S-<return>")
+      'electrify-return-if-match)
+    (define-key geiser-repl-mode-map (kbd "M-<return>")
+      'electrify-return-if-match)
     (define-key geiser-repl-mode-map (kbd "C-<return>")
       'electrify-return-if-match)))
 
