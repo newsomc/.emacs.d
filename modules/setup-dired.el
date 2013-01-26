@@ -43,6 +43,7 @@
   (vector 'remap 'smart-down) 'dired-jump-to-bottom)
 
 ;; delete with C-x C-k to match file buffers and magit
+(define-key dired-mode-map (kbd "e") 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
 (define-key dired-mode-map (kbd "C-x C-k") 'dired-do-delete)
 (define-key dired-mode-map (kbd "M-<up>") 'dired-back-to-top)
