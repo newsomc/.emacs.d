@@ -5,6 +5,7 @@
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'scheme-mode-hook           (lambda () (paredit-mode +1)))
 (add-hook 'geiser-repl-mode-hook      (lambda () (paredit-mode +1)))
+(add-hook 'ielm-mode-hook             (lambda () (paredit-mode +1)))
 
 ;; making paredit work with delete-selection-mode
 (put 'paredit-forward-delete 'delete-selection 'supersede)
@@ -64,5 +65,12 @@ cursor to the new line."
 (define-key paredit-mode-map (kbd "M-)") 'paredit-wrap-round-from-behind)
 (define-key paredit-mode-map (kbd "M-q") 'save-buffers-kill-terminal)
 (define-key paredit-mode-map (kbd "RET") 'electrify-return-if-match)
+
+(eval-after-load 'ielm
+  '(progn
+    (define-key ielm-map (kbd "<return>") 'ielm-return)
+    (define-key ielm-map (kbd "S-<return>") 'electrify-return-if-match)
+    (define-key ielm-map (kbd "M-<return>") 'electrify-return-if-match)
+    (define-key ielm-map (kbd "C-<return>") 'electrify-return-if-match)))
 
 (provide 'setup-paredit)

@@ -138,6 +138,7 @@
 ;; eval-elisp
 (global-set-key (kbd "C-j eb") 'eval-buffer)
 (global-set-key (kbd "C-j ee") 'eval-defun)
+(global-set-key (kbd "C-j ei") 'ielm)
 (global-set-key (kbd "C-j er") 'eval-region)
 
 ;; expand-region
