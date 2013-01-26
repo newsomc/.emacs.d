@@ -106,6 +106,30 @@ region-end is used. Adds the duplicated text to the kill ring."
   (interactive)
   (insert "  "))
 
+(defun join-line-below ()
+  (interactive)
+  (join-line -1))
+
+(defun join-line-or-lines-in-region-up ()
+  "Join this line or the lines in the selected region."
+  (interactive)
+  (cond ((region-active-p)
+         (let ((min (line-number-at-pos (region-beginning))))
+           (goto-char (region-end))
+           (while (> (line-number-at-pos) min)
+             (join-line))))
+        (t (call-interactively 'join-line))))
+
+(defun join-line-or-lines-in-region-down ()
+  "Join this line or the lines in the selected region."
+  (interactive)
+  (cond ((region-active-p)
+         (let ((min (line-number-at-pos (region-beginning))))
+           (goto-char (region-end))
+           (while (> (line-number-at-pos) min)
+             (join-line))))
+        (t (call-interactively 'join-line-below))))
+
 (defun kill-and-retry-line ()
   "Kill the entire current line and reposition point at indentation"
   (interactive)
