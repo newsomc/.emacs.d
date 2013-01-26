@@ -75,6 +75,8 @@
 (global-set-key (kbd "H-[ H-[") (make-repeatable-command 'winner-undo))
 (h-pf-key "[" "]" 'winner-redo)
 
+(c-pf-key "s" "a" 'mc/edit-beginnings-of-lines)
+(c-pf-key "s" "e" 'mc/edit-ends-of-lines)
 (c-pf-key "s" "x" 'kill-region)
 (c-pf-key "s" "c" 'kill-ring-save)
 (c-pf-key "s" "d" 'duplicate-region)
