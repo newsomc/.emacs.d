@@ -37,6 +37,7 @@
 
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
 
 ;; message buffer size
 (setq message-log-max 10000)
