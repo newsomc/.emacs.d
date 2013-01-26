@@ -52,4 +52,16 @@
 (define-key dired-mode-map (kbd "C-j C-l") 'ace-jump-mode)
 (define-key dired-mode-map (kbd "C-j ll") 'ace-jump-mode)
 
+;; wdired
+(eval-after-load 'wdired
+  '(progn
+    (define-key wdired-mode-map (kbd "C-j") nil)
+    (define-key wdired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
+    (define-key wdired-mode-map (kbd "C-j C-l") 'ace-jump-mode)
+    (define-key wdired-mode-map (kbd "C-j ll") 'ace-jump-mode)
+    (define-key wdired-mode-map (kbd "M-o") 'malko/step-out)
+    (define-key wdired-mode-map (kbd "C-x C-k") 'dired-do-delete)
+    (define-key wdired-mode-map (kbd "M-<up>") 'dired-back-to-top)
+    (define-key wdired-mode-map (kbd "M-<down>") 'dired-jump-to-bottom)))
+
 (provide 'setup-dired)
