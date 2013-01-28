@@ -273,6 +273,23 @@
 (c-pf-key "j C-m" "h" 'malko/toggle-icy-mode)
 (c-pf-key "j C-m" "s" 'malko/toggle-smartparens-mode)
 
+;; move more quickly
+(global-set-key (kbd "C-S-n") (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "C-S-p") (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-S-f") (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-S-b") (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
+
 ;; multiple-cursors
 (global-set-key (kbd "C-j cl") 'mc/edit-lines)
 (global-set-key (kbd "C-j ce") 'mc/edit-ends-of-lines)
