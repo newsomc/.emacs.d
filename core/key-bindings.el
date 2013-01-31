@@ -259,6 +259,7 @@
 (global-set-key (kbd "M-p") 'scroll-down-command)
 (global-set-key (kbd "M-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-w") 'delete-frame)
 (global-set-key (kbd "M-x") 'kill-region)
 (global-set-key (kbd "M-z") 'undo-tree-undo)
 (global-set-key (kbd "M-Z") 'undo-tree-redo)
@@ -321,8 +322,9 @@
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
+(define-key persp-mode-map (kbd "C-j pk") 'persp-kill)
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
-(define-key persp-mode-map (kbd "C-j ps") 'project-switcher)
+(define-key persp-mode-map (kbd "C-j ps") 'persp-switch)
 
 (define-key ibuffer-mode-map (kbd "/p") 'ibuffer-filter-by-perspective-filter)
 
