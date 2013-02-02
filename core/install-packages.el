@@ -1,6 +1,7 @@
 (defun init--install-packages ()
   (packages-install
    (cons 'ace-jump-mode melpa)
+   (cons 'ag melpa)
    (cons 'auto-complete melpa)
    (cons 'browse-kill-ring melpa)
    (cons 'change-inner melpa)

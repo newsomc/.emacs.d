@@ -9,17 +9,19 @@
   (interactive
     (let ((string (read-string "Command: " nil 'my-history)))
       (list string)))
-  (malko/kill-run-shell-cmds)
-  (move-to-upper-left)
-  (split-window-below)
-  (windmove-down)
-  (halve-current-window-height)
-  (ansi-term "/bin/bash" "run-shell-cmds")
-  (malko/setup-term-mode-map)
-  (visual-line-mode -1)
-  (malko/run-shell-commands "PROMPT_COMMAND=\"PS1='> '\""
-                            "clear"
-                            cmd))
+  (let ((buf (current-buffer-name)))
+    (malko/kill-run-shell-cmds)
+    (move-to-upper-left)
+    (split-window-below)
+    (windmove-down)
+    (halve-current-window-height)
+    (ansi-term "/bin/bash" "run-shell-cmds")
+    (malko/setup-term-mode-map)
+    (visual-line-mode -1)
+    (malko/run-shell-commands "PROMPT_COMMAND=\"PS1='> '\""
+                              "clear"
+                              cmd)
+    (switch-to-window-by-name buf)))
 
 (defun malko/setup-term-mode-map ()
   (when (term-in-char-mode)

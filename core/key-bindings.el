@@ -79,15 +79,13 @@
 (c-pf-key "s" "e" 'mc/edit-ends-of-lines)
 (c-pf-key "s" "x" 'kill-region)
 (c-pf-key "s" "c" 'kill-ring-save)
-(c-pf-key "s" "d" 'duplicate-region)
+(c-pf-key "s" "d" 'duplicate-current-line-or-region)
 (c-pf-key "s" "m" 'mf/mirror-region-in-multifile)
 (c-pf-key "s" "i" 'indent-region)
 (c-pf-key "s" "/" 'comment-or-uncomment-region)
 (c-pf-key "s" "k" 'malko/mark-all-in-region)
 (c-pf-key "s" "f" 'fold-this-all)
-
-(c-pf-key "," "d" 'duplicate-current-line-or-region)
-(c-pf-key "," "k" 'kill-to-beginning-of-line)
+(c-pf-key "s" "r" 'align-regexp)
 
 ;; ace-jump-mode
 (define-key global-map (kbd "C-SPC") 'ace-jump-mode)
@@ -114,7 +112,6 @@
 ;; buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x rq") 'save-buffers-kill-terminal)
-(global-set-key (kbd "C-j k") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j K") 'delete-current-buffer-file)
 
 (global-set-key (kbd "C-c N") 'cleanup-buffer)
@@ -230,6 +227,10 @@
 ;; jump-char
 (global-set-key (kbd "M-m") 'jump-char-forward)
 (global-set-key (kbd "M-M") 'jump-char-backward)
+
+;; kill
+(global-set-key (kbd "C-j kk") 'kill-and-close-buffer)
+(global-set-key (kbd "C-j ka") 'kill-to-beginning-of-line)
 
 ;; layouts
 (define-key global-map (kbd "C-j yy") 'malko/layouts-spec-and-file)
