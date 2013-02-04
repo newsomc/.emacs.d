@@ -41,6 +41,22 @@
     "public/apps/.*/js/specs/libs")
   (ffip-local-patterns "*.js" "*.css" "*.styl" "*.jade"))
 
+;; playground
+(defun custom-persp/playground ()
+  (interactive)
+  (custom-persp "playground"
+                (find-file "~/projects/playground/")))
+
+(project-specifics "projects/playground"
+  (bvarp 'git-base-path "~/projects/playground/")
+
+  (ffip-local-patterns "*.sh" "Makefile" "*.c" "*.h" "*.clj" "*.coffee"
+    "*.lisp" "*.ex" "*.exs" "*.erl" "*.source" "*.config" "*.escript" "*.go"
+    "*.hs" "*.cabal" "*.java" "*.properties" "*.xml" "*.js"
+    "*.lua" "*.toc" "*.conf" "*.txt" "*.md" "*.py" "*.cfg" "*.in"
+    "*.rkt" "*.scrbl" "*.rb" "*.ru" "Rakefile" "Gemfile" "*.feature"
+    "*.rake" "*.yml" "*.yaml" "*.scala" "*.scm" "*.sml"))
+
 ;; proglang-2012-001
 (defun custom-persp/proglang-2012-001 ()
   (interactive)
@@ -54,7 +70,7 @@
 
 ;; project switcher
 (defvar project-switcher-list
-  '("emacs" "instajams" "proglang-2012-001"))
+  '("emacs" "instajams" "playground" "proglang-2012-001"))
 
 (defun project-switcher ()
   (interactive)

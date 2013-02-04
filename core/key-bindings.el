@@ -45,6 +45,7 @@
 
 ;; C-j C-... mappings
 (global-set-key (kbd "C-j C-a") 'malko/apply-macro-to-end-of-buffer)
+(global-set-key (kbd "C-j C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-j C-c") 'copy-whole-lines)
 (global-set-key (kbd "C-j C-d") 'duplicate-current-line-or-region)
 (global-set-key (kbd "C-j C-e") 'ibuffer)
