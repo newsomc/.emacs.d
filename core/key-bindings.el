@@ -175,16 +175,12 @@
 (global-set-key (kbd "C-j fe") 'next-error-follow-minor-mode)
 
 ;; grep
-(global-set-key (kbd "C-j gg") 'ag-fullscreen)
-(global-set-key (kbd "C-j gk") 'malko/kill-grep)
-(global-set-key (kbd "C-j gw") 'ag-fullscreen-current-word)
+(global-set-key (kbd "C-j gg") 'ag-fullscreen-current-word)
 
 (global-set-key (kbd "M-i") 'malko/step-in)
 (global-set-key (kbd "M-o") 'malko/step-out)
 
 ;; help
-(global-set-key (kbd "C-j hk") 'malko/kill-help)
-
 (define-key help-mode-map (kbd "j") 'next-line)
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "k") 'previous-line)
@@ -230,8 +226,12 @@
 (global-set-key (kbd "M-M") 'jump-char-backward)
 
 ;; kill
-(global-set-key (kbd "C-j kk") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j ka") 'kill-to-beginning-of-line)
+(global-set-key (kbd "C-j kg") 'malko/kill-grep)
+(global-set-key (kbd "C-j kh") 'malko/kill-help)
+(global-set-key (kbd "C-j kk") 'kill-and-close-buffer)
+(global-set-key (kbd "C-j ko") 'malko/kill-occur)
+(define-key persp-mode-map (kbd "C-j kp") 'persp-kill)
 (global-set-key (kbd "C-j ks") 'malko/kill-run-shell-cmds)
 
 ;; layouts
@@ -311,7 +311,6 @@
 
 ;; occur
 (global-set-key (kbd "C-j oo") 'occur)
-(global-set-key (kbd "C-j ok") 'malko/kill-occur)
 (global-set-key (kbd "C-j om") 'multi-occur-in-all-open-buffers)
 (global-set-key (kbd "C-j os") 'malko/switch-to-occur-buffer)
 
@@ -325,7 +324,6 @@
 ;; perspectives
 (define-key persp-mode-map (kbd "C-j pe") 'custom-persp/emacs)
 (define-key persp-mode-map (kbd "C-j pi") 'custom-persp/instajams)
-(define-key persp-mode-map (kbd "C-j pk") 'persp-kill)
 (define-key persp-mode-map (kbd "C-j pp") 'custom-persp-last)
 (define-key persp-mode-map (kbd "C-j ps") 'persp-switch)
 
