@@ -333,6 +333,11 @@ region-end is used. Adds the duplicated text to the kill ring."
          (snakified (snake-case current-word)))
     (replace-string current-word snakified nil beg end)))
 
+(defun toggle-comment-on-line ()
+  "comment or uncomment current line"
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (defun transpose-params ()
   "Presumes that params are in the form (p, p, p) or {p, p, p} or [p, p, p]"
   (interactive)

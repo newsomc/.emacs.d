@@ -122,6 +122,9 @@
 ;; commands (shell)
 (global-set-key (kbd "C-j cc") 'shell-command-on-whole-buffer)
 
+;; comment
+(global-set-key (kbd "M-/") 'toggle-comment-on-line)
+
 ;; debug
 (global-set-key (kbd "C-j dc") 'cancel-debug-on-entry)
 (global-set-key (kbd "C-j dd") 'debug-on-entry)
