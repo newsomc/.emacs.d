@@ -232,6 +232,7 @@
 ;; kill
 (global-set-key (kbd "C-j kk") 'kill-and-close-buffer)
 (global-set-key (kbd "C-j ka") 'kill-to-beginning-of-line)
+(global-set-key (kbd "C-j ks") 'malko/kill-run-shell-cmds)
 
 ;; layouts
 (define-key global-map (kbd "C-j yy") 'malko/layouts-spec-and-file)

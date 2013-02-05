@@ -55,6 +55,7 @@
 ;; help
 (malko/create-buffer-specific-cmds "help" "*Help*")
 (malko/create-buffer-specific-cmds "tm-tests" "*tm-test*")
+(malko/create-buffer-specific-cmds "run-shell-cmds" "*run-shell-cmds*")
 
 ;; logging messages
 (defun malko/switch-to-messages-buffer ()

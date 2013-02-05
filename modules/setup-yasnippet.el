@@ -4,7 +4,7 @@
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
-(setq yas-indent-line 'auto)
+(setq yas-indent-line 'fixed)
 
 ;; jump to end of snippet definition
 (define-key yas-keymap (kbd "<return>") 'yas-exit-all-snippets)
