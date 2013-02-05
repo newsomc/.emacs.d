@@ -154,6 +154,10 @@ Symbols matching the text at point are put first in the completion list."
 (defmacro malko/create-buffer-specific-cmds (cmd buffer-name)
   `(progn
 
+    (defun ,(intern (format "malko/switch-to-%s-buffer" cmd)) ()
+      (interactive)
+      (switch-to-window-by-name ,buffer-name))
+
     (defun ,(intern (format "malko/%s-active?" cmd)) ()
       (-contains? (buffer-names) ,buffer-name))
 

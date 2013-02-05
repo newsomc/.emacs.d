@@ -22,6 +22,7 @@
             (grep-use-null-device nil))
         (when confirm
           (setq command (read-shell-command "Run ag: " command 'ag-history)))
+        (setq malko/grep--buffer-names (buffer-names))
         (window-configuration-to-register ?$)
         (grep command)
         (switch-to-buffer "*grep*")
@@ -42,10 +43,24 @@
   (delete-other-windows)
   (message "Type C-x r j $ to return to pre-rgrep windows."))
 
+(defun rgrep--kill-searched-buffers ()
+  (interactive)
+  (-each (-difference (buffer-names) malko/grep--buffer-names)
+         (lambda (item) (kill-buffer item))))
+
 (defun rgrep-quit-window ()
   (interactive)
-  (kill-buffer)
-  (jump-to-register ?$))
+  (if (malko/grep-active?)
+    (if (malko/grep-visible?)
+      (progn
+        (switch-to-window-by-name "*grep*")
+        (kill-and-close-buffer)
+        (rgrep--kill-searched-buffers)
+        (jump-to-register ?$))
+      (progn
+        (kill-buffer "*grep*")
+        (rgrep--kill-searched-buffers)
+        (jump-to-register ?$)))))
 
 (eval-after-load "grep"
   '(progn

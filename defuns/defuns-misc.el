@@ -36,18 +36,8 @@
      (interactive)
      (if (malko/grep-active?)
          (if (malko/grep-visible?)
-             (progn
-               (if (current-buffer-name-sw "*grep*")
-                   (progn
-                     (funcall ',(intern (format "%s-error" name))))
-                 (progn
-                   (kill-buffer (current-buffer))
-                   (delete-window)
-                   (funcall ',(intern (format "%s-error" name))))))
-           (progn
-             (switch-to-buffer "*grep*")
-             (delete-other-windows)
-             (funcall ',(intern (format "%s-error" name))))))))
+           (funcall ',(intern (format "%s-error" name))))
+           (malko/kill-grep))))
 
 (malko/cycle-grep "next")
 (malko/cycle-grep "previous")
@@ -123,10 +113,6 @@ and so on."
 
 ;; occur
 (malko/create-buffer-specific-cmds "occur" "*Occur*")
-
-(defun malko/switch-to-occur-buffer ()
-  (interactive)
-  (icicle-select-window-by-name "*Occur*"))
 
 (defun quiet (key)
   (global-set-key (read-kbd-macro key)
