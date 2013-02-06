@@ -69,12 +69,13 @@ might be bad."
 
 (defun font-size-normal ()
   (interactive)
-  (text-scale-increase 0))
+  (set-face-attribute 'default nil :font "Ubuntu Mono-16")
+  (maximize-frame))
 
 (defun font-size-big ()
   (interactive)
-  (text-scale-increase 0)
-  (text-scale-increase 3))
+  (set-face-attribute 'default nil :font "Ubuntu Mono-28")
+  (maximize-frame))
 
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"

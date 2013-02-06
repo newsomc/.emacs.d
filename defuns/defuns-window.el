@@ -12,6 +12,10 @@
   (interactive)
   (apply-to-window-index 'select-window 1 "Moved to upper left"))
 
+(defun number-of-windows ()
+  (interactive)
+  (length (window-list (selected-frame))))
+
 (defun reset-winner-mode ()
   (interactive)
   (setq winner-ring-alist nil))

@@ -25,9 +25,8 @@
         (setq malko/grep--buffer-names (buffer-names))
         (window-configuration-to-register ?$)
         (grep command)
-        (switch-to-buffer "*grep*")
-        (delete-other-windows)
-        (beginning-of-buffer))
+        (switch-to-window-by-name "*grep*")
+        (halve-current-window-height))
       (message "Whoops! Your search must contain 3 characters or more"))
     (message "Command not found: brew install the_silver_searcher")))
 

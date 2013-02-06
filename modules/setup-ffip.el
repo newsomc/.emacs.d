@@ -37,7 +37,8 @@ Example:
 
 ;; default excludes - override with ffip-local-excludes
 (defvar ffip-default-excludes
-  '("node_modules" "\.DS_Store" ".*\.log" "target" "overlays"))
+  '("node_modules" "\.DS_Store" ".*\.log" "target" "overlays"
+    ".metadata" ".gitkeep"))
 
 (setq ffip-find-options
       (ffip--create-exclude-find-options ffip-default-excludes))

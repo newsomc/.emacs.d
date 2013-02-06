@@ -1,3 +1,4 @@
+(require 'go-autocomplete)
 (require 'auto-complete)
 (require 'auto-complete-config)
 
@@ -9,7 +10,9 @@
 
 (delq 'ac-source-yasnippet ac-sources)
 
-(setq ac-auto-show-menu 1.0)
+(setq ac-quick-help-delay 0.1)
+(setq ac-delay 0)
+(setq ac-auto-show-menu 0)
 (setq ac-auto-start 3)
 (setq ac-ignore-case nil)
 (setq ac-menu-height 20)
