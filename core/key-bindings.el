@@ -125,6 +125,11 @@
 ;; comment
 (global-set-key (kbd "M-/") 'toggle-comment-on-line)
 
+;; ctags
+(global-set-key (kbd "C-j cu") 'build-ctags)
+(global-set-key (kbd "M-.") 'malko/find-tag)
+(global-set-key (kbd "C-M-.") 'malko/ido-find-tag)
+
 ;; debug
 (global-set-key (kbd "C-j dc") 'cancel-debug-on-entry)
 (global-set-key (kbd "C-j dd") 'debug-on-entry)
