@@ -37,4 +37,5 @@
   (font-size-normal))
 
 (defadvice split-window-below (before reset-font-size activate)
-  (font-size-normal))
+  (if (not (eq this-command 'save-buffer))
+    (font-size-normal)))
