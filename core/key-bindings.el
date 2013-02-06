@@ -236,6 +236,7 @@
 
 ;; kill
 (global-set-key (kbd "C-j ka") 'kill-to-beginning-of-line)
+(global-set-key (kbd "C-j ke") 'kill-line)
 (global-set-key (kbd "C-j kg") 'rgrep-quit-window)
 (global-set-key (kbd "C-j kh") 'malko/kill-help)
 (global-set-key (kbd "C-j kk") 'kill-and-close-buffer)
