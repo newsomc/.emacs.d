@@ -15,27 +15,23 @@
 (defadvice jao-toggle-selective-display (after toggle-center activate)
   (recenter))
 
-(defadvice kill-and-close-buffer (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
-(defadvice kill-window (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
-(defadvice malko/kill-help (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
-(defadvice malko/kill-occur (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
-(defadvice malko/kill-run-shell-cmds (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
-(defadvice rgrep-quit-window (after reset-font-size activate)
-  (malko/fix-font-sizing))
-
 (defadvice split-window-right (before reset-font-size activate)
   (font-size-normal))
 
 (defadvice split-window-below (before reset-font-size activate)
   (if (not (eq this-command 'save-buffer))
     (font-size-normal)))
+
+(defmacro malko/create-font-sizing-advice (name)
+  `(defadvice ,(intern name) (after reset-font-size activate)
+    (malko/fix-font-sizing)))
+
+(malko/create-font-sizing-advice "custom-persp-last")
+(malko/create-font-sizing-advice "kill-and-close-buffer")
+(malko/create-font-sizing-advice "kill-window")
+(malko/create-font-sizing-advice "magit-quit-session")
+(malko/create-font-sizing-advice "malko/kill-help")
+(malko/create-font-sizing-advice "malko/kill-occur")
+(malko/create-font-sizing-advice "malko/kill-run-shell-cmds")
+(malko/create-font-sizing-advice "project-switcher")
+(malko/create-font-sizing-advice "rgrep-quit-window")
