@@ -72,7 +72,7 @@ might be bad."
   (interactive)
   (unwind-protect
       (progn
-        (linum-mode 1)
+        (linum-mode -1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
 
