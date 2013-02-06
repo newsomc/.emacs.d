@@ -177,6 +177,12 @@
 (global-set-key (kbd "C-j fm") 'follow-mode)
 (global-set-key (kbd "C-j fe") 'next-error-follow-minor-mode)
 
+;; font-size
+(global-set-key (kbd "C-j =") 'font-size-big)
+(global-set-key (kbd "C-j C-=") 'font-size-big)
+(global-set-key (kbd "C-j -") 'font-size-normal)
+(global-set-key (kbd "C-j C--") 'font-size-normal)
+
 ;; grep
 (global-set-key (kbd "C-j gg") 'ag-fullscreen-current-word)
 

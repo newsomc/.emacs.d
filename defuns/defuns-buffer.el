@@ -67,6 +67,15 @@ might be bad."
   "Returns the major mode associated with current buffer"
   (with-current-buffer (current-buffer) major-mode))
 
+(defun font-size-normal ()
+  (interactive)
+  (text-scale-increase 0))
+
+(defun font-size-big ()
+  (interactive)
+  (text-scale-increase 0)
+  (text-scale-increase 3))
+
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
