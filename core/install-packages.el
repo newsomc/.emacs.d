@@ -19,6 +19,7 @@
    (cons 'fold-this melpa)
    (cons 'frame-cmds melpa)
    (cons 'frame-fns melpa)
+   (cons 'git-gutter melpa)
    (cons 'guide-key melpa)
    (cons 'icicles melpa)
    (cons 'ido-ubiquitous melpa)
