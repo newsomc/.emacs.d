@@ -147,6 +147,12 @@
 (global-set-key (kbd "C-j ei") 'ielm)
 (global-set-key (kbd "C-j er") 'eval-region)
 
+;; evil-numbers
+(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c =") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
+(global-set-key (kbd "C-c _") 'evil-numbers/dec-at-pt)
+
 ;; expand-region
 (global-set-key (kbd "C-;") 'er/expand-region)
 (global-set-key (kbd "M-;") 'er/expand-region) ;; comment-dwim

@@ -12,6 +12,7 @@
    (cons 'elisp-slime-nav melpa)
    (cons 'eproject melpa)
    (cons 'etags-select marmalade)
+   (cons 'evil-numbers melpa)
    (cons 'exec-path-from-shell melpa)
    (cons 'expand-region melpa)
    (cons 'feature-mode melpa)
